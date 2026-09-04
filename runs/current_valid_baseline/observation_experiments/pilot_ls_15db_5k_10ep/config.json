@@ -1,0 +1,101 @@
+{
+  "data": {
+    "test_paths": {
+      "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+      "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+      "OOD-Far 1 ms": "runs/baseline_reproduction/step5_snr_ablation/noisy_train_noisy_eval/generated_data/test_ood_far_1ms.npz",
+      "OOD-Near 120 ns": "data/prototype/test_ood_near.npz"
+    },
+    "train_path": "runs/baseline_reproduction/step5_snr_ablation/noisy_train_noisy_eval/generated_data/train_5k_pilot.npz",
+    "validation_path": "data/prototype/validation.npz"
+  },
+  "evaluation_protocol": {
+    "Ng": 16,
+    "mask": "uniform_grouping_mask",
+    "omitted_polarity": "1-mask",
+    "score": "paper_subcarrier_uncertainty_map then paper_omitted_uncertainty_score"
+  },
+  "implementation_assumption": {
+    "batch_size": 8,
+    "current_valid_baseline": true,
+    "device": "cuda:0",
+    "epochs": 10,
+    "estimator": "least_squares",
+    "eval_batch_size": 16,
+    "eval_grouping_factor": 16,
+    "evidential_covariance": "diagonal_multivariate_pair_scalar_kappa_nu_pair_regularizer",
+    "evidential_mode": "pair_scalar",
+    "experiment_name": "OBSERVATION-PILOT-LS-15dB-5k-10ep",
+    "mask_grouping_factors": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "nll_mode": "diagonal_multivariate",
+    "observation_mode": "pilot_ls",
+    "observation_noise_note": "IMPLEMENTATION-ASSUMPTION: X=I2 orthogonal pilot, received-pilot complex AWGN, LS CFR estimate; clean target",
+    "observation_noise_snr_db": 15.0,
+    "optimizer": "Adam",
+    "pilot_amplitude": 1.0,
+    "pilot_note": "IMPLEMENTATION-ASSUMPTION / PILOT, not paper-specified",
+    "pilot_sequence": "X=I2, two orthogonal pilot slots",
+    "probe_samples": 200,
+    "reg_mode": "pair",
+    "seed": 20260819,
+    "target_channels": 8
+  },
+  "pair_mapping": {
+    "layout": "[Re(pair0..3), Im(pair0..3)]",
+    "pair_channels": {
+      "pair0": [
+        0,
+        4
+      ],
+      "pair1": [
+        1,
+        5
+      ],
+      "pair2": [
+        2,
+        6
+      ],
+      "pair3": [
+        3,
+        7
+      ]
+    }
+  },
+  "paper_specified": {
+    "dropout": 0.05,
+    "hidden_channels": 192,
+    "input_channels": 9,
+    "kernel_size": 5,
+    "lambda_reg": 0.001,
+    "learning_rate": 0.0001,
+    "num_rx_ant": 2,
+    "num_subcarriers": 1024,
+    "num_tx_ant": 2,
+    "residual_blocks": 32
+  },
+  "provenance": {
+    "code_sha256": {
+      "scripts/diagnose_predictor.py": "aa1990c1ec2e84c26025d42f550cb11823d2b940ca0d97d2d007e5ce97959be6",
+      "scripts/train_pilot_ls_observation.py": "9e65ee3ba8d431cd0a70a6d202d0b5dc230faa52c31c0ec56f76ce21ffaa46fb",
+      "scripts/train_predictor.py": "e352bc748d8ed14600d640b8216d226f6d7bd30d5e8c2c9b03b191d5005ed8f4",
+      "src/models/evidential.py": "2ecff75639a386a1045d64937564d10899398034b2ea2580625a062389c4f2c4",
+      "src/models/uacp_predictor.py": "f2752beb2cf13ffb250d1e565bb849ae71a9450e7b454d563342be49d2a6b259",
+      "src/training/data.py": "8705c576897084fa6dc4d23f9e6b7e5b3f15c96ebe84e75817d21eeec30c69f3",
+      "src/training/uncertainty.py": "1b8e5f2e75a9b7eb9fd4f04c3d13060a15eee9cd6b775ecb3c8de7c4844e475c"
+    },
+    "config_sha256": "ca085d24037c7da5521a0bfd0d7d34916b26eddd2e9c5d021f09335e1a1d8cce",
+    "cuda_available": true,
+    "git_commit": "f5870fb735009d62d7237e3574d669e92dd5e9d8",
+    "git_status": "M README.md\n?? configs/\n?? data/\n?? mobihoc26-paper289.pdf\n?? runs/\n?? scripts/\n?? src/\n?? tests/",
+    "gpu_name": "NVIDIA GB10",
+    "seed": 20260819,
+    "timestamp_utc": "2026-09-03T02:49:57.315422+00:00",
+    "torch_cuda_version": "13.0",
+    "torch_version": "2.13.0+cu130"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "seed_by_regime": {
+    "ID-Easy 20 ns": 20341819,
+    "ID-Hard 80 ns": 20341820,
+    "OOD-Near 120 ns": 20341821,
+    "OOD-Far 1 ms": 20341822
+  },
+  "paths": {
+    "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+    "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+    "OOD-Far 1 ms": "runs/baseline_reproduction/step5_snr_ablation/noisy_train_noisy_eval/generated_data/test_ood_far_1ms.npz",
+    "OOD-Near 120 ns": "data/prototype/test_ood_near.npz"
+  },
+  "ng": 16,
+  "noise_snr_db": 15.0,
+  "same_in_memory_probes_for_exp_a_and_model_trace": true
+}

@@ -1,0 +1,3 @@
+model,total_parameters,parameter_increase_vs_diagonal,inference_ms,peak_gpu_memory_mb
+Diagonal current-valid control,11815320,0,69.05188634991646,161.87890625
+Banded lag32,11914136,98816,153.59212718904018,161.87890625

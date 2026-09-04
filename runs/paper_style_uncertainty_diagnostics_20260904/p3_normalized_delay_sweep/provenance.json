@@ -1,0 +1,9 @@
+{
+  "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "normalization": "a=sqrt(mean(|H_true|^2)); H and gamma divided by a; Sigma_ale and Sigma_epi divided by a^2; Eq.12->Eq.13 reapplied",
+  "probe_dir": "runs/paper_style_uncertainty_diagnostics_20260904/generated_p3",
+  "training_performed": false
+}

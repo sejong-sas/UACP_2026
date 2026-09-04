@@ -1,0 +1,12 @@
+{
+  "aggregation": "pair Sigma_ale -> Re/Im trace Eq.12 -> pair mean -> omitted Eq.13",
+  "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "config": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/config.json",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "normalization": "a=sqrt(mean(|H_true|^2)); Sigma_norm=Sigma/a^2; gamma,target divided by a",
+  "probe_dir": "runs/paper_style_uncertainty_diagnostics_20260904/generated_p3",
+  "runtime_seconds": 482.57192268036306,
+  "training_performed": false
+}

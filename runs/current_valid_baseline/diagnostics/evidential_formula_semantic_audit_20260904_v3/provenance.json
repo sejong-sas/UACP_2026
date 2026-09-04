@@ -1,0 +1,29 @@
+{
+  "audit": "Paper Eq.5~11 vs Current Evidential Implementation Semantic Consistency Audit",
+  "baseline": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected",
+  "checkpoint": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "checkpoint_sha256_after": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "checkpoint_sha256_before": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "code_sha256": {
+    "scripts/evidential_formula_semantic_audit.py": "db1be8276d4e6bf1a5097832da2d5f099aa012654e3db68c1a5008592a501a4d",
+    "src/models/evidential.py": "2ecff75639a386a1045d64937564d10899398034b2ea2580625a062389c4f2c4",
+    "src/models/uacp_predictor.py": "f2752beb2cf13ffb250d1e565bb849ae71a9450e7b454d563342be49d2a6b259",
+    "src/training/data.py": "600744ef0cd0753acc0e896e0b4319edf99b62fa5aea525ae31fbeb6efb0cd19",
+    "src/training/uncertainty.py": "1b8e5f2e75a9b7eb9fd4f04c3d13060a15eee9cd6b775ecb3c8de7c4844e475c"
+  },
+  "config_sha256": "830341fe90e5a9b79676f61922ec82feeb859d1d74d422e818f8d0e14b410070",
+  "cuda_available": true,
+  "device_requested": "cuda:0",
+  "device_used": "cuda:0",
+  "elapsed_seconds": 6.932269340381026,
+  "finite_outputs": true,
+  "git_commit": "f5870fb735009d62d7237e3574d669e92dd5e9d8",
+  "git_status": " M README.md\n?? configs/\n?? data/\n?? mobihoc26-paper289.pdf\n?? runs/\n?? scripts/\n?? src/\n?? tests/\n",
+  "gpu_name": "NVIDIA GB10",
+  "optimizer_step_called": false,
+  "seed": 20260819,
+  "timestamp_utc": "2026-09-04T11:26:11.352598+00:00",
+  "torch_cuda_version": "13.0",
+  "torch_version": "2.13.0+cu130",
+  "training_performed": false
+}

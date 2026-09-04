@@ -1,0 +1,12 @@
+# 실행 중 자동으로 만들어지는 Python 캐시
+**/__pycache__/
+*.py[cod]
+
+# 가상환경은 각 컴퓨터에서 다시 만들 수 있음
+.venv-uacp/
+
+# 실험 중간 생성 데이터는 저장소에 넣지 않음
+runs/**/generated_data/
+
+# 대용량 단계별 raw dump는 요약 CSV와 README로 대체
+runs/current_valid_baseline/diagnostics/normalized_aleatoric_aggregation_audit_20260904_v2/subcarrier_eq12_trace.csv

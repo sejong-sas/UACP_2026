@@ -1,0 +1,11 @@
+{
+  "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "config_sha256": "580e1e254a8187586ee8c41b65c975fb034a6530528274276d67a2e13f4d0bef",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "runtime_seconds": 30.091668815352023,
+  "seed": 20260819,
+  "timestamp_utc": "2026-09-04T06:37:43.771178+00:00",
+  "training_performed": false
+}

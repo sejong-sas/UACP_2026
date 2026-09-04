@@ -1,0 +1,76 @@
+{
+  "config": "configs/dataset_prototype.json",
+  "output_dir": "data/prototype",
+  "splits": [
+    {
+      "bytes": 32908176,
+      "dtype": "complex64",
+      "generation_seconds": 4.112127704080194,
+      "path": "data/prototype/train.npz",
+      "samples": 1000,
+      "shape": [
+        1000,
+        1024,
+        2,
+        2
+      ],
+      "split": "train"
+    },
+    {
+      "bytes": 6588204,
+      "dtype": "complex64",
+      "generation_seconds": 0.47171218367293477,
+      "path": "data/prototype/validation.npz",
+      "samples": 200,
+      "shape": [
+        200,
+        1024,
+        2,
+        2
+      ],
+      "split": "validation"
+    },
+    {
+      "bytes": 6588208,
+      "dtype": "complex64",
+      "generation_seconds": 0.5064801792614162,
+      "path": "data/prototype/test_id_easy.npz",
+      "samples": 200,
+      "shape": [
+        200,
+        1024,
+        2,
+        2
+      ],
+      "split": "test_id_easy"
+    },
+    {
+      "bytes": 6588208,
+      "dtype": "complex64",
+      "generation_seconds": 0.6303273378871381,
+      "path": "data/prototype/test_id_hard.npz",
+      "samples": 200,
+      "shape": [
+        200,
+        1024,
+        2,
+        2
+      ],
+      "split": "test_id_hard"
+    },
+    {
+      "bytes": 6588212,
+      "dtype": "complex64",
+      "generation_seconds": 0.4549712548032403,
+      "path": "data/prototype/test_ood_near.npz",
+      "samples": 200,
+      "shape": [
+        200,
+        1024,
+        2,
+        2
+      ],
+      "split": "test_ood_near"
+    }
+  ]
+}

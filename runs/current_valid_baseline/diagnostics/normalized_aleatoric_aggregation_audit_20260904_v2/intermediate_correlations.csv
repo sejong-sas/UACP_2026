@@ -1,0 +1,21 @@
+regime,final,intermediate,pearson,spearman
+ID-Easy 20 ns,normalized_aleatoric_eq12_omitted,normalized_aleatoric_eq12_observed,0.996081856902853,0.9929828245706145
+ID-Easy 20 ns,normalized_aleatoric_eq12_omitted,normalized_psi_mean,0.9918665902506041,0.9870966774169355
+ID-Easy 20 ns,normalized_aleatoric_eq12_omitted,denom_mean,0.3154214208084194,0.28989274731868303
+ID-Easy 20 ns,normalized_aleatoric_eq12_omitted,normalized_error_omitted,0.4696397894837527,0.35882997074926876
+ID-Easy 20 ns,normalized_aleatoric_eq12_omitted,normalized_scale_a,-0.8950534459311569,-0.9652921323033077
+ID-Hard 80 ns,normalized_aleatoric_eq12_omitted,normalized_aleatoric_eq12_observed,0.9987747323394627,0.997530938273457
+ID-Hard 80 ns,normalized_aleatoric_eq12_omitted,normalized_psi_mean,0.9990036276287682,0.9980394509862748
+ID-Hard 80 ns,normalized_aleatoric_eq12_omitted,denom_mean,0.7508454165417259,0.7752793819845497
+ID-Hard 80 ns,normalized_aleatoric_eq12_omitted,normalized_error_omitted,0.7027452746044199,0.6737673441836047
+ID-Hard 80 ns,normalized_aleatoric_eq12_omitted,normalized_scale_a,-0.9277974825159965,-0.9933173329333235
+OOD-Near 120 ns,normalized_aleatoric_eq12_omitted,normalized_aleatoric_eq12_observed,0.998120830151542,0.9969759243981101
+OOD-Near 120 ns,normalized_aleatoric_eq12_omitted,normalized_psi_mean,0.9984004282263068,0.9971019275481889
+OOD-Near 120 ns,normalized_aleatoric_eq12_omitted,denom_mean,0.6670453300078993,0.6772924323108078
+OOD-Near 120 ns,normalized_aleatoric_eq12_omitted,normalized_error_omitted,0.826864461040797,0.7886357158928974
+OOD-Near 120 ns,normalized_aleatoric_eq12_omitted,normalized_scale_a,-0.9532945871320962,-0.99121578039451
+OOD-Far 1 ms,normalized_aleatoric_eq12_omitted,normalized_aleatoric_eq12_observed,0.9757796899554592,0.9654871371784296
+OOD-Far 1 ms,normalized_aleatoric_eq12_omitted,normalized_psi_mean,0.8957598108643637,0.870183754593865
+OOD-Far 1 ms,normalized_aleatoric_eq12_omitted,denom_mean,0.21070794573549806,0.1996624915622891
+OOD-Far 1 ms,normalized_aleatoric_eq12_omitted,normalized_error_omitted,0.06978693074196038,0.040481512037800954
+OOD-Far 1 ms,normalized_aleatoric_eq12_omitted,normalized_scale_a,-0.6689316067596126,-0.6434050851271284

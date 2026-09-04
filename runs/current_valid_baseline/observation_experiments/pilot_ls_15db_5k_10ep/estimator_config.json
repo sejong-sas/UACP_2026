@@ -1,0 +1,6 @@
+{
+  "estimator": "LS",
+  "formula": "H_hat=Y X^H (X X^H)^-1",
+  "for_X": "I2, H_hat=Y",
+  "assumption": "IMPLEMENTATION-ASSUMPTION"
+}

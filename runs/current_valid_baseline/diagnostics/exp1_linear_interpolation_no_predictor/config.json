@@ -1,0 +1,5 @@
+{
+  "baseline": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected",
+  "evaluation_setup": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/evaluation_setup.json",
+  "method": "frequency-axis real/imag linear interpolation; edge extrapolation uses np.interp endpoint values"
+}

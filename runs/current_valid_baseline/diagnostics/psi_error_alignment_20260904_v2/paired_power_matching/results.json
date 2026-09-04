@@ -1,0 +1,53 @@
+{
+  "power_tolerance": {
+    "max_absolute": 0.5184490382671356,
+    "mean_absolute": 0.06063604414463043,
+    "mean_relative": 0.08870128999454771,
+    "median_absolute": 0.012266278266906738,
+    "p95_absolute": 0.29563264548778523,
+    "p95_relative": 0.5396427580700824
+  },
+  "provenance": {
+    "aggregation": "mean across four antenna pairs per sample",
+    "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+    "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+    "input": "runs/current_valid_baseline/diagnostics/psi_error_alignment_20260904_v2/sample_pair_metrics.csv",
+    "matching": "1:1 without replacement, minimum total absolute CFR-power distance",
+    "pair_rows_each": 800,
+    "runtime_note": "read-only reuse of existing sample/pair inference output",
+    "sample_count_each": 200,
+    "training_performed": false
+  },
+  "statistics": [
+    {
+      "mean": 0.0023370163922663777,
+      "median": 0.0024294813629239798,
+      "positive_ratio": 0.8,
+      "quantity": "normalized_error",
+      "sign_test_p_two_sided": 3.3840159775152857e-18,
+      "std": 0.0030790824355203983,
+      "wilcoxon_p_two_sided": 1.0547283210990813e-18,
+      "zero_ratio": 0.0
+    },
+    {
+      "mean": -0.011117142774164677,
+      "median": -0.001957410015165806,
+      "positive_ratio": 0.43,
+      "quantity": "normalized_psi",
+      "sign_test_p_two_sided": 0.05596574049426474,
+      "std": 0.03689651069774686,
+      "wilcoxon_p_two_sided": 0.017808759750136467,
+      "zero_ratio": 0.0
+    },
+    {
+      "mean": -0.0010117885749787092,
+      "median": -0.0002145341131836176,
+      "positive_ratio": 0.475,
+      "quantity": "normalized_aleatoric",
+      "sign_test_p_two_sided": 0.5246223557223155,
+      "std": 0.003926654857697526,
+      "wilcoxon_p_two_sided": 0.08186557112524226,
+      "zero_ratio": 0.0
+    }
+  ]
+}

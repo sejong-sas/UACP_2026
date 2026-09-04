@@ -1,0 +1,13 @@
+{
+  "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "config": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/config.json",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "mask": "Ng=16, 64 observed (mask=1), 960 omitted (mask=0)",
+  "normalization": "a=sqrt(mean(|H_true|^2)); Psi and Sigma variance-derived quantities divided by a^2",
+  "pair_mapping": "channels (0,4),(1,5),(2,6),(3,7)",
+  "probe_dir": "runs/paper_style_uncertainty_diagnostics_20260904/generated_p3",
+  "runtime_seconds": 5.859137030318379,
+  "training_performed": false
+}

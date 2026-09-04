@@ -1,0 +1,7 @@
+{
+  "mode": "pilot_ls",
+  "noise_stage": "received pilot Y",
+  "snr_db": 15.0,
+  "target": "clean full CFR",
+  "assumption": "IMPLEMENTATION-ASSUMPTION"
+}

@@ -1,0 +1,9 @@
+{
+  "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "normalization": "H_norm=H/a, gamma_norm=gamma/a, Sigma_norm=Sigma/a^2, a=sqrt(mean(|H|^2))",
+  "seed": 20260819,
+  "training_performed": false
+}

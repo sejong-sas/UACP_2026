@@ -1,0 +1,39 @@
+{
+  "data": {
+    "train_path": "data/prototype/train.npz",
+    "validation_path": "data/prototype/validation.npz",
+    "test_paths": {
+      "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+      "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+      "OOD-Near 120 ns": "data/prototype/test_ood_near.npz"
+    }
+  },
+  "paper_specified": {
+    "input_channels": 9,
+    "hidden_channels": 192,
+    "residual_blocks": 32,
+    "kernel_size": 5,
+    "dropout": 0.05,
+    "learning_rate": 0.0001,
+    "lambda_reg": 0.001,
+    "num_subcarriers": 1024,
+    "num_rx_ant": 2,
+    "num_tx_ant": 2
+  },
+  "implementation_assumption": {
+    "experiment_name": "Experiment-C-pair-scalar-diagonal-multivariate-nll",
+    "epochs": 5,
+    "batch_size": 8,
+    "eval_batch_size": 16,
+    "mask_grouping_factors": [4, 8, 16, 32],
+    "eval_grouping_factor": 16,
+    "optimizer": "Adam",
+    "evidential_mode": "pair_scalar",
+    "nll_mode": "diagonal_multivariate",
+    "reg_mode": "elementwise",
+    "evidential_covariance": "diagonal_multivariate_pair_scalar_kappa_nu",
+    "target_channels": 8,
+    "device": "cuda:0",
+    "seed": 20260819
+  }
+}

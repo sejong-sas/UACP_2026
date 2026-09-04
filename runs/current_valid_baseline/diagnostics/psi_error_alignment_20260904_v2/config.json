@@ -1,0 +1,16 @@
+{
+  "regimes": [
+    [
+      "ID-Easy 20 ns",
+      20
+    ],
+    [
+      "ID-Hard 80 ns",
+      80
+    ]
+  ],
+  "power_bins": 5,
+  "snr_db": 15.0,
+  "ng": 16,
+  "training_performed": false
+}

@@ -1,0 +1,9 @@
+{
+  "config_sha256": "bce6092b64c4c171bb8395b131c921be25d3131134a4b718c2ecefaa9ccf1c63",
+  "code_sha256": {
+    "src/training/data.py": "600744ef0cd0753acc0e896e0b4319edf99b62fa5aea525ae31fbeb6efb0cd19",
+    "scripts/requested_pilot_gate.py": "f306d7f9f051630b0436c52c44e039ed88bbe0db104dcaa8991f5e9947ac5d5d"
+  },
+  "baseline_checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "seed": 20260819
+}

@@ -1,0 +1,126 @@
+{
+  "experiment": "Experiment 1 No-Predictor Linear Reconstruction",
+  "method": "frequency-axis real/imag linear interpolation; edge extrapolation uses np.interp endpoint values",
+  "rows": [
+    {
+      "regime": "ID-Easy 20 ns",
+      "nmse_all_db": -16.744876861572266,
+      "nmse_omitted_db": -16.887027740478516,
+      "pair0_nmse_omitted_db": -14.59074805333064,
+      "pair1_nmse_omitted_db": -15.420375530536358,
+      "pair2_nmse_omitted_db": -14.178936518155611,
+      "pair3_nmse_omitted_db": -14.212176983173077
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "nmse_all_db": -16.434457778930664,
+      "nmse_omitted_db": -16.553661346435547,
+      "pair0_nmse_omitted_db": -15.520106315612793,
+      "pair1_nmse_omitted_db": -15.427352611835186,
+      "pair2_nmse_omitted_db": -15.28571312244122,
+      "pair3_nmse_omitted_db": -15.185256737929125
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "nmse_all_db": -15.913509368896484,
+      "nmse_omitted_db": -15.982284545898438,
+      "pair0_nmse_omitted_db": -14.848808875450722,
+      "pair1_nmse_omitted_db": -14.939219107994667,
+      "pair2_nmse_omitted_db": -15.045980380131649,
+      "pair3_nmse_omitted_db": -15.141138076782227
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "nmse_all_db": 2.1917436122894287,
+      "nmse_omitted_db": 2.465524196624756,
+      "pair0_nmse_omitted_db": 2.5339979391831617,
+      "pair1_nmse_omitted_db": 2.4460175037384033,
+      "pair2_nmse_omitted_db": 2.5049841220562277,
+      "pair3_nmse_omitted_db": 2.464143496293288
+    }
+  ],
+  "pair_rows": [
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 0,
+      "nmse_omitted_db": -14.59074805333064
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 1,
+      "nmse_omitted_db": -15.420375530536358
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 2,
+      "nmse_omitted_db": -14.178936518155611
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 3,
+      "nmse_omitted_db": -14.212176983173077
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 0,
+      "nmse_omitted_db": -15.520106315612793
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 1,
+      "nmse_omitted_db": -15.427352611835186
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 2,
+      "nmse_omitted_db": -15.28571312244122
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 3,
+      "nmse_omitted_db": -15.185256737929125
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 0,
+      "nmse_omitted_db": -14.848808875450722
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 1,
+      "nmse_omitted_db": -14.939219107994667
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 2,
+      "nmse_omitted_db": -15.045980380131649
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 3,
+      "nmse_omitted_db": -15.141138076782227
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 0,
+      "nmse_omitted_db": 2.5339979391831617
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 1,
+      "nmse_omitted_db": 2.4460175037384033
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 2,
+      "nmse_omitted_db": 2.5049841220562277
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 3,
+      "nmse_omitted_db": 2.464143496293288
+    }
+  ],
+  "hypothesis_h1": true,
+  "shared_observation": true
+}

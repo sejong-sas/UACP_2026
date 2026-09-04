@@ -1,0 +1,11 @@
+regime,x,y,pearson,spearman,observations
+ID-Easy 20 ns,normalized_error,s_ale_psi,0.02144572803872018,0.07153745552727427,800
+ID-Easy 20 ns,normalized_error,s_ale_nu,0.3935611819882107,0.45214193303427047,800
+ID-Easy 20 ns,normalized_error,s_ale_total,0.2900316337115451,0.3558778294966086,800
+ID-Easy 20 ns,normalized_error,normalized_psi,0.2388558847389119,0.16804003600005626,800
+ID-Easy 20 ns,normalized_error,denom,0.07948552871739495,0.025812907520168002,800
+ID-Hard 80 ns,normalized_error,s_ale_psi,0.10857134290197491,0.08714572991520302,800
+ID-Hard 80 ns,normalized_error,s_ale_nu,0.3338464395574858,0.4116347213042521,800
+ID-Hard 80 ns,normalized_error,s_ale_total,0.2907129759213862,0.34247840231000365,800
+ID-Hard 80 ns,normalized_error,normalized_psi,0.3766214622234169,0.34423253786334046,800
+ID-Hard 80 ns,normalized_error,denom,0.21125097387532296,0.20177968246825384,800

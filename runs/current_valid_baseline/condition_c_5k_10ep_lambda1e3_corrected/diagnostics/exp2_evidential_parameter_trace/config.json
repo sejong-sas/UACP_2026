@@ -1,0 +1,24 @@
+{
+  "baseline": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected",
+  "checkpoint": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "mapping": {
+    "pair0": [
+      0,
+      4
+    ],
+    "pair1": [
+      1,
+      5
+    ],
+    "pair2": [
+      2,
+      6
+    ],
+    "pair3": [
+      3,
+      7
+    ]
+  },
+  "psi": "diagonal approximation",
+  "score": "paper_subcarrier_uncertainty_map -> paper_omitted_uncertainty_score"
+}

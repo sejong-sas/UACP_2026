@@ -1,0 +1,9 @@
+{
+  "regimes": [
+    "ID-Easy 20 ns",
+    "ID-Hard 80 ns"
+  ],
+  "snr_db": 15.0,
+  "ng": 16,
+  "lambda_reg": 0.001
+}

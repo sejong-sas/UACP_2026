@@ -1,0 +1,241 @@
+{
+  "correlations": [
+    {
+      "observations": 800,
+      "pearson": 0.8615044487124661,
+      "regime": "ID-Easy 20 ns",
+      "spearman": 0.8260747516792996,
+      "x": "raw_psi_scale",
+      "y": "cfr_power"
+    },
+    {
+      "observations": 800,
+      "pearson": 0.7005793966140991,
+      "regime": "ID-Easy 20 ns",
+      "spearman": 0.6934789507483605,
+      "x": "raw_psi_scale",
+      "y": "absolute_error_mse"
+    },
+    {
+      "observations": 800,
+      "pearson": 0.23885587650862333,
+      "regime": "ID-Easy 20 ns",
+      "spearman": 0.16804003600005626,
+      "x": "normalized_psi_scale",
+      "y": "normalized_error_mse"
+    },
+    {
+      "observations": 800,
+      "pearson": -0.8538160950835866,
+      "regime": "ID-Easy 20 ns",
+      "spearman": -0.9851607815012212,
+      "x": "normalized_psi_scale",
+      "y": "cfr_power"
+    },
+    {
+      "observations": 800,
+      "pearson": 0.9303983408643444,
+      "regime": "ID-Hard 80 ns",
+      "spearman": 0.8991969831202863,
+      "x": "raw_psi_scale",
+      "y": "cfr_power"
+    },
+    {
+      "observations": 800,
+      "pearson": 0.7757990930857133,
+      "regime": "ID-Hard 80 ns",
+      "spearman": 0.7514465178851844,
+      "x": "raw_psi_scale",
+      "y": "absolute_error_mse"
+    },
+    {
+      "observations": 800,
+      "pearson": 0.37662144480054943,
+      "regime": "ID-Hard 80 ns",
+      "spearman": 0.34423253786334046,
+      "x": "normalized_psi_scale",
+      "y": "normalized_error_mse"
+    },
+    {
+      "observations": 800,
+      "pearson": -0.8803562847386303,
+      "regime": "ID-Hard 80 ns",
+      "spearman": -0.9935611227517545,
+      "x": "normalized_psi_scale",
+      "y": "cfr_power"
+    }
+  ],
+  "power_matched_bins": [
+    {
+      "cfr_power_mean": 0.5446105714027698,
+      "count_pairs": 208,
+      "normalized_aleatoric_mean": 0.03375435376074165,
+      "normalized_error_mse_mean": 0.018194041761139836,
+      "normalized_psi_scale_mean": 0.32177398131730467,
+      "power_bin": 0,
+      "power_max": 0.6644138097763062,
+      "power_min": 0.27928441762924194,
+      "regime": "ID-Easy 20 ns"
+    },
+    {
+      "cfr_power_mean": 0.5548423528671265,
+      "count_pairs": 112,
+      "normalized_aleatoric_mean": 0.033651875531566997,
+      "normalized_error_mse_mean": 0.022292633615766784,
+      "normalized_psi_scale_mean": 0.31806982388453825,
+      "power_bin": 0,
+      "power_max": 0.6509040594100952,
+      "power_min": 0.363298237323761,
+      "regime": "ID-Hard 80 ns"
+    },
+    {
+      "cfr_power_mean": 0.7652714071851788,
+      "count_pairs": 132,
+      "normalized_aleatoric_mean": 0.02523926498763489,
+      "normalized_error_mse_mean": 0.017700069322899886,
+      "normalized_psi_scale_mean": 0.23463189195502887,
+      "power_bin": 1,
+      "power_max": 0.8484517931938171,
+      "power_min": 0.6716174483299255,
+      "regime": "ID-Easy 20 ns"
+    },
+    {
+      "cfr_power_mean": 0.7659438683631572,
+      "count_pairs": 188,
+      "normalized_aleatoric_mean": 0.025554601836236233,
+      "normalized_error_mse_mean": 0.020036994880857938,
+      "normalized_psi_scale_mean": 0.23747774467189262,
+      "power_bin": 1,
+      "power_max": 0.846326470375061,
+      "power_min": 0.6697933077812195,
+      "regime": "ID-Hard 80 ns"
+    },
+    {
+      "cfr_power_mean": 0.9441606216132641,
+      "count_pairs": 128,
+      "normalized_aleatoric_mean": 0.020999554617446847,
+      "normalized_error_mse_mean": 0.016303617056109942,
+      "normalized_psi_scale_mean": 0.19504058605525643,
+      "power_bin": 2,
+      "power_max": 1.0518169403076172,
+      "power_min": 0.8495875597000122,
+      "regime": "ID-Easy 20 ns"
+    },
+    {
+      "cfr_power_mean": 0.9652086111406485,
+      "count_pairs": 192,
+      "normalized_aleatoric_mean": 0.021252664766507223,
+      "normalized_error_mse_mean": 0.0192806431587087,
+      "normalized_psi_scale_mean": 0.19552505388855934,
+      "power_bin": 2,
+      "power_max": 1.0565310716629028,
+      "power_min": 0.8530129790306091,
+      "regime": "ID-Hard 80 ns"
+    },
+    {
+      "cfr_power_mean": 1.1632313007532165,
+      "count_pairs": 172,
+      "normalized_aleatoric_mean": 0.01835807751279411,
+      "normalized_error_mse_mean": 0.01610199728612463,
+      "normalized_psi_scale_mean": 0.16743521123777988,
+      "power_bin": 3,
+      "power_max": 1.2838627099990845,
+      "power_min": 1.0599439144134521,
+      "regime": "ID-Easy 20 ns"
+    },
+    {
+      "cfr_power_mean": 1.1361545163231928,
+      "count_pairs": 148,
+      "normalized_aleatoric_mean": 0.01869223007579913,
+      "normalized_error_mse_mean": 0.018070664596618026,
+      "normalized_psi_scale_mean": 0.17053780030157115,
+      "power_bin": 3,
+      "power_max": 1.2704126834869385,
+      "power_min": 1.057607650756836,
+      "regime": "ID-Hard 80 ns"
+    },
+    {
+      "cfr_power_mean": 1.6092491537332534,
+      "count_pairs": 160,
+      "normalized_aleatoric_mean": 0.015325259242672473,
+      "normalized_error_mse_mean": 0.01587483405601233,
+      "normalized_psi_scale_mean": 0.13552595553919672,
+      "power_bin": 4,
+      "power_max": 2.567816734313965,
+      "power_min": 1.2856484651565552,
+      "regime": "ID-Easy 20 ns"
+    },
+    {
+      "cfr_power_mean": 1.6228774547576905,
+      "count_pairs": 160,
+      "normalized_aleatoric_mean": 0.01512746632215567,
+      "normalized_error_mse_mean": 0.017166819167323412,
+      "normalized_psi_scale_mean": 0.13378029251471163,
+      "power_bin": 4,
+      "power_max": 2.5056488513946533,
+      "power_min": 1.2873194217681885,
+      "regime": "ID-Hard 80 ns"
+    }
+  ],
+  "provenance": {
+    "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+    "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+    "config": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/config.json",
+    "device": "cuda:0",
+    "gpu": "NVIDIA GB10",
+    "mask": "Ng=16, 64 observed (mask=1), 960 omitted (mask=0)",
+    "normalization": "a=sqrt(mean(|H_true|^2)); Psi and Sigma variance-derived quantities divided by a^2",
+    "pair_mapping": "channels (0,4),(1,5),(2,6),(3,7)",
+    "probe_dir": "runs/paper_style_uncertainty_diagnostics_20260904/generated_p3",
+    "runtime_seconds": 5.859137030318379,
+    "training_performed": false
+  },
+  "summary": [
+    {
+      "absolute_error_mse_mean": 0.016371389708656352,
+      "absolute_error_mse_std": 0.007969049353245137,
+      "cfr_power_mean": 0.9908787906169891,
+      "cfr_power_std": 0.40966787060752147,
+      "kappa_mean": 7.950837384462357,
+      "kappa_std": 0.4253769078129864,
+      "normalized_aleatoric_mean": 0.02331257795332931,
+      "normalized_aleatoric_std": 0.007781509742660975,
+      "normalized_error_mse_mean": 0.016896437252871693,
+      "normalized_error_mse_std": 0.005554709721682293,
+      "normalized_psi_scale_mean": 0.21668575260788203,
+      "normalized_psi_scale_std": 0.07745946579619774,
+      "nu_mean": 2067.48488861084,
+      "nu_std": 0.9606399899148332,
+      "raw_aleatoric_mean": 0.02043257189448923,
+      "raw_aleatoric_std": 0.003225667996723264,
+      "raw_psi_scale_mean": 0.18761546505615115,
+      "raw_psi_scale_std": 0.020872781231763112,
+      "regime": "ID-Easy 20 ns",
+      "sample_pairs": 800,
+      "samples": 200
+    },
+    {
+      "absolute_error_mse_mean": 0.019125093251350336,
+      "absolute_error_mse_std": 0.007094365460050289,
+      "cfr_power_mean": 1.024088881611824,
+      "cfr_power_std": 0.3784895793382639,
+      "kappa_mean": 7.910444679260254,
+      "kappa_std": 0.24081023573052204,
+      "normalized_aleatoric_mean": 0.022300789378350602,
+      "normalized_aleatoric_std": 0.006166032807241243,
+      "normalized_error_mse_mean": 0.01923345364513807,
+      "normalized_error_mse_std": 0.0047184323557241765,
+      "normalized_psi_scale_mean": 0.20556860983371736,
+      "normalized_psi_scale_std": 0.060954814086944954,
+      "nu_mean": 2067.3477243041993,
+      "nu_std": 0.4945512614516768,
+      "raw_aleatoric_mean": 0.020793395813088863,
+      "raw_aleatoric_std": 0.0021003392701749754,
+      "raw_psi_scale_mean": 0.19021003663539887,
+      "raw_psi_scale_std": 0.01451857774953722,
+      "regime": "ID-Hard 80 ns",
+      "sample_pairs": 800,
+      "samples": 200
+    }
+  ]
+}

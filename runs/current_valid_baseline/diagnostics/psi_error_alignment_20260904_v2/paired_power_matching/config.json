@@ -1,0 +1,15 @@
+{
+  "regimes": [
+    "ID-Easy 20 ns",
+    "ID-Hard 80 ns"
+  ],
+  "matching": "1:1 without replacement, minimum total absolute CFR-power distance",
+  "power_tolerance": {
+    "mean_absolute": 0.06063604414463043,
+    "median_absolute": 0.012266278266906738,
+    "p95_absolute": 0.29563264548778523,
+    "max_absolute": 0.5184490382671356,
+    "mean_relative": 0.08870128999454771,
+    "p95_relative": 0.5396427580700824
+  }
+}

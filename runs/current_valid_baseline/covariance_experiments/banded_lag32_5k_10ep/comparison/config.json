@@ -1,0 +1,6 @@
+{
+  "control": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected",
+  "treatment": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/covariance_experiments/banded_lag32_5k_10ep",
+  "paired_probe_seed_base": 20352819,
+  "device": "cuda:0"
+}

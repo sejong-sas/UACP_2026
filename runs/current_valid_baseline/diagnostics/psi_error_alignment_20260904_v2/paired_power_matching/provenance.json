@@ -1,0 +1,11 @@
+{
+  "aggregation": "mean across four antenna pairs per sample",
+  "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "input": "runs/current_valid_baseline/diagnostics/psi_error_alignment_20260904_v2/sample_pair_metrics.csv",
+  "matching": "1:1 without replacement, minimum total absolute CFR-power distance",
+  "pair_rows_each": 800,
+  "runtime_note": "read-only reuse of existing sample/pair inference output",
+  "sample_count_each": 200,
+  "training_performed": false
+}

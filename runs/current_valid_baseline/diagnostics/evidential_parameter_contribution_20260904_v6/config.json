@@ -1,0 +1,10 @@
+{
+  "regimes": [
+    "ID-Easy 20 ns",
+    "ID-Hard 80 ns"
+  ],
+  "snr_db": 15.0,
+  "ng": 16,
+  "lambda_reg": 0.001,
+  "matching": "runs/current_valid_baseline/diagnostics/psi_error_alignment_20260904_v2/paired_power_matching/matched_pairs.csv"
+}

@@ -1,0 +1,24 @@
+{
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "training_seconds": 3338.4387824982405,
+  "training_peak_memory_recorded": false,
+  "feasibility_peak_memory_mb": 200.3330078125,
+  "paired_inference_cost": [
+    {
+      "model": "Diagonal current-valid control",
+      "total_parameters": 11815320,
+      "parameter_increase_vs_diagonal": 0,
+      "inference_ms": 69.05188634991646,
+      "peak_gpu_memory_mb": 161.87890625
+    },
+    {
+      "model": "Banded lag32",
+      "total_parameters": 11914136,
+      "parameter_increase_vs_diagonal": 98816,
+      "inference_ms": 153.59212718904018,
+      "peak_gpu_memory_mb": 161.87890625
+    }
+  ],
+  "note": "Training peak memory was not captured by the original training process; feasibility and paired inference measurements are recorded."
+}

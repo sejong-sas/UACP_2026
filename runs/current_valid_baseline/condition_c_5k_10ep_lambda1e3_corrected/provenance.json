@@ -1,0 +1,20 @@
+{
+  "code_sha256": {
+    "scripts/diagnose_predictor.py": "f197ccca5deef33ad6dfd393f6a9051296ceeb8e6c11d3f3cb190a810216aad0",
+    "scripts/train_current_valid_baseline.py": "d9fd3644b4150e0b3b365f9a3856d57b1f31e0a0b36043a21aff312dfa4d3371",
+    "scripts/train_predictor.py": "1a0784e747f84740a3f865725a2c81ef94a8c6fb6a10419f53a591719d9bbe5f",
+    "src/models/evidential.py": "2af74ddeb6b66eedaccf509eda66339debfeb19dc1226842aa8fca11fa385514",
+    "src/models/uacp_predictor.py": "f9eada77d683c673ade1b81e216c2724009e4f09b873a82cefd24bb0aff95e17",
+    "src/training/data.py": "51389420296f7f635ec7809a58d31d9b4d38ad51f1c3ac60992070c6ce664d6c",
+    "src/training/uncertainty.py": "1b8e5f2e75a9b7eb9fd4f04c3d13060a15eee9cd6b775ecb3c8de7c4844e475c"
+  },
+  "config_sha256": "bce6092b64c4c171bb8395b131c921be25d3131134a4b718c2ecefaa9ccf1c63",
+  "cuda_available": true,
+  "git_commit": "f5870fb735009d62d7237e3574d669e92dd5e9d8",
+  "git_status": "M README.md\n?? configs/\n?? data/\n?? mobihoc26-paper289.pdf\n?? runs/\n?? scripts/\n?? src/\n?? tests/",
+  "gpu_name": "NVIDIA GB10",
+  "seed": 20260819,
+  "timestamp_utc": "2026-09-02T05:52:33.931738+00:00",
+  "torch_cuda_version": "13.0",
+  "torch_version": "2.13.0+cu130"
+}

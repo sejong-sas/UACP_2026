@@ -1,0 +1,1579 @@
+{
+  "experiment": "A Sample / Pair-level Evidence Calibration",
+  "baseline": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected",
+  "primary_error": "omitted pair-vector squared error",
+  "records": 3200,
+  "final_rows": [
+    {
+      "regime": "ID-Easy 20 ns",
+      "nmse_all_db": -17.716529846191406,
+      "nmse_omitted_db": -17.717439651489258,
+      "u_ale_omitted": 0.020891649648547173,
+      "u_epi_omitted": 0.0026747894007712603
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "nmse_all_db": -17.277530670166016,
+      "nmse_omitted_db": -17.27501678466797,
+      "u_ale_omitted": 0.020813461393117905,
+      "u_epi_omitted": 0.002641179831698537
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "nmse_all_db": -15.26822280883789,
+      "nmse_omitted_db": -15.264795303344727,
+      "u_ale_omitted": 0.020994240418076515,
+      "u_epi_omitted": 0.0026708156801760197
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "nmse_all_db": 1.356176733970642,
+      "nmse_omitted_db": 1.5591953992843628,
+      "u_ale_omitted": 0.02892567403614521,
+      "u_epi_omitted": 0.004138704854995012
+    }
+  ],
+  "correlations": [
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.4688975174327787,
+      "spearman": -0.42401710042751073
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.495051868175247,
+      "spearman": -0.43541738543463593
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.517402034753264,
+      "spearman": -0.464731118277957
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.4950518681752473,
+      "spearman": -0.43541738543463593
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.7239150267808264,
+      "spearman": 0.672967824195605
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.6817019933347008,
+      "spearman": 0.6120168004200106
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.4054144546340616,
+      "spearman": -0.392951278048872
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.41018612887851774,
+      "spearman": -0.3687271776987152
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.44802247307927207,
+      "spearman": -0.40976206212822214
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.4101861288785178,
+      "spearman": -0.3687271776987152
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.5942444104088155,
+      "spearman": 0.5691253345708354
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.5738769348707817,
+      "spearman": 0.5477076682932318
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.5844098615865332,
+      "spearman": -0.5154248856221406
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.6197780329161109,
+      "spearman": -0.5644086102152555
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.651078554962737,
+      "spearman": -0.5831845796144904
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.6197780329161109,
+      "spearman": -0.5644086102152555
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.7872300925529878,
+      "spearman": 0.7505902647566189
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.7816937749306134,
+      "spearman": 0.7253206330158255
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.4054144546340616,
+      "spearman": -0.392951278048872
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.41018612887851774,
+      "spearman": -0.3687271776987152
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.44802247307927207,
+      "spearman": -0.40976206212822214
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.4101861288785178,
+      "spearman": -0.3687271776987152
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.5942444104088155,
+      "spearman": 0.5691253345708354
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.5738769348707817,
+      "spearman": 0.5477076682932318
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.39382312750030884,
+      "spearman": -0.39447086177154433
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.3119167486085932,
+      "spearman": -0.278871971799295
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.3628553250181175,
+      "spearman": -0.3343088577214431
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.31191674860859325,
+      "spearman": -0.278871971799295
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.44482643241864067,
+      "spearman": 0.40313807845196137
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.4595285500417375,
+      "spearman": 0.4334853371334284
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.4054144546340616,
+      "spearman": -0.392951278048872
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.41018612887851774,
+      "spearman": -0.3687271776987152
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.44802247307927207,
+      "spearman": -0.40976206212822214
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.4101861288785178,
+      "spearman": -0.3687271776987152
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.5942444104088155,
+      "spearman": 0.5691253345708354
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.5738769348707817,
+      "spearman": 0.5477076682932318
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.2241982956917621,
+      "spearman": -0.23222380559513991
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.14924116686595823,
+      "spearman": -0.13396234905872648
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.17455818363415634,
+      "spearman": -0.1709172729318233
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.14924116686595817,
+      "spearman": -0.13396234905872648
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.43049338228442113,
+      "spearman": 0.42257706442661075
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.392232178477609,
+      "spearman": 0.38511962799069976
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.4054144546340616,
+      "spearman": -0.392951278048872
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.41018612887851774,
+      "spearman": -0.3687271776987152
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.44802247307927207,
+      "spearman": -0.40976206212822214
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.4101861288785178,
+      "spearman": -0.3687271776987152
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.5942444104088155,
+      "spearman": 0.5691253345708354
+    },
+    {
+      "regime": "ID-Easy 20 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.5738769348707817,
+      "spearman": 0.5477076682932318
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.6950969914218733,
+      "spearman": -0.6590294757368935
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.6975058880545582,
+      "spearman": -0.6743703592589816
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.7088667427120977,
+      "spearman": -0.6826490662266558
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.6975058880545582,
+      "spearman": -0.6743703592589816
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.7645406800500277,
+      "spearman": 0.741177529438236
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.7620617066100368,
+      "spearman": 0.7336968424210606
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.5060471742686388,
+      "spearman": -0.49475728087075144
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.5889746241464985,
+      "spearman": -0.5659057201651878
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.6804567546512659,
+      "spearman": -0.6619052373519335
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.5889746241464983,
+      "spearman": -0.5659057201651878
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.6890608849361207,
+      "spearman": 0.6918180731532394
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.6871175784686477,
+      "spearman": 0.6948778669966672
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.7149287506736532,
+      "spearman": -0.7012135303382586
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.6849038064765481,
+      "spearman": -0.6786079651991301
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.7051658851402496,
+      "spearman": -0.6954578864471613
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.6849038064765481,
+      "spearman": -0.6786079651991301
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.7647629770637273,
+      "spearman": 0.7499407485187131
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.7684476069370921,
+      "spearman": 0.7490422260556514
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.5060471742686388,
+      "spearman": -0.49475728087075144
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.5889746241464985,
+      "spearman": -0.5659057201651878
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.6804567546512659,
+      "spearman": -0.6619052373519335
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.5889746241464983,
+      "spearman": -0.5659057201651878
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.6890608849361207,
+      "spearman": 0.6918180731532394
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.6871175784686477,
+      "spearman": 0.6948778669966672
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.682425645702547,
+      "spearman": -0.6922193054826372
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.681700222623743,
+      "spearman": -0.6818180454511362
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.6939122560287642,
+      "spearman": -0.6986709667741694
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.6817002226237432,
+      "spearman": -0.6818180454511362
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.7017256694705788,
+      "spearman": 0.7217670441761045
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.7101368687527255,
+      "spearman": 0.7292612315307884
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.5060471742686388,
+      "spearman": -0.49475728087075144
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.5889746241464985,
+      "spearman": -0.5659057201651878
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.6804567546512659,
+      "spearman": -0.6619052373519335
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.5889746241464983,
+      "spearman": -0.5659057201651878
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.6890608849361207,
+      "spearman": 0.6918180731532394
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.6871175784686477,
+      "spearman": 0.6948778669966672
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.550948709631102,
+      "spearman": -0.521561539038476
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.5582950559189036,
+      "spearman": -0.5131883297082428
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.5610027309815949,
+      "spearman": -0.5204185104627616
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.5582950559189034,
+      "spearman": -0.5131883297082428
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.5876846583521333,
+      "spearman": 0.5768109202730068
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.5839281075125655,
+      "spearman": 0.5667366684167104
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.5060471742686388,
+      "spearman": -0.49475728087075144
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.5889746241464985,
+      "spearman": -0.5659057201651878
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.6804567546512659,
+      "spearman": -0.6619052373519335
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.5889746241464983,
+      "spearman": -0.5659057201651878
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.6890608849361207,
+      "spearman": 0.6918180731532394
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.6871175784686477,
+      "spearman": 0.6948778669966672
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.5064487085012772,
+      "spearman": -0.44103352583814603
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.48509850381275216,
+      "spearman": -0.42943973599339985
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.5035550905120537,
+      "spearman": -0.44325508137703445
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.48509850381275205,
+      "spearman": -0.42943973599339985
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.6083987112495157,
+      "spearman": 0.5749778744468613
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.6053453912692636,
+      "spearman": 0.5581429535738394
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.37831912105696797,
+      "spearman": -0.3641694674522929
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.39329192258629053,
+      "spearman": -0.37440883501380473
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.4846641320225967,
+      "spearman": -0.4647260855095086
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.3932919225862905,
+      "spearman": -0.37440883501380473
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.5322948460516885,
+      "spearman": 0.5279902546722729
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.5334877689113016,
+      "spearman": 0.5326513947678043
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.5015533538374903,
+      "spearman": -0.499425485637141
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.49497091431880935,
+      "spearman": -0.5129813245331134
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.5114817745496466,
+      "spearman": -0.5217520438010951
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.4949709143188089,
+      "spearman": -0.5129813245331134
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.5814952412836408,
+      "spearman": 0.6132003300082504
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.5778662861451093,
+      "spearman": 0.6033090827270683
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.37831912105696797,
+      "spearman": -0.3641694674522929
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.39329192258629053,
+      "spearman": -0.37440883501380473
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.4846641320225967,
+      "spearman": -0.4647260855095086
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.3932919225862905,
+      "spearman": -0.37440883501380473
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.5322948460516885,
+      "spearman": 0.5279902546722729
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.5334877689113016,
+      "spearman": 0.5326513947678043
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.49888988673176216,
+      "spearman": -0.4891052276306908
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.45014122887272606,
+      "spearman": -0.4480117002925074
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.47672432407115883,
+      "spearman": -0.47627990699767503
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.4501412288727258,
+      "spearman": -0.4480117002925074
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.5132409948774413,
+      "spearman": 0.5241986049651242
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.5220627873742033,
+      "spearman": 0.5229925748143704
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.37831912105696797,
+      "spearman": -0.3641694674522929
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.39329192258629053,
+      "spearman": -0.37440883501380473
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.4846641320225967,
+      "spearman": -0.4647260855095086
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.3932919225862905,
+      "spearman": -0.37440883501380473
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.5322948460516885,
+      "spearman": 0.5279902546722729
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.5334877689113016,
+      "spearman": 0.5326513947678043
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.37231150075318925,
+      "spearman": -0.29950798769969256
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.3368526197650886,
+      "spearman": -0.2923603090077252
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.3504888379594745,
+      "spearman": -0.2998949973749344
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.3368526197650884,
+      "spearman": -0.2923603090077252
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.4274542912392415,
+      "spearman": 0.3783154578864472
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.424387229750121,
+      "spearman": 0.36940823520588023
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.37831912105696797,
+      "spearman": -0.3641694674522929
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.39329192258629053,
+      "spearman": -0.37440883501380473
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.4846641320225967,
+      "spearman": -0.4647260855095086
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.3932919225862905,
+      "spearman": -0.37440883501380473
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.5322948460516885,
+      "spearman": 0.5279902546722729
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.5334877689113016,
+      "spearman": 0.5326513947678043
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.3886569458652483,
+      "spearman": -0.3942323558088953
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.377151505773137,
+      "spearman": -0.37488037200930024
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.3858707918735203,
+      "spearman": -0.38789169729243234
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.377151505773137,
+      "spearman": -0.37488037200930024
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.3876100492915898,
+      "spearman": 0.4096947423685593
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 0,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.38441478762197684,
+      "spearman": 0.41039675991899804
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.3370356763868696,
+      "spearman": -0.30444671007298457
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.3364378674103496,
+      "spearman": -0.3059825718477685
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.35711254790365904,
+      "spearman": -0.328028668794795
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.3364378674103496,
+      "spearman": -0.3059825718477685
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.38585665235966593,
+      "spearman": 0.3637740293344209
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.37925620270027294,
+      "spearman": 0.35973316364556823
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.42069944595713543,
+      "spearman": -0.3113522838070952
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.4125551751914337,
+      "spearman": -0.2748293707342684
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.4222862731621425,
+      "spearman": -0.29088127203180086
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.4125551751914338,
+      "spearman": -0.2748293707342684
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.4843366592501579,
+      "spearman": 0.3011310282757069
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 1,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.48827004828568915,
+      "spearman": 0.30784219605490143
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.3370356763868696,
+      "spearman": -0.30444671007298457
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.3364378674103496,
+      "spearman": -0.3059825718477685
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.35711254790365904,
+      "spearman": -0.328028668794795
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.3364378674103496,
+      "spearman": -0.3059825718477685
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.38585665235966593,
+      "spearman": 0.3637740293344209
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.37925620270027294,
+      "spearman": 0.35973316364556823
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.2732524920341365,
+      "spearman": -0.24471311782794572
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.23666841345318668,
+      "spearman": -0.2386424660616516
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.2513830170021951,
+      "spearman": -0.24567914197854948
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.23666841345318673,
+      "spearman": -0.2386424660616516
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.28805496454120794,
+      "spearman": 0.30315757893947354
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 2,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.27786960936888905,
+      "spearman": 0.2941618540463512
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.3370356763868696,
+      "spearman": -0.30444671007298457
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.3364378674103496,
+      "spearman": -0.3059825718477685
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.35711254790365904,
+      "spearman": -0.328028668794795
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.3364378674103496,
+      "spearman": -0.3059825718477685
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.38585665235966593,
+      "spearman": 0.3637740293344209
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.37925620270027294,
+      "spearman": 0.35973316364556823
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "kappa",
+      "pearson": -0.3193540866746545,
+      "spearman": -0.3186724668116703
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "nu",
+      "pearson": -0.3612174962410182,
+      "spearman": -0.36568514212855324
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "evidence",
+      "pearson": -0.35306567241496395,
+      "spearman": -0.35737793444836125
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "denom",
+      "pearson": -0.3612174962410181,
+      "spearman": -0.36568514212855324
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "aleatoric_score",
+      "pearson": 0.3689644939577028,
+      "spearman": 0.39175579389484744
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": 3,
+      "scope": "pair",
+      "variable": "epistemic_score",
+      "pearson": 0.3437209621224097,
+      "spearman": 0.38031200780019503
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "kappa",
+      "pearson": -0.3370356763868696,
+      "spearman": -0.30444671007298457
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "nu",
+      "pearson": -0.3364378674103496,
+      "spearman": -0.3059825718477685
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "evidence",
+      "pearson": -0.35711254790365904,
+      "spearman": -0.328028668794795
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "denom",
+      "pearson": -0.3364378674103496,
+      "spearman": -0.3059825718477685
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "aleatoric_score",
+      "pearson": 0.38585665235966593,
+      "spearman": 0.3637740293344209
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "pair": "all",
+      "scope": "all_pairs",
+      "variable": "epistemic_score",
+      "pearson": 0.37925620270027294,
+      "spearman": 0.35973316364556823
+    }
+  ],
+  "gaps": {
+    "ale_gap_80_20": -7.818825542926788e-05,
+    "epi_gap_120_id": -3.973720595240593e-06,
+    "epi_gap_1ms_id": 0.001463915454223752
+  }
+}

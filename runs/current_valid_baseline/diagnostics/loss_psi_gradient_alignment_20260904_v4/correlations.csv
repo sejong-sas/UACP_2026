@@ -1,0 +1,9 @@
+regime,x,y,pearson,spearman,observations
+ID-Easy 20 ns,normalized_error,psi_pressure_mean,0.4341003771627813,0.4726960901501409,800
+ID-Easy 20 ns,normalized_error,normalized_psi,0.23885588869668278,0.16804003600005626,800
+ID-Easy 20 ns,normalized_error,grad_total_kappa_abs,-0.29743022215144815,-0.33171429174108086,800
+ID-Easy 20 ns,normalized_error,grad_total_nu_abs,-0.326191973313997,-0.41318813779396535,800
+ID-Hard 80 ns,normalized_error,psi_pressure_mean,0.2224634302399675,0.2660257906652979,800
+ID-Hard 80 ns,normalized_error,normalized_psi,0.37662146237463096,0.34423253786334046,800
+ID-Hard 80 ns,normalized_error,grad_total_kappa_abs,-0.11790056378937641,-0.09417975653086959,800
+ID-Hard 80 ns,normalized_error,grad_total_nu_abs,-0.2495717545002946,-0.27114051740705847,800

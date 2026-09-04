@@ -1,0 +1,222 @@
+{
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "observation_quality": [
+    {
+      "regime": "ID-Easy 20 ns",
+      "delay_spread_ns": 20.0,
+      "samples": 200,
+      "direct_observation_nmse_omitted_db": -14.979407005310058,
+      "pilot_ls_observation_nmse_omitted_db": -14.979407005310058,
+      "direct_measured_snr_db": 14.99832015991211,
+      "pilot_ls_measured_snr_db": 14.99832015991211
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "delay_spread_ns": 80.0,
+      "samples": 200,
+      "direct_observation_nmse_omitted_db": -15.004337120056153,
+      "pilot_ls_observation_nmse_omitted_db": -15.004337120056153,
+      "direct_measured_snr_db": 15.016533889770507,
+      "pilot_ls_measured_snr_db": 15.016533889770507
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "delay_spread_ns": 120.0,
+      "samples": 200,
+      "direct_observation_nmse_omitted_db": -15.03108528137207,
+      "pilot_ls_observation_nmse_omitted_db": -15.03108528137207,
+      "direct_measured_snr_db": 15.0419873046875,
+      "pilot_ls_measured_snr_db": 15.0419873046875
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "delay_spread_ns": 1000000.0,
+      "samples": 200,
+      "direct_observation_nmse_omitted_db": -15.023872146606445,
+      "pilot_ls_observation_nmse_omitted_db": -15.023872146606445,
+      "direct_measured_snr_db": 15.027068939208984,
+      "pilot_ls_measured_snr_db": 15.027068939208984
+    }
+  ],
+  "linear_reconstruction": [
+    {
+      "regime": "ID-Easy 20 ns",
+      "delay_spread_ns": 20.0,
+      "direct_linear_nmse_all_db": -16.710456085205077,
+      "direct_linear_nmse_omitted_db": -16.85336097717285,
+      "pilot_ls_linear_nmse_all_db": -16.710456085205077,
+      "pilot_ls_linear_nmse_omitted_db": -16.85336097717285
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "delay_spread_ns": 80.0,
+      "direct_linear_nmse_all_db": -16.470771179199218,
+      "direct_linear_nmse_omitted_db": -16.588341903686523,
+      "pilot_ls_linear_nmse_all_db": -16.470771179199218,
+      "pilot_ls_linear_nmse_omitted_db": -16.588341903686523
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "delay_spread_ns": 120.0,
+      "direct_linear_nmse_all_db": -15.963515663146973,
+      "direct_linear_nmse_omitted_db": -16.03321823120117,
+      "pilot_ls_linear_nmse_all_db": -15.963515663146973,
+      "pilot_ls_linear_nmse_omitted_db": -16.03321823120117
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "delay_spread_ns": 1000000.0,
+      "direct_linear_nmse_all_db": 2.187503623962402,
+      "direct_linear_nmse_omitted_db": 2.4613223266601563,
+      "pilot_ls_linear_nmse_all_db": 2.187503623962402,
+      "pilot_ls_linear_nmse_omitted_db": 2.4613223266601563
+    }
+  ],
+  "model_comparison": [
+    {
+      "model": "Direct-CFR-AWGN",
+      "regime": "ID-Easy 20 ns",
+      "delay_spread_ns": 20.0,
+      "nmse_all_db": -17.746040802001954,
+      "nmse_omitted_db": -17.746655044555663,
+      "aleatoric": 0.020900175049901007,
+      "epistemic": 0.002676267819479108,
+      "psi_mean": 0.19011718034744263,
+      "kappa_mean": 7.885878086090088,
+      "nu_mean": 2067.326171875,
+      "denom_mean": 18.326257705688477,
+      "error_aleatoric_pearson": 0.2380063533782959,
+      "error_epistemic_pearson": 0.2436763495206833,
+      "measured_snr_db": 14.989779167175293
+    },
+    {
+      "model": "Direct-CFR-AWGN",
+      "regime": "ID-Hard 80 ns",
+      "delay_spread_ns": 80.0,
+      "nmse_all_db": -17.24818634033203,
+      "nmse_omitted_db": -17.24579475402832,
+      "aleatoric": 0.02082062102854252,
+      "epistemic": 0.002642302056774497,
+      "psi_mean": 0.19031907618045807,
+      "kappa_mean": 7.899916172027588,
+      "nu_mean": 2067.3154296875,
+      "denom_mean": 18.31531524658203,
+      "error_aleatoric_pearson": 0.26161810755729675,
+      "error_epistemic_pearson": 0.2654086649417877,
+      "measured_snr_db": 15.045683708190918
+    },
+    {
+      "model": "Direct-CFR-AWGN",
+      "regime": "OOD-Near 120 ns",
+      "delay_spread_ns": 120.0,
+      "nmse_all_db": -15.284209022521972,
+      "nmse_omitted_db": -15.28086296081543,
+      "aleatoric": 0.021015587076544762,
+      "epistemic": 0.0026741055212914943,
+      "psi_mean": 0.19173793494701385,
+      "kappa_mean": 7.875720024108887,
+      "nu_mean": 2067.27490234375,
+      "denom_mean": 18.274864196777344,
+      "error_aleatoric_pearson": 0.2575979232788086,
+      "error_epistemic_pearson": 0.25970256328582764,
+      "measured_snr_db": 15.029369163513184
+    },
+    {
+      "model": "Direct-CFR-AWGN",
+      "regime": "OOD-Far 1 ms",
+      "delay_spread_ns": 1000000.0,
+      "nmse_all_db": 1.357019910812378,
+      "nmse_omitted_db": 1.5601095867156982,
+      "aleatoric": 0.02892197571694851,
+      "epistemic": 0.004138684328645468,
+      "psi_mean": 0.23189014196395874,
+      "kappa_mean": 7.0554609298706055,
+      "nu_mean": 2065.153076171875,
+      "denom_mean": 16.153263092041016,
+      "error_aleatoric_pearson": 0.061257388442754745,
+      "error_epistemic_pearson": 0.06974685192108154,
+      "measured_snr_db": 14.999731903076173
+    },
+    {
+      "model": "Pilot-LS",
+      "regime": "ID-Easy 20 ns",
+      "delay_spread_ns": 20.0,
+      "nmse_all_db": -17.746040802001954,
+      "nmse_omitted_db": -17.746655044555663,
+      "aleatoric": 0.020900175049901007,
+      "epistemic": 0.002676267819479108,
+      "psi_mean": 0.19011718034744263,
+      "kappa_mean": 7.885878086090088,
+      "nu_mean": 2067.326171875,
+      "denom_mean": 18.326257705688477,
+      "error_aleatoric_pearson": 0.2380063533782959,
+      "error_epistemic_pearson": 0.2436763495206833,
+      "measured_snr_db": 14.989779167175293
+    },
+    {
+      "model": "Pilot-LS",
+      "regime": "ID-Hard 80 ns",
+      "delay_spread_ns": 80.0,
+      "nmse_all_db": -17.24818634033203,
+      "nmse_omitted_db": -17.24579475402832,
+      "aleatoric": 0.02082062102854252,
+      "epistemic": 0.002642302056774497,
+      "psi_mean": 0.19031907618045807,
+      "kappa_mean": 7.899916172027588,
+      "nu_mean": 2067.3154296875,
+      "denom_mean": 18.31531524658203,
+      "error_aleatoric_pearson": 0.26161810755729675,
+      "error_epistemic_pearson": 0.2654086649417877,
+      "measured_snr_db": 15.045683708190918
+    },
+    {
+      "model": "Pilot-LS",
+      "regime": "OOD-Near 120 ns",
+      "delay_spread_ns": 120.0,
+      "nmse_all_db": -15.284209022521972,
+      "nmse_omitted_db": -15.28086296081543,
+      "aleatoric": 0.021015587076544762,
+      "epistemic": 0.0026741055212914943,
+      "psi_mean": 0.19173793494701385,
+      "kappa_mean": 7.875720024108887,
+      "nu_mean": 2067.27490234375,
+      "denom_mean": 18.274864196777344,
+      "error_aleatoric_pearson": 0.2575979232788086,
+      "error_epistemic_pearson": 0.25970256328582764,
+      "measured_snr_db": 15.029369163513184
+    },
+    {
+      "model": "Pilot-LS",
+      "regime": "OOD-Far 1 ms",
+      "delay_spread_ns": 1000000.0,
+      "nmse_all_db": 1.357019910812378,
+      "nmse_omitted_db": 1.5601095867156982,
+      "aleatoric": 0.02892197571694851,
+      "epistemic": 0.004138684328645468,
+      "psi_mean": 0.23189014196395874,
+      "kappa_mean": 7.0554609298706055,
+      "nu_mean": 2065.153076171875,
+      "denom_mean": 16.153263092041016,
+      "error_aleatoric_pearson": 0.061257388442754745,
+      "error_epistemic_pearson": 0.06974685192108154,
+      "measured_snr_db": 14.999731903076173
+    }
+  ],
+  "gaps": [
+    {
+      "model": "Direct-CFR-AWGN",
+      "ale_gap_80_20": -7.955402135848694e-05,
+      "epi_gap_120_id": -2.1622981876134872e-06,
+      "epi_gap_1ms_id": 0.00146241650916636,
+      "nmse_ordering": true
+    },
+    {
+      "model": "Pilot-LS",
+      "ale_gap_80_20": -7.955402135848694e-05,
+      "epi_gap_120_id": -2.1622981876134872e-06,
+      "epi_gap_1ms_id": 0.00146241650916636,
+      "nmse_ordering": true
+    }
+  ]
+}

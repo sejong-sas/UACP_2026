@@ -1,0 +1,7 @@
+{
+  "baseline": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected",
+  "checkpoint": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "fixed_setup": "/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/evaluation_setup.json",
+  "psi": "learned diagonal approximation",
+  "empirical_covariance": "clean ground-truth CFR; no predictor/noise"
+}

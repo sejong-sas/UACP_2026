@@ -1,0 +1,91 @@
+{
+  "p1": [],
+  "p3": [
+    {
+      "delay_spread_ns": 10.0,
+      "samples": 200,
+      "nmse_omitted_mean_db": -17.669728055000306,
+      "nmse_omitted_std_db": 0.7353586436852182,
+      "aleatoric_mean": 0.02051338632591069,
+      "aleatoric_std": 0.0035300301034935635,
+      "epistemic_mean": 0.0026076501043280588,
+      "epistemic_std": 0.0005832115281338068,
+      "nmse_ci95_halfwidth_db": 0.10191550837657615,
+      "aleatoric_ci95_halfwidth": 0.0004892372118986979,
+      "epistemic_ci95_halfwidth": 8.082899397627841e-05
+    },
+    {
+      "delay_spread_ns": 20.0,
+      "samples": 200,
+      "nmse_omitted_mean_db": -17.72834836959839,
+      "nmse_omitted_std_db": 0.6849667708346983,
+      "aleatoric_mean": 0.020426839813590048,
+      "aleatoric_std": 0.003175925838396075,
+      "epistemic_mean": 0.0025911226513562723,
+      "epistemic_std": 0.0005240873653583443,
+      "nmse_ci95_halfwidth_db": 0.09493155111475472,
+      "aleatoric_ci95_halfwidth": 0.0004401608645875854,
+      "epistemic_ci95_halfwidth": 7.263480307589907e-05
+    },
+    {
+      "delay_spread_ns": 40.0,
+      "samples": 200,
+      "nmse_omitted_mean_db": -17.739230499267578,
+      "nmse_omitted_std_db": 0.5564137487189915,
+      "aleatoric_mean": 0.020274710105732084,
+      "aleatoric_std": 0.0023962236713792337,
+      "epistemic_mean": 0.0025620724307373168,
+      "epistemic_std": 0.0003982424213224761,
+      "nmse_ci95_halfwidth_db": 0.0771150112334668,
+      "aleatoric_ci95_halfwidth": 0.0003320996574253083,
+      "epistemic_ci95_halfwidth": 5.5193583667961495e-05
+    },
+    {
+      "delay_spread_ns": 60.0,
+      "samples": 200,
+      "nmse_omitted_mean_db": -17.63131751060486,
+      "nmse_omitted_std_db": 0.544745661560762,
+      "aleatoric_mean": 0.020542012872174383,
+      "aleatoric_std": 0.0020700424963234097,
+      "epistemic_mean": 0.002601833769585937,
+      "epistemic_std": 0.0003194414023057934,
+      "nmse_ci95_halfwidth_db": 0.07549789685706708,
+      "aleatoric_ci95_halfwidth": 0.0002868932529529439,
+      "epistemic_ci95_halfwidth": 4.4272319625384644e-05
+    },
+    {
+      "delay_spread_ns": 80.0,
+      "samples": 200,
+      "nmse_omitted_mean_db": -17.25914371967316,
+      "nmse_omitted_std_db": 0.5798099603141865,
+      "aleatoric_mean": 0.020791223011910914,
+      "aleatoric_std": 0.0020841198166081263,
+      "epistemic_mean": 0.0026368233747780323,
+      "epistemic_std": 0.00032410139883473323,
+      "nmse_ci95_halfwidth_db": 0.0803575607285822,
+      "aleatoric_ci95_halfwidth": 0.00028884427000525845,
+      "epistemic_ci95_halfwidth": 4.491816219398479e-05
+    },
+    {
+      "delay_spread_ns": 100.0,
+      "samples": 200,
+      "nmse_omitted_mean_db": -16.40085916519165,
+      "nmse_omitted_std_db": 0.6655920177267576,
+      "aleatoric_mean": 0.020764080109074712,
+      "aleatoric_std": 0.001612546734632302,
+      "epistemic_mean": 0.0026337186503224076,
+      "epistemic_std": 0.0002488305338658089,
+      "nmse_ci95_halfwidth_db": 0.0922463473306925,
+      "aleatoric_ci95_halfwidth": 0.00022348757528359005,
+      "epistemic_ci95_halfwidth": 3.448615254110533e-05
+    }
+  ],
+  "p4_auroc": {
+    "overall_ood": 0.7598,
+    "near_ood": 0.54915,
+    "far_ood": 0.97045
+  },
+  "runtime_seconds": 30.091668815352023,
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10"
+}

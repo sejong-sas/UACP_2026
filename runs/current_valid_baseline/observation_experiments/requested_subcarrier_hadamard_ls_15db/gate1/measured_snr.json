@@ -1,0 +1,24 @@
+{
+  "rows": [
+    {
+      "regime": "ID-Easy 20 ns",
+      "direct_measured_snr_db": 14.990141067504883,
+      "pilot_ls_measured_snr_db": 14.990140762329101
+    },
+    {
+      "regime": "ID-Hard 80 ns",
+      "direct_measured_snr_db": 14.998511581420898,
+      "pilot_ls_measured_snr_db": 14.998511543273926
+    },
+    {
+      "regime": "OOD-Near 120 ns",
+      "direct_measured_snr_db": 15.025266494750976,
+      "pilot_ls_measured_snr_db": 15.025266494750976
+    },
+    {
+      "regime": "OOD-Far 1 ms",
+      "direct_measured_snr_db": 14.999449539184571,
+      "pilot_ls_measured_snr_db": 14.999449691772462
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "test_paths": {
+    "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+    "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+    "OOD-Near 120 ns": "data/prototype/test_ood_near.npz",
+    "OOD-Far 1 ms": "runs/baseline_reproduction/step5_snr_ablation/noisy_train_noisy_eval/generated_data/test_ood_far_1ms.npz"
+  },
+  "Ng": 16,
+  "noise_snr_db": 15.0,
+  "probe_seed_offset": 92000
+}

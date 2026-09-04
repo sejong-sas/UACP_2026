@@ -1,0 +1,11 @@
+{
+  "checkpoint": "runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/checkpoint_with_provenance.pt",
+  "checkpoint_sha256": "c9df50913b5b48688c8576bbb174b5645a842b269667cacf2822dc049cd626fc",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "lambda_reg": 0.001,
+  "loss": "current diagonal multivariate Student-t NLL + pair-level regularizer",
+  "normalization": "sample-wise CFR power normalization; variance quantities scaled by 1/a^2",
+  "optimizer_step_called": false,
+  "training_performed": false
+}

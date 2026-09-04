@@ -1,0 +1,29 @@
+{
+  "regimes": [
+    [
+      "ID-Easy 20 ns",
+      20.0
+    ],
+    [
+      "ID-Hard 80 ns",
+      80.0
+    ],
+    [
+      "OOD-Near 120 ns",
+      120.0
+    ],
+    [
+      "OOD-Far 1 ms",
+      1000000.0
+    ]
+  ],
+  "paths": {
+    "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+    "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+    "OOD-Near 120 ns": "data/prototype/test_ood_near.npz",
+    "OOD-Far 1 ms": "runs/baseline_reproduction/step5_snr_ablation/noisy_train_noisy_eval/generated_data/test_ood_far_1ms.npz"
+  },
+  "ng": 16,
+  "noise_snr_db": 15.0,
+  "observation_mode": "pilot_ls"
+}

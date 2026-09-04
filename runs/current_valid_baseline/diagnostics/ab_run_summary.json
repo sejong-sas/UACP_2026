@@ -1,0 +1,11 @@
+{
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "seconds": 28.150050829164684,
+  "exp_a_gaps": {
+    "ale_gap_80_20": -7.818825542926788e-05,
+    "epi_gap_120_id": -3.973720595240593e-06,
+    "epi_gap_1ms_id": 0.001463915454223752
+  },
+  "exp_b_energy_rows": 16
+}
