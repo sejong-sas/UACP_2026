@@ -5,7 +5,7 @@
 
 | 경로 | 분류 | 불필요해 보이는 이유 | 현재 참조 | 나중 삭제 가능성 |
 | --- | --- | --- | --- | --- |
-| `runs/prototype_predictor/` | 과거 실험 | 초기 element-wise prototype 결과 | README와 과거 명령에서 참조 | 낮음, 역사 설명에 필요 |
+| `runs/prototype_predictor/` | 과거 실험 | 초기 element-wise prototype 결과 | README와 과거 명령에서 참조 | 낮음, 역사 정리에 필요 |
 | `runs/prototype_predictor_repro/` | 중복 가능성 | prototype 재현성 확인 결과 | 과거 기록에서 참조 | 중간 |
 | `runs/formulation_b_pair_scalar/` | 과거 실험 | corrected baseline 이전 formulation | formulation 비교 기록에서 참조 | 낮음 |
 | `runs/formulation_c_diag_mvnll/` | 과거 실험 | 현재 valid baseline 이전 checkpoint | STEP 기록에서 참조 | 낮음 |

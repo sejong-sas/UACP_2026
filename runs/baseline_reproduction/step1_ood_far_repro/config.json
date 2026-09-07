@@ -1,0 +1,9 @@
+{
+  "checkpoint": "runs/formulation_c_diag_mvnll/uacp_predictor_prototype.pt",
+  "dataset_config": "configs/dataset_prototype.json",
+  "experiment_name": "Experiment C + diag MV NLL",
+  "model_config": "configs/train_formulation_c_diag_mvnll.json",
+  "output_dir": "runs/baseline_reproduction/step1_ood_far_repro",
+  "samples": 200,
+  "step": "step1-ood-far"
+}

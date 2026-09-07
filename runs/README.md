@@ -1,7 +1,7 @@
 # 결과 폴더 안내
 
 결과 파일은 실험 재현에 필요하므로 이동하거나 삭제하지 않았습니다. 아래 분류는
-설명 순서만 정한 것입니다.
+기능 요약 순서만 정한 것입니다.
 
 ## 현재 연구 흐름
 
@@ -37,7 +37,7 @@ runs/current_valid_baseline/
 
 ## SUPPORTING
 
-| 결과 폴더 | 대응 스크립트 | 설명 |
+| 결과 폴더 | 대응 스크립트 | 기능 요약 |
 | --- | --- | --- |
 | `current_valid_baseline/diagnostics/expB_diagonal_psi_covariance_diagnostic` | `current_baseline_diagnostic_ab.py` | 실제 CFR frequency correlation 차이 |
 | `current_valid_baseline/covariance_experiments/banded_lag32_5k_10ep` | `train_banded_covariance.py` | banded covariance pilot 실패 참고 |
@@ -47,7 +47,7 @@ runs/current_valid_baseline/
 
 ## ARCHIVE / HISTORICAL
 
-| 결과 폴더 | 설명 |
+| 결과 폴더 | 기능 요약 |
 | --- | --- |
 | `prototype_predictor`, `prototype_predictor_repro`, `prototype_diagnostics` | 최초 작은 prototype과 재현성 결과 |
 | `formulation_b_pair_scalar`, `formulation_c_diag_mvnll`, `formulation_d_pair_reg` | A/B/C/D formulation 비교 |
@@ -55,5 +55,5 @@ runs/current_valid_baseline/
 | `baseline_reproduction/step1_ood_far` ~ `step8_corrected_revalidation` | 단계별 baseline reproduction 기록 |
 
 주의: pre-fix STEP 6와 formulation A~D는 현재 valid uncertainty baseline이
-아닙니다. 다만 pair mapping bug가 결과에 미친 영향을 설명할 때 필요하므로
+아닙니다. 다만 pair mapping bug가 결과에 미친 영향을 기능 요약할 때 필요하므로
 역사적 참고자료로 보존합니다.

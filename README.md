@@ -1334,7 +1334,7 @@ CSV의 수치도 동일하고 차이는 regime 행 순서와 output path뿐이�
 늘리면 Far-OOD epistemic signal이 epoch 3부터 reproducibly 나타난다는 점에서
 STEP 4A의 Far-OOD 가설은 `PARTIAL PASS`다. 이는 1k/5가 Far-OOD evidence
 learning에 부족했을 가능성을 지지하지만, ID-Hard aleatoric과 Near-OOD
-epistemic 실패까지 설명하지는 못한다. 초기부터 정상 ordering이었다가 후기에
+epistemic 실패까지 정리하지는 못한다. 초기부터 정상 ordering이었다가 후기에
 무너지는 Case C 패턴은 관찰되지 않았다.
 
 ### STEP 4B 진행 여부
@@ -1633,7 +1633,7 @@ learning rate, batch size와 fixed probes를 고정했다.
 | 1e-2 | -0.00002992 |
 
 모든 lambda에서 gap이 음수다. Regularizer strength만으로 ID-Hard
-aleatoric failure를 설명할 수 없는 `Case C`다.
+aleatoric failure를 정리할 수 없는 `Case C`다.
 
 ### Near-OOD Epistemic
 

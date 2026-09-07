@@ -1,0 +1,15 @@
+{
+  "dimensions": [
+    4,
+    8
+  ],
+  "max_abs_log_probability_error": 0.0,
+  "tolerance": 1e-08,
+  "dense_diagonal_match": true,
+  "df_formula": "nu - d + 1",
+  "scale_formula": "((kappa + 1) / (kappa * df)) * Psi",
+  "uncertainty_formula": "ale=Psi/(nu-d-1), epi=ale/kappa",
+  "layout": "[Re(pair0..3, k), Im(pair0..3, k)] -> pair vector [Re(k1..K), Im(k1..K)]",
+  "eq11_scope": "full target CFR, observed and omitted frequencies",
+  "finding": "The diagonal multivariate NLL is mathematically exact after correcting pair-major channel mapping; full Psi=LL^T remains approximated by diagonal Psi."
+}

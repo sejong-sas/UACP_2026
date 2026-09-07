@@ -1,0 +1,3 @@
+model,total_parameters,covariance_head_parameters,single_sample_inference_ms,peak_gpu_memory_mb
+Diagonal corrected control,11815320,4632,2.6722577400505543,94.6923828125
+Low-Rank rank4,11821496,10808,3.0357549898326397,94.6923828125

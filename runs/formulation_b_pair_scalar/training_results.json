@@ -1,0 +1,206 @@
+{
+  "checkpoint": "runs/formulation_b_pair_scalar/uacp_predictor_prototype.pt",
+  "config": {
+    "data": {
+      "test_paths": {
+        "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+        "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+        "OOD-Near 120 ns": "data/prototype/test_ood_near.npz"
+      },
+      "train_path": "data/prototype/train.npz",
+      "validation_path": "data/prototype/validation.npz"
+    },
+    "implementation_assumption": {
+      "batch_size": 8,
+      "device": "cuda:0",
+      "epochs": 5,
+      "eval_batch_size": 16,
+      "eval_grouping_factor": 16,
+      "evidential_covariance": "diagonal_per_real_imag_channel_pair_scalar_kappa_nu",
+      "evidential_mode": "pair_scalar",
+      "experiment_name": "Experiment-B-pair-scalar-kappa-nu",
+      "mask_grouping_factors": [
+        4,
+        8,
+        16,
+        32
+      ],
+      "nll_mode": "elementwise",
+      "optimizer": "Adam",
+      "reg_mode": "elementwise",
+      "seed": 20260819,
+      "target_channels": 8
+    },
+    "paper_specified": {
+      "dropout": 0.05,
+      "hidden_channels": 192,
+      "input_channels": 9,
+      "kernel_size": 5,
+      "lambda_reg": 0.001,
+      "learning_rate": 0.0001,
+      "num_rx_ant": 2,
+      "num_subcarriers": 1024,
+      "num_tx_ant": 2,
+      "residual_blocks": 32
+    }
+  },
+  "device": "cuda:0",
+  "elapsed_seconds": 128.12292567221448,
+  "history": [
+    {
+      "epoch": 1,
+      "train": {
+        "lambda_reg_x_reg": 0.4917223926782608,
+        "nll": 0.6390009331703186,
+        "nmse_all_db": -3.3561430780887602,
+        "nmse_omitted_db": -3.277398989200592,
+        "reg": 491.72236926269534,
+        "total": 1.130723326921463
+      },
+      "validation": {
+        "aleatoric": 0.1776681786775589,
+        "aleatoric_all": 0.17207923650741577,
+        "epistemic": 0.1460171175003052,
+        "epistemic_all": 0.14138440251350404,
+        "lambda_reg_x_reg": 0.4130460202693939,
+        "nll": 0.5659646892547607,
+        "nmse_all_db": -3.84108419418335,
+        "nmse_omitted_db": -3.6467113399505617,
+        "reg": 413.0459997558594,
+        "total": 0.9790107154846192
+      }
+    },
+    {
+      "epoch": 2,
+      "train": {
+        "lambda_reg_x_reg": 0.2272370558977127,
+        "nll": -0.03125849191471934,
+        "nmse_all_db": -6.750835731506347,
+        "nmse_omitted_db": -6.629973165512085,
+        "reg": 227.2370440979004,
+        "total": 0.19597856467962266
+      },
+      "validation": {
+        "aleatoric": 0.030772647857666015,
+        "aleatoric_all": 0.02950537025928497,
+        "epistemic": 0.01635378547012806,
+        "epistemic_all": 0.01567382089793682,
+        "lambda_reg_x_reg": 0.0523513850569725,
+        "nll": -0.5433745861053467,
+        "nmse_all_db": -12.823782844543457,
+        "nmse_omitted_db": -12.665491790771485,
+        "reg": 52.35138275146485,
+        "total": -0.49102320075035094
+      }
+    },
+    {
+      "epoch": 3,
+      "train": {
+        "lambda_reg_x_reg": 0.13926935765147208,
+        "nll": -0.3755922368243337,
+        "nmse_all_db": -9.11905076789856,
+        "nmse_omitted_db": -9.01663109779358,
+        "reg": 139.26935159301757,
+        "total": -0.23632288014888764
+      },
+      "validation": {
+        "aleatoric": 0.030302275568246842,
+        "aleatoric_all": 0.029617469012737273,
+        "epistemic": 0.016865996047854423,
+        "epistemic_all": 0.016482366323471068,
+        "lambda_reg_x_reg": 0.030024295151233674,
+        "nll": -0.6315952396392822,
+        "nmse_all_db": -14.938847274780274,
+        "nmse_omitted_db": -14.83410873413086,
+        "reg": 30.024293518066408,
+        "total": -0.6015709400177002
+      }
+    },
+    {
+      "epoch": 4,
+      "train": {
+        "lambda_reg_x_reg": 0.11660587836802006,
+        "nll": -0.5081047563552856,
+        "nmse_all_db": -9.845813438415528,
+        "nmse_omitted_db": -9.743740394592285,
+        "reg": 116.60587273406982,
+        "total": -0.3914988763332367
+      },
+      "validation": {
+        "aleatoric": 0.01149225067347288,
+        "aleatoric_all": 0.011310891360044479,
+        "epistemic": 0.005456488151103258,
+        "epistemic_all": 0.005370578933507204,
+        "lambda_reg_x_reg": 0.057338016778230666,
+        "nll": -0.2842273330688477,
+        "nmse_all_db": -12.248714599609375,
+        "nmse_omitted_db": -12.15705093383789,
+        "reg": 57.338014373779295,
+        "total": -0.2268893164396286
+      }
+    },
+    {
+      "epoch": 5,
+      "train": {
+        "lambda_reg_x_reg": 0.09714287206530571,
+        "nll": -0.5368468299508095,
+        "nmse_all_db": -10.6094214553833,
+        "nmse_omitted_db": -10.517663345336913,
+        "reg": 97.14286753845215,
+        "total": -0.43970396083593366
+      },
+      "validation": {
+        "aleatoric": 0.013808928281068802,
+        "aleatoric_all": 0.013688916563987732,
+        "epistemic": 0.0071191111579537395,
+        "epistemic_all": 0.007056267280131578,
+        "lambda_reg_x_reg": 0.023505215123295783,
+        "nll": -0.8705547237396241,
+        "nmse_all_db": -16.08297607421875,
+        "nmse_omitted_db": -16.038936157226562,
+        "reg": 23.505214233398437,
+        "total": -0.8470495080947876
+      }
+    }
+  ],
+  "test_results": {
+    "ID-Easy 20 ns": {
+      "aleatoric": 0.014447222910821438,
+      "aleatoric_all": 0.014315498694777488,
+      "epistemic": 0.007609224133193493,
+      "epistemic_all": 0.007538521699607372,
+      "lambda_reg_x_reg": 0.024728416800498962,
+      "nll": -0.8587464761734008,
+      "nmse_all_db": -16.212880630493164,
+      "nmse_omitted_db": -16.165722732543944,
+      "reg": 24.72841567993164,
+      "total": -0.8340180563926697
+    },
+    "ID-Hard 80 ns": {
+      "aleatoric": 0.013961611501872539,
+      "aleatoric_all": 0.013838102668523788,
+      "epistemic": 0.007196252271533012,
+      "epistemic_all": 0.00713180722668767,
+      "lambda_reg_x_reg": 0.02405778594315052,
+      "nll": -0.8564148449897766,
+      "nmse_all_db": -16.218321228027342,
+      "nmse_omitted_db": -16.17297393798828,
+      "reg": 24.057784729003906,
+      "total": -0.8323570561408996
+    },
+    "OOD-Near 120 ns": {
+      "aleatoric": 0.013770563118159771,
+      "aleatoric_all": 0.0136495491117239,
+      "epistemic": 0.007081875614821911,
+      "epistemic_all": 0.007018641084432602,
+      "lambda_reg_x_reg": 0.025958951711654663,
+      "nll": -0.8324009919166565,
+      "nmse_all_db": -15.790904312133788,
+      "nmse_omitted_db": -15.722800827026367,
+      "reg": 25.95895050048828,
+      "total": -0.8064420485496521
+    }
+  },
+  "total_parameters": 11815320,
+  "trainable_parameters": 11815320
+}

@@ -1,0 +1,280 @@
+{
+  "aggregation": {
+    "current_helper_sequence": "pair -> Re/Im sum (trace of diagonal approximation) -> pair mean -> omitted mean",
+    "expected_omitted_score": 9.0,
+    "expected_score_map": [
+      [
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ]
+    ],
+    "matches_eq12_eq13": true,
+    "omitted_polarity": "omitted = 1 - mask",
+    "omitted_score": 9.0,
+    "score_map": [
+      [
+        9.0,
+        9.0,
+        9.0,
+        9.0
+      ]
+    ]
+  },
+  "audit": "STEP 6 Condition C Baseline Audit",
+  "checkpoint_metadata": {
+    "contains_config_or_code_revision": false,
+    "format": "plain PyTorch state_dict",
+    "status": "NOT RECORDED",
+    "tensor_count": 138
+  },
+  "condition_identity": {
+    "STEP6_reference": "/home/saslab01/Desktop/UACP_2026/runs/baseline_reproduction/step6_lambda_calibration/lambda_1e-3_reference",
+    "actual_training_run": "STEP 5 Condition C",
+    "checkpoint": "/home/saslab01/Desktop/UACP_2026/runs/baseline_reproduction/step5_snr_ablation/noisy_train_noisy_eval/uacp_predictor_step4a.pt",
+    "historical_result": true
+  },
+  "current_code_shape_trace": {
+    "cuda_available": true,
+    "cuda_device_name": "NVIDIA GB10",
+    "device_requested": "cuda:0",
+    "device_used": "cuda:0",
+    "gamma_external_shape": [
+      1,
+      8,
+      1024
+    ],
+    "gamma_pair_vector_shape": [
+      1,
+      4,
+      2048
+    ],
+    "input_shape": [
+      1,
+      9,
+      1024
+    ],
+    "kappa_expanded_shape": [
+      1,
+      8,
+      1024
+    ],
+    "kappa_min": 7.304869174957275,
+    "kappa_shape": [
+      1,
+      4,
+      1
+    ],
+    "loss_finite": true,
+    "measured_snr": {
+      "measured_snr_db_mean": 15.037771224975586,
+      "measured_snr_db_std": 0.0,
+      "requested_snr_db": 15.0
+    },
+    "nll_mode": "diagonal_multivariate",
+    "nu_expanded_shape": [
+      1,
+      8,
+      1024
+    ],
+    "nu_minus_d_minus_1_min": 17.013427734375,
+    "nu_shape": [
+      1,
+      4,
+      1
+    ],
+    "psi_external_shape": [
+      1,
+      8,
+      1024
+    ],
+    "psi_min": 0.15191958844661713,
+    "psi_pair_diagonal_shape": [
+      1,
+      4,
+      2048
+    ],
+    "reg_mode": "pair",
+    "target_shape": [
+      1,
+      8,
+      1024
+    ]
+  },
+  "dataset_metadata": {
+    "implementation_assumption": {
+      "channel_family": "3GPP TR 38.901 TDL",
+      "cyclic_prefix_length": 0,
+      "device": "cuda:0",
+      "mask_storage": "not_stored_online_training_mask_expected",
+      "max_speed_mps": 0.0,
+      "min_speed_mps": 0.0,
+      "normalize_channel": false,
+      "num_ofdm_symbols": 1,
+      "num_streams_per_tx": 1,
+      "num_tx": 1,
+      "precision": "single",
+      "seed": 20260819,
+      "sionna_package": "sionna-no-rt",
+      "sionna_version": "2.0.1",
+      "store_device": "cpu",
+      "store_dtype": "complex64",
+      "tdl_model": "A"
+    },
+    "paper_specified": {
+      "carrier_frequency_hz": 3500000000.0,
+      "fft_size": 1024,
+      "num_rx_ant": 2,
+      "num_tx_ant": 2,
+      "snr_db": 15.0,
+      "subcarrier_spacing_hz": 30000.0,
+      "test_regimes": {
+        "ID-Easy": 20.0,
+        "ID-Hard": 80.0,
+        "OOD-Near": 120.0
+      },
+      "training_delay_spread_ns": [
+        10.0,
+        100.0
+      ]
+    },
+    "unknown": {
+      "paper_antenna_geometry": "UNKNOWN",
+      "paper_channel_model": "UNKNOWN",
+      "paper_channel_normalization": "UNKNOWN",
+      "paper_cyclic_prefix_length": "UNKNOWN",
+      "paper_mobility_or_doppler": "UNKNOWN",
+      "paper_num_ofdm_symbols": "UNKNOWN",
+      "paper_sionna_1x_or_2x": "UNKNOWN",
+      "paper_sionna_version": "UNKNOWN",
+      "paper_snr_application_stage": "UNKNOWN_NEEDS_DESIGN_DECISION",
+      "paper_spatial_correlation": "UNKNOWN",
+      "paper_tdl_or_cdl_profile": "UNKNOWN",
+      "paper_velocity": "UNKNOWN"
+    }
+  },
+  "pair_mapping": {
+    "channel_layout": "[Re(pair0..3), Im(pair0..3)]",
+    "exact_mapping": true,
+    "pair_channel_indices": {
+      "pair0": [
+        0,
+        4
+      ],
+      "pair1": [
+        1,
+        5
+      ],
+      "pair2": [
+        2,
+        6
+      ],
+      "pair3": [
+        3,
+        7
+      ]
+    },
+    "roundtrip_test_covered_by": "tests/test_predictor.py::test_channel_pair_mapping_and_roundtrip_are_exact"
+  },
+  "paper_source": "mobihoc26-paper289.pdf",
+  "saved_result_finite": true,
+  "settings": {
+    "batch_size": {
+      "dataloader_length": 625,
+      "observed": 8,
+      "status": "VERIFIED"
+    },
+    "checkpoint": {
+      "bytes": 47317003,
+      "path": "/home/saslab01/Desktop/UACP_2026/runs/baseline_reproduction/step5_snr_ablation/noisy_train_noisy_eval/uacp_predictor_step4a.pt",
+      "status": "VERIFIED"
+    },
+    "condition_c_noisy_train_noisy_eval": {
+      "evidence": "config noise=15 dB and STEP 5 Condition C training history; target clean in build_noisy_sparse_input",
+      "status": "VERIFIED"
+    },
+    "epochs": {
+      "epoch_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "final_results_history": 10,
+      "status": "VERIFIED",
+      "training_history_history": 10
+    },
+    "evaluation_1ms": {
+      "present_in_final_probe": true,
+      "source": "saved epoch_probe_results",
+      "status": "VERIFIED"
+    },
+    "evaluation_20_80_120": {
+      "configured_paths": {
+        "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+        "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+        "OOD-Near 120 ns": "data/prototype/test_ood_near.npz"
+      },
+      "regimes": [
+        "ID-Easy 20 ns",
+        "ID-Hard 80 ns",
+        "OOD-Far 1 ms",
+        "OOD-Near 120 ns"
+      ],
+      "status": "VERIFIED"
+    },
+    "lambda_reg": {
+      "observed": 0.001,
+      "status": "VERIFIED"
+    },
+    "learning_rate": {
+      "observed": 0.0001,
+      "status": "VERIFIED"
+    },
+    "mask": {
+      "eval_grouping_factor": 16,
+      "status": "VERIFIED",
+      "training_grouping_factors": [
+        4,
+        8,
+        16,
+        32
+      ]
+    },
+    "seed": {
+      "observed": 20260819,
+      "status": "VERIFIED"
+    },
+    "snr_15_db": {
+      "configured": 15.0,
+      "final_probe_measured_snr": {
+        "ID-Easy 20 ns": 14.990790939331054,
+        "ID-Hard 80 ns": 14.986900787353516,
+        "OOD-Far 1 ms": 14.993080215454102,
+        "OOD-Near 120 ns": 15.00957145690918
+      },
+      "status": "VERIFIED"
+    },
+    "train_delay_uniform_10_100_ns": {
+      "labels": [
+        "train"
+      ],
+      "observed_max": 99.99331665039062,
+      "observed_min": 10.002578735351562,
+      "status": "VERIFIED"
+    },
+    "train_samples": {
+      "evidence": "/home/saslab01/Desktop/UACP_2026/runs/baseline_reproduction/step5_snr_ablation/noisy_train_noisy_eval/generated_data/train_5k_pilot.npz",
+      "observed": 5000,
+      "status": "VERIFIED"
+    }
+  },
+  "verdict": "BASELINE INVALID FOR UNCERTAINTY COMPARISON"
+}

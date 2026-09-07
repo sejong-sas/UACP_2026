@@ -1,0 +1,51 @@
+{
+  "data": {
+    "test_paths": {
+      "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+      "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+      "OOD-Near 120 ns": "data/prototype/test_ood_near.npz"
+    },
+    "train_path": "runs/baseline_reproduction/step7_covariance_structure/lowrank_rank4/generated_data/train_5k_pilot.npz",
+    "validation_path": "data/prototype/validation.npz"
+  },
+  "implementation_assumption": {
+    "batch_size": 8,
+    "covariance_factor_scale": "1/sqrt(d)",
+    "covariance_rank": 4,
+    "device": "cuda:0",
+    "epochs": 10,
+    "eval_batch_size": 16,
+    "eval_grouping_factor": 16,
+    "evidential_covariance": "lowrank_plus_diagonal_approximation",
+    "evidential_mode": "pair_scalar_lowrank",
+    "experiment_name": "STEP-7B-lowrank-rank4-5k-10ep",
+    "mask_grouping_factors": [
+      4,
+      8,
+      16,
+      32
+    ],
+    "nll_mode": "lowrank_multivariate",
+    "observation_noise_note": "IMPLEMENTATION-ASSUMPTION: observed complex CFR AWGN; target remains clean CFR",
+    "observation_noise_snr_db": 15.0,
+    "optimizer": "Adam",
+    "pilot_epochs": 10,
+    "pilot_note": "IMPLEMENTATION-ASSUMPTION / PILOT, not paper-specified",
+    "pilot_train_samples": 5000,
+    "reg_mode": "pair",
+    "seed": 20260819,
+    "target_channels": 8
+  },
+  "paper_specified": {
+    "dropout": 0.05,
+    "hidden_channels": 192,
+    "input_channels": 9,
+    "kernel_size": 5,
+    "lambda_reg": 0.001,
+    "learning_rate": 0.0001,
+    "num_rx_ant": 2,
+    "num_subcarriers": 1024,
+    "num_tx_ant": 2,
+    "residual_blocks": 32
+  }
+}

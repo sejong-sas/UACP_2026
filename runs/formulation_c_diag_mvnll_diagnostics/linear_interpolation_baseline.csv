@@ -1,0 +1,4 @@
+regime,samples,nmse_omitted_db
+ID-Easy 20 ns,200,-44.22488891601562
+ID-Hard 80 ns,200,-28.914525299072267
+OOD-Near 120 ns,200,-23.431175308227537

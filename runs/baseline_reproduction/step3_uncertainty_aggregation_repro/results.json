@@ -1,0 +1,325 @@
+{
+  "checkpoint": "runs/formulation_c_diag_mvnll/uacp_predictor_prototype.pt",
+  "dataset_config": "configs/dataset_prototype.json",
+  "diagnostics": {
+    "ID-Easy 20 ns": {
+      "current": {
+        "aleatoric_all": {
+          "mean": 0.4026363492012024,
+          "std": 0.268644779920578
+        },
+        "aleatoric_omitted": {
+          "mean": 0.41142213344573975,
+          "std": 0.27390679717063904
+        },
+        "df_cov_all": {
+          "mean": 1.188094139099121,
+          "std": 0.3334703743457794
+        },
+        "df_cov_omitted": {
+          "mean": 1.188094139099121,
+          "std": 0.3334703743457794
+        },
+        "epistemic_all": {
+          "mean": 0.4077785611152649,
+          "std": 0.277538537979126
+        },
+        "epistemic_omitted": {
+          "mean": 0.41672632098197937,
+          "std": 0.28303274512290955
+        },
+        "error_aleatoric_pearson": 0.30756455659866333,
+        "error_aleatoric_spearman": 0.06920143961906433,
+        "error_epistemic_pearson": 0.3067089319229126,
+        "error_epistemic_spearman": 0.07690306007862091,
+        "kappa_all": {
+          "mean": 0.9987637400627136,
+          "std": 0.12390539795160294
+        },
+        "kappa_omitted": {
+          "mean": 0.9987638592720032,
+          "std": 0.12390539795160294
+        },
+        "lambda_reg_x_l_reg": 0.014571995176374912,
+        "nll": -2513.617490234375,
+        "nmse_all_db": -18.60341278076172,
+        "nmse_omitted_db": -18.563976821899413,
+        "nu_all": {
+          "mean": 2050.188232421875,
+          "std": 0.3334704041481018
+        },
+        "nu_omitted": {
+          "mean": 2050.18798828125,
+          "std": 0.3334703743457794
+        },
+        "psi_all": {
+          "mean": 0.44120892882347107,
+          "std": 0.2621507942676544
+        },
+        "psi_omitted": {
+          "mean": 0.45106104016304016,
+          "std": 0.2674713730812073
+        },
+        "raw_l_reg": 14.571994590759278,
+        "samples": 200
+      },
+      "paper_aggregation": {
+        "aleatoric_paper_aggregation": 0.8228442215919495,
+        "epistemic_paper_aggregation": 0.8334527015686035
+      }
+    },
+    "ID-Hard 80 ns": {
+      "current": {
+        "aleatoric_all": {
+          "mean": 0.3956107199192047,
+          "std": 0.25850623846054077
+        },
+        "aleatoric_omitted": {
+          "mean": 0.40421053767204285,
+          "std": 0.26372388005256653
+        },
+        "df_cov_all": {
+          "mean": 1.190579891204834,
+          "std": 0.3190802335739136
+        },
+        "df_cov_omitted": {
+          "mean": 1.190579891204834,
+          "std": 0.3190802335739136
+        },
+        "epistemic_all": {
+          "mean": 0.392293781042099,
+          "std": 0.2518922686576843
+        },
+        "epistemic_omitted": {
+          "mean": 0.4008471667766571,
+          "std": 0.25698941946029663
+        },
+        "error_aleatoric_pearson": 0.3082267642021179,
+        "error_aleatoric_spearman": 0.06381682306528091,
+        "error_epistemic_pearson": 0.3136044442653656,
+        "error_epistemic_spearman": 0.06681946665048599,
+        "kappa_all": {
+          "mean": 1.0026253461837769,
+          "std": 0.04555061459541321
+        },
+        "kappa_omitted": {
+          "mean": 1.0026254653930664,
+          "std": 0.04555061459541321
+        },
+        "lambda_reg_x_l_reg": 0.014217697940766811,
+        "nll": -2432.5536328125,
+        "nmse_all_db": -18.558506851196288,
+        "nmse_omitted_db": -18.514682388305665,
+        "nu_all": {
+          "mean": 2050.190673828125,
+          "std": 0.3190802335739136
+        },
+        "nu_omitted": {
+          "mean": 2050.190673828125,
+          "std": 0.3190802335739136
+        },
+        "psi_all": {
+          "mean": 0.4388337731361389,
+          "std": 0.26055386662483215
+        },
+        "psi_omitted": {
+          "mean": 0.4485189616680145,
+          "std": 0.2658989429473877
+        },
+        "raw_l_reg": 14.21769718170166,
+        "samples": 200
+      },
+      "paper_aggregation": {
+        "aleatoric_paper_aggregation": 0.8084210157394409,
+        "epistemic_paper_aggregation": 0.8016943430900574
+      }
+    },
+    "OOD-Far 1 ms": {
+      "current": {
+        "aleatoric_all": {
+          "mean": 0.3807920515537262,
+          "std": 0.25215569138526917
+        },
+        "aleatoric_omitted": {
+          "mean": 0.38864055275917053,
+          "std": 0.25743356347084045
+        },
+        "df_cov_all": {
+          "mean": 1.2028756141662598,
+          "std": 0.3341015875339508
+        },
+        "df_cov_omitted": {
+          "mean": 1.2028756141662598,
+          "std": 0.3341015875339508
+        },
+        "epistemic_all": {
+          "mean": 0.3796396553516388,
+          "std": 0.247678741812706
+        },
+        "epistemic_omitted": {
+          "mean": 0.3874911665916443,
+          "std": 0.2528863847255707
+        },
+        "error_aleatoric_pearson": -0.010145575739443302,
+        "error_aleatoric_spearman": 0.008535058237612247,
+        "error_epistemic_pearson": -0.010661778971552849,
+        "error_epistemic_spearman": 0.007890688255429268,
+        "kappa_all": {
+          "mean": 0.9984826445579529,
+          "std": 0.05680156871676445
+        },
+        "kappa_omitted": {
+          "mean": 0.9984827637672424,
+          "std": 0.05680156871676445
+        },
+        "lambda_reg_x_l_reg": 1.851099214553833,
+        "nll": 2813.953447265625,
+        "nmse_all_db": 2.548245220184326,
+        "nmse_omitted_db": 2.827792053222656,
+        "nu_all": {
+          "mean": 2050.202880859375,
+          "std": 0.3341015875339508
+        },
+        "nu_omitted": {
+          "mean": 2050.202880859375,
+          "std": 0.3341015875339508
+        },
+        "psi_all": {
+          "mean": 0.42423728108406067,
+          "std": 0.2530457079410553
+        },
+        "psi_omitted": {
+          "mean": 0.43313583731651306,
+          "std": 0.2585231065750122
+        },
+        "raw_l_reg": 1851.099150390625,
+        "samples": 200
+      },
+      "paper_aggregation": {
+        "aleatoric_paper_aggregation": 0.7772810554504395,
+        "epistemic_paper_aggregation": 0.7749823331832886
+      }
+    },
+    "OOD-Near 120 ns": {
+      "current": {
+        "aleatoric_all": {
+          "mean": 0.3927244246006012,
+          "std": 0.2568597197532654
+        },
+        "aleatoric_omitted": {
+          "mean": 0.40123429894447327,
+          "std": 0.262062668800354
+        },
+        "df_cov_all": {
+          "mean": 1.194962501525879,
+          "std": 0.32106614112854004
+        },
+        "df_cov_omitted": {
+          "mean": 1.194962501525879,
+          "std": 0.32106614112854004
+        },
+        "epistemic_all": {
+          "mean": 0.38869622349739075,
+          "std": 0.25012484192848206
+        },
+        "epistemic_omitted": {
+          "mean": 0.3971444070339203,
+          "std": 0.25520503520965576
+        },
+        "error_aleatoric_pearson": 0.3281033933162689,
+        "error_aleatoric_spearman": 0.06995265930891037,
+        "error_epistemic_pearson": 0.33369186520576477,
+        "error_epistemic_spearman": 0.07263468950986862,
+        "kappa_all": {
+          "mean": 1.0050480365753174,
+          "std": 0.049439944326877594
+        },
+        "kappa_omitted": {
+          "mean": 1.0050480365753174,
+          "std": 0.049439944326877594
+        },
+        "lambda_reg_x_l_reg": 0.016425661146640777,
+        "nll": -2265.28931640625,
+        "nmse_all_db": -17.82144432067871,
+        "nmse_omitted_db": -17.74124412536621,
+        "nu_all": {
+          "mean": 2050.195068359375,
+          "std": 0.3210661709308624
+        },
+        "nu_omitted": {
+          "mean": 2050.195068359375,
+          "std": 0.3210661709308624
+        },
+        "psi_all": {
+          "mean": 0.4370349049568176,
+          "std": 0.25954678654670715
+        },
+        "psi_omitted": {
+          "mean": 0.4466548562049866,
+          "std": 0.2648979723453522
+        },
+        "raw_l_reg": 16.425660247802735,
+        "samples": 200
+      },
+      "paper_aggregation": {
+        "aleatoric_paper_aggregation": 0.8024685716629029,
+        "epistemic_paper_aggregation": 0.7942888498306274
+      }
+    }
+  },
+  "interpretation": {
+    "Aggregation scale": "For diagonal covariance, paper-style trace aggregation is 2x the current 8-channel mean.",
+    "Aleatoric(80) > Aleatoric(20) under paper aggregation": false,
+    "Epistemic(1 ms) > Epistemic(ID) under paper aggregation": false,
+    "Epistemic(120) > Epistemic(ID) under paper aggregation": false,
+    "Next step": "Aggregation does not change ordering if it is only a constant scale; proceed to scaled training if trends still fail."
+  },
+  "model_config": "configs/train_formulation_c_diag_mvnll.json",
+  "rows": [
+    {
+      "aleatoric_current": 0.41142213344573975,
+      "aleatoric_paper_aggregation": 0.8228442215919495,
+      "delay_spread_ns": 20.0,
+      "epistemic_current": 0.41672632098197937,
+      "epistemic_paper_aggregation": 0.8334527015686035,
+      "regime": "ID-Easy 20 ns",
+      "samples": 200,
+      "total_current": 0.8281484544277191,
+      "total_paper_aggregation": 1.656296923160553
+    },
+    {
+      "aleatoric_current": 0.40421053767204285,
+      "aleatoric_paper_aggregation": 0.8084210157394409,
+      "delay_spread_ns": 80.0,
+      "epistemic_current": 0.4008471667766571,
+      "epistemic_paper_aggregation": 0.8016943430900574,
+      "regime": "ID-Hard 80 ns",
+      "samples": 200,
+      "total_current": 0.8050577044487,
+      "total_paper_aggregation": 1.6101153588294983
+    },
+    {
+      "aleatoric_current": 0.40123429894447327,
+      "aleatoric_paper_aggregation": 0.8024685716629029,
+      "delay_spread_ns": 120.0,
+      "epistemic_current": 0.3971444070339203,
+      "epistemic_paper_aggregation": 0.7942888498306274,
+      "regime": "OOD-Near 120 ns",
+      "samples": 200,
+      "total_current": 0.7983787059783936,
+      "total_paper_aggregation": 1.5967574214935303
+    },
+    {
+      "aleatoric_current": 0.38864055275917053,
+      "aleatoric_paper_aggregation": 0.7772810554504395,
+      "delay_spread_ns": 1000000.0,
+      "epistemic_current": 0.3874911665916443,
+      "epistemic_paper_aggregation": 0.7749823331832886,
+      "regime": "OOD-Far 1 ms",
+      "samples": 200,
+      "total_current": 0.7761317193508148,
+      "total_paper_aggregation": 1.552263388633728
+    }
+  ],
+  "step": "STEP 3 Uncertainty Score Aggregation"
+}

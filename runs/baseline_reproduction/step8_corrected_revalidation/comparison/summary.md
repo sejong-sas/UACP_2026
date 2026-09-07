@@ -1,0 +1,5 @@
+# STEP 8A Corrected Lambda Revalidation
+
+- lambda=0: Ale80-20=-1.4353544e-05, Epi120-ID=3.5226811e-05, Epi1ms-ID=0.00084445532, mean ID NMSE=-17.8068 dB
+- lambda=1e-3: Ale80-20=-1.404807e-05, Epi120-ID=2.0253123e-05, Epi1ms-ID=0.00071336573, mean ID NMSE=-18.0884 dB
+- lambda=1e-2: Ale80-20=-6.8217516e-05, Epi120-ID=4.5849243e-05, Epi1ms-ID=0.0016709133, mean ID NMSE=-18.2721 dB

@@ -1,0 +1,4020 @@
+{
+  "config": {
+    "data": {
+      "test_paths": {
+        "ID-Easy 20 ns": "data/prototype/test_id_easy.npz",
+        "ID-Hard 80 ns": "data/prototype/test_id_hard.npz",
+        "OOD-Near 120 ns": "data/prototype/test_ood_near.npz"
+      },
+      "train_path": "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/generated_data/train_5k_pilot.npz",
+      "validation_path": "data/prototype/validation.npz"
+    },
+    "implementation_assumption": {
+      "batch_size": 8,
+      "device": "cuda:0",
+      "epochs": 10,
+      "eval_batch_size": 16,
+      "eval_grouping_factor": 16,
+      "evidential_covariance": "diagonal_multivariate_pair_scalar_kappa_nu_pair_regularizer",
+      "evidential_mode": "pair_scalar",
+      "experiment_name": "STEP-8A-corrected-lambda-1e-2",
+      "mask_grouping_factors": [
+        4,
+        8,
+        16,
+        32
+      ],
+      "nll_mode": "diagonal_multivariate",
+      "observation_noise_note": "IMPLEMENTATION-ASSUMPTION: observed complex CFR AWGN; target remains clean CFR",
+      "observation_noise_snr_db": 15.0,
+      "optimizer": "Adam",
+      "pilot_epochs": 10,
+      "pilot_note": "IMPLEMENTATION-ASSUMPTION / PILOT, not paper-specified",
+      "pilot_train_samples": 5000,
+      "reg_mode": "pair",
+      "seed": 20260819,
+      "target_channels": 8
+    },
+    "paper_specified": {
+      "dropout": 0.05,
+      "hidden_channels": 192,
+      "input_channels": 9,
+      "kernel_size": 5,
+      "lambda_reg": 0.01,
+      "learning_rate": 0.0001,
+      "num_rx_ant": 2,
+      "num_subcarriers": 1024,
+      "num_tx_ant": 2,
+      "residual_blocks": 32
+    }
+  },
+  "curve_files": [
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_train_validation_nmse.png",
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_nll.png",
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_lambda_reg_x_l_reg.png",
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_reg_to_nll_ratio.png",
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_aleatoric.png",
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_epistemic.png",
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_psi.png",
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_kappa.png",
+    "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/epoch_vs_df_cov.png"
+  ],
+  "dataset_config": "configs/dataset_prototype.json",
+  "device": "cuda:0",
+  "epoch_probe_results": {
+    "1": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.5202100276947021,
+          "std": 0.12981222569942474
+        },
+        "aleatoric_omitted": {
+          "mean": 0.5142899751663208,
+          "std": 0.12501488626003265
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 1.1185961961746216,
+          "std": 0.16546422243118286
+        },
+        "df_cov_omitted": {
+          "mean": 1.1185961961746216,
+          "std": 0.16546422243118286
+        },
+        "epistemic_all": {
+          "mean": 0.4209035634994507,
+          "std": 0.13128136098384857
+        },
+        "epistemic_omitted": {
+          "mean": 0.4160688519477844,
+          "std": 0.12741950154304504
+        },
+        "error_aleatoric_pearson": 0.0532752126455307,
+        "error_aleatoric_spearman": 0.04111192002892494,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.5091217160224915,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.4140103757381439,
+            "error_mean": 0.0015788956079632044
+          },
+          {
+            "aleatoric_mean": 0.5112091302871704,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.4141482412815094,
+            "error_mean": 0.013071620836853981
+          },
+          {
+            "aleatoric_mean": 0.5225390791893005,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.42004790902137756,
+            "error_mean": 0.07355935871601105
+          }
+        ],
+        "error_epistemic_pearson": 0.02389184944331646,
+        "error_epistemic_spearman": 0.013280048035085201,
+        "kappa_all": {
+          "mean": 1.265575885772705,
+          "std": 0.1461092233657837
+        },
+        "kappa_omitted": {
+          "mean": 1.2655760049819946,
+          "std": 0.1461092233657837
+        },
+        "lambda_reg_x_l_reg": 1245.11392578125,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.975807647705079,
+        "measured_snr_db_std": 0.26704728171575887,
+        "nll": -808.62228515625,
+        "nmse_all_db": -12.325969467163086,
+        "nmse_omitted_db": -12.363516120910644,
+        "nu_all": {
+          "mean": 2050.11865234375,
+          "std": 0.16546423733234406
+        },
+        "nu_omitted": {
+          "mean": 2050.118408203125,
+          "std": 0.16546432673931122
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.5666185617446899,
+          "std": 0.09438106417655945
+        },
+        "psi_omitted": {
+          "mean": 0.5604183673858643,
+          "std": 0.09034419804811478
+        },
+        "raw_l_reg": 124511.395625,
+        "reg_to_nll_ratio": 1.5397966994259362,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.5113115310668945,
+          "std": 0.08699335157871246
+        },
+        "aleatoric_omitted": {
+          "mean": 0.5058039426803589,
+          "std": 0.08319907635450363
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 1.1104501485824585,
+          "std": 0.04822676256299019
+        },
+        "df_cov_omitted": {
+          "mean": 1.1104501485824585,
+          "std": 0.04822676256299019
+        },
+        "epistemic_all": {
+          "mean": 0.4087992012500763,
+          "std": 0.07223016768693924
+        },
+        "epistemic_omitted": {
+          "mean": 0.4043905436992645,
+          "std": 0.06922762840986252
+        },
+        "error_aleatoric_pearson": 0.07428921014070511,
+        "error_aleatoric_spearman": 0.06266570091247559,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.5014309287071228,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.40283867716789246,
+            "error_mean": 0.0015483185416087508
+          },
+          {
+            "aleatoric_mean": 0.5034793615341187,
+            "bin": 1,
+            "count": 512001,
+            "epistemic_mean": 0.4034336507320404,
+            "error_mean": 0.012794917449355125
+          },
+          {
+            "aleatoric_mean": 0.5125013589859009,
+            "bin": 2,
+            "count": 511999,
+            "epistemic_mean": 0.40689924359321594,
+            "error_mean": 0.07086741924285889
+          }
+        ],
+        "error_epistemic_pearson": 0.03736988082528114,
+        "error_epistemic_spearman": 0.029881402850151062,
+        "kappa_all": {
+          "mean": 1.2535369396209717,
+          "std": 0.0572534054517746
+        },
+        "kappa_omitted": {
+          "mean": 1.2535369396209717,
+          "std": 0.0572534054517746
+        },
+        "lambda_reg_x_l_reg": 1203.6050634765625,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.003419342041015,
+        "measured_snr_db_std": 0.2547487409902887,
+        "nll": -784.2711474609375,
+        "nmse_all_db": -12.36843132019043,
+        "nmse_omitted_db": -12.407388916015625,
+        "nu_all": {
+          "mean": 2050.1103515625,
+          "std": 0.04822686314582825
+        },
+        "nu_omitted": {
+          "mean": 2050.1103515625,
+          "std": 0.04822686314582825
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.5667187571525574,
+          "std": 0.09302239120006561
+        },
+        "psi_omitted": {
+          "mean": 0.5606370568275452,
+          "std": 0.08892956376075745
+        },
+        "raw_l_reg": 120360.510625,
+        "reg_to_nll_ratio": 1.5346797690541893,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.5226464867591858,
+          "std": 0.0923893004655838
+        },
+        "aleatoric_omitted": {
+          "mean": 0.5173145532608032,
+          "std": 0.08906435966491699
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 1.089558720588684,
+          "std": 0.0651366338133812
+        },
+        "df_cov_omitted": {
+          "mean": 1.089558720588684,
+          "std": 0.0651366338133812
+        },
+        "epistemic_all": {
+          "mean": 0.4299573004245758,
+          "std": 0.08119244873523712
+        },
+        "epistemic_omitted": {
+          "mean": 0.42555737495422363,
+          "std": 0.07841762900352478
+        },
+        "error_aleatoric_pearson": -0.026772037148475647,
+        "error_aleatoric_spearman": -0.024513008072972298,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.5190954208374023,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.4272862374782562,
+            "error_mean": 0.049076784402132034
+          },
+          {
+            "aleatoric_mean": 0.518229067325592,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.42645391821861267,
+            "error_mean": 0.400210440158844
+          },
+          {
+            "aleatoric_mean": 0.5146192908287048,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.422931969165802,
+            "error_mean": 2.054530382156372
+          }
+        ],
+        "error_epistemic_pearson": -0.0290899109095335,
+        "error_epistemic_spearman": -0.027191871777176857,
+        "kappa_all": {
+          "mean": 1.2198131084442139,
+          "std": 0.06254952400922775
+        },
+        "kappa_omitted": {
+          "mean": 1.2198129892349243,
+          "std": 0.06254952400922775
+        },
+        "lambda_reg_x_l_reg": 33100.424921875,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.005892143249511,
+        "measured_snr_db_std": 0.24637874231902782,
+        "nll": 2627.3652734375,
+        "nmse_all_db": 1.963783712387085,
+        "nmse_omitted_db": 2.2124969387054443,
+        "nu_all": {
+          "mean": 2050.089599609375,
+          "std": 0.06513664126396179
+        },
+        "nu_omitted": {
+          "mean": 2050.089599609375,
+          "std": 0.06513664126396179
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.5670339465141296,
+          "std": 0.09137421101331711
+        },
+        "psi_omitted": {
+          "mean": 0.5612903833389282,
+          "std": 0.08796868473291397
+        },
+        "raw_l_reg": 3310042.6,
+        "reg_to_nll_ratio": 12.598333873250231,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.5114693641662598,
+          "std": 0.0873742550611496
+        },
+        "aleatoric_omitted": {
+          "mean": 0.5059699416160583,
+          "std": 0.08367214351892471
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 1.1095309257507324,
+          "std": 0.05153486505150795
+        },
+        "df_cov_omitted": {
+          "mean": 1.1095309257507324,
+          "std": 0.05153486505150795
+        },
+        "epistemic_all": {
+          "mean": 0.4107862114906311,
+          "std": 0.07367786765098572
+        },
+        "epistemic_omitted": {
+          "mean": 0.40636056661605835,
+          "std": 0.07071692496538162
+        },
+        "error_aleatoric_pearson": 0.07447461783885956,
+        "error_aleatoric_spearman": 0.05869707092642784,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.5020238757133484,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.40471982955932617,
+            "error_mean": 0.0015986632788553834
+          },
+          {
+            "aleatoric_mean": 0.5036570429801941,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.4053146541118622,
+            "error_mean": 0.013177383691072464
+          },
+          {
+            "aleatoric_mean": 0.5122289061546326,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.40904712677001953,
+            "error_mean": 0.07298881560564041
+          }
+        ],
+        "error_epistemic_pearson": 0.04329226538538933,
+        "error_epistemic_spearman": 0.031342294067144394,
+        "kappa_all": {
+          "mean": 1.2484005689620972,
+          "std": 0.059661488980054855
+        },
+        "kappa_omitted": {
+          "mean": 1.2484005689620972,
+          "std": 0.059661488980054855
+        },
+        "lambda_reg_x_l_reg": 1238.4538134765626,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.99090560913086,
+        "measured_snr_db_std": 0.2707705227594815,
+        "nll": -748.04853515625,
+        "nmse_all_db": -12.163290824890137,
+        "nmse_omitted_db": -12.197316093444824,
+        "nu_all": {
+          "mean": 2050.109619140625,
+          "std": 0.05153493955731392
+        },
+        "nu_omitted": {
+          "mean": 2050.109619140625,
+          "std": 0.05153493955731392
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.5661678910255432,
+          "std": 0.09228101372718811
+        },
+        "psi_omitted": {
+          "mean": 0.5601053237915039,
+          "std": 0.08829386532306671
+        },
+        "raw_l_reg": 123845.384375,
+        "reg_to_nll_ratio": 1.6555794915116337,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "10": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.013219798915088177,
+          "std": 0.006644203793257475
+        },
+        "aleatoric_omitted": {
+          "mean": 0.013234083540737629,
+          "std": 0.006738367490470409
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 14.71177864074707,
+          "std": 0.6087793707847595
+        },
+        "df_cov_omitted": {
+          "mean": 14.711777687072754,
+          "std": 0.6087793707847595
+        },
+        "epistemic_all": {
+          "mean": 0.0022390359081327915,
+          "std": 0.0011604434112086892
+        },
+        "epistemic_omitted": {
+          "mean": 0.0022415663115680218,
+          "std": 0.001176816294901073
+        },
+        "error_aleatoric_pearson": 0.25242799520492554,
+        "error_aleatoric_spearman": 0.19377616047859192,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.012514631263911724,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.002111222827807069,
+            "error_mean": 0.00036706626997329295
+          },
+          {
+            "aleatoric_mean": 0.01276865229010582,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.002158187795430422,
+            "error_mean": 0.003080724971368909
+          },
+          {
+            "aleatoric_mean": 0.014418969862163067,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0024552885442972183,
+            "error_mean": 0.01833166927099228
+          }
+        ],
+        "error_epistemic_pearson": 0.253763347864151,
+        "error_epistemic_spearman": 0.19136358797550201,
+        "kappa_all": {
+          "mean": 5.943317413330078,
+          "std": 0.3015998303890228
+        },
+        "kappa_omitted": {
+          "mean": 5.943317890167236,
+          "std": 0.3015998303890228
+        },
+        "lambda_reg_x_l_reg": 307.7014526367187,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.990790939331054,
+        "measured_snr_db_std": 0.2631161288054744,
+        "nll": -2275.813046875,
+        "nmse_all_db": -18.665287475585938,
+        "nmse_omitted_db": -18.665373153686524,
+        "nu_all": {
+          "mean": 2063.711669921875,
+          "std": 0.6087793707847595
+        },
+        "nu_omitted": {
+          "mean": 2063.7119140625,
+          "std": 0.6087793707847595
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.19349952042102814,
+          "std": 0.09490320086479187
+        },
+        "psi_omitted": {
+          "mean": 0.1937013417482376,
+          "std": 0.09625081717967987
+        },
+        "raw_l_reg": 30770.14578125,
+        "reg_to_nll_ratio": 0.135205065749088,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.013150010257959366,
+          "std": 0.006340544205158949
+        },
+        "aleatoric_omitted": {
+          "mean": 0.013165866024792194,
+          "std": 0.006431611254811287
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 14.683244705200195,
+          "std": 0.3936019241809845
+        },
+        "df_cov_omitted": {
+          "mean": 14.683244705200195,
+          "std": 0.3936019241809845
+        },
+        "epistemic_all": {
+          "mean": 0.002220769878476858,
+          "std": 0.0010802503675222397
+        },
+        "epistemic_omitted": {
+          "mean": 0.0022234662901610136,
+          "std": 0.0010957632912322879
+        },
+        "error_aleatoric_pearson": 0.31947091221809387,
+        "error_aleatoric_spearman": 0.1441560983657837,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.012523203156888485,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0021108812652528286,
+            "error_mean": 0.00043018258293159306
+          },
+          {
+            "aleatoric_mean": 0.012701389379799366,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.002142917597666383,
+            "error_mean": 0.003565505612641573
+          },
+          {
+            "aleatoric_mean": 0.014273006469011307,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.002416600240394473,
+            "error_mean": 0.02046395093202591
+          }
+        ],
+        "error_epistemic_pearson": 0.3215996325016022,
+        "error_epistemic_spearman": 0.15059342980384827,
+        "kappa_all": {
+          "mean": 5.931975841522217,
+          "std": 0.14309591054916382
+        },
+        "kappa_omitted": {
+          "mean": 5.931975364685059,
+          "std": 0.14309591054916382
+        },
+        "lambda_reg_x_l_reg": 345.4042541503906,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.986900787353516,
+        "measured_snr_db_std": 0.28718149687648,
+        "nll": -2119.26076171875,
+        "nmse_all_db": -17.88049003601074,
+        "nmse_omitted_db": -17.878828353881836,
+        "nu_all": {
+          "mean": 2063.683349609375,
+          "std": 0.3936019241809845
+        },
+        "nu_omitted": {
+          "mean": 2063.68310546875,
+          "std": 0.3936019539833069
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.1926400363445282,
+          "std": 0.09184291213750839
+        },
+        "psi_omitted": {
+          "mean": 0.19286873936653137,
+          "std": 0.09316010028123856
+        },
+        "raw_l_reg": 34540.42609375,
+        "reg_to_nll_ratio": 0.16298336683619488,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.019987914711236954,
+          "std": 0.009097905829548836
+        },
+        "aleatoric_omitted": {
+          "mean": 0.020037764683365822,
+          "std": 0.009172319434583187
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 12.43187141418457,
+          "std": 0.8254814743995667
+        },
+        "df_cov_omitted": {
+          "mean": 12.43187141418457,
+          "std": 0.8254814743995667
+        },
+        "epistemic_all": {
+          "mean": 0.0039025205187499523,
+          "std": 0.0019336979603394866
+        },
+        "epistemic_omitted": {
+          "mean": 0.003912479616701603,
+          "std": 0.0019492561696097255
+        },
+        "error_aleatoric_pearson": 0.07829368859529495,
+        "error_aleatoric_spearman": 0.0798257440328598,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.01962350681424141,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.003816252341493964,
+            "error_mean": 0.0420265793800354
+          },
+          {
+            "aleatoric_mean": 0.01980607584118843,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0038592044729739428,
+            "error_mean": 0.34258899092674255
+          },
+          {
+            "aleatoric_mean": 0.020683711394667625,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0040619815699756145,
+            "error_mean": 1.7599648237228394
+          }
+        ],
+        "error_epistemic_pearson": 0.08515630662441254,
+        "error_epistemic_spearman": 0.08242584764957428,
+        "kappa_all": {
+          "mean": 5.188487529754639,
+          "std": 0.27793142199516296
+        },
+        "kappa_omitted": {
+          "mean": 5.188487529754639,
+          "std": 0.27793142199516296
+        },
+        "lambda_reg_x_l_reg": 28880.29953125,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.993080215454102,
+        "measured_snr_db_std": 0.23830227738988888,
+        "nll": 2479.9251171875,
+        "nmse_all_db": 1.333892593383789,
+        "nmse_omitted_db": 1.5340125465393066,
+        "nu_all": {
+          "mean": 2061.431884765625,
+          "std": 0.8254814743995667
+        },
+        "nu_omitted": {
+          "mean": 2061.431640625,
+          "std": 0.8254815340042114
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.24535466730594635,
+          "std": 0.1033768579363823
+        },
+        "psi_omitted": {
+          "mean": 0.24594897031784058,
+          "std": 0.10423588752746582
+        },
+        "raw_l_reg": 2888029.99,
+        "reg_to_nll_ratio": 11.645633705217232,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.013427108526229858,
+          "std": 0.006554853171110153
+        },
+        "aleatoric_omitted": {
+          "mean": 0.013444253243505955,
+          "std": 0.006649784278124571
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 14.563553810119629,
+          "std": 0.38024988770484924
+        },
+        "df_cov_omitted": {
+          "mean": 14.563554763793945,
+          "std": 0.38024988770484924
+        },
+        "epistemic_all": {
+          "mean": 0.002284479094669223,
+          "std": 0.0011254427954554558
+        },
+        "epistemic_omitted": {
+          "mean": 0.0022874155547469854,
+          "std": 0.0011416807537898421
+        },
+        "error_aleatoric_pearson": 0.3032834231853485,
+        "error_aleatoric_spearman": 0.09671320766210556,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.012885463424026966,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.002189061837270856,
+            "error_mean": 0.0007290535140782595
+          },
+          {
+            "aleatoric_mean": 0.013028543442487717,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0022152247838675976,
+            "error_mean": 0.005970338825136423
+          },
+          {
+            "aleatoric_mean": 0.014418749138712883,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.002457960043102503,
+            "error_mean": 0.03224683552980423
+          }
+        ],
+        "error_epistemic_pearson": 0.304764986038208,
+        "error_epistemic_spearman": 0.10118401050567627,
+        "kappa_all": {
+          "mean": 5.889027118682861,
+          "std": 0.15066754817962646
+        },
+        "kappa_omitted": {
+          "mean": 5.889026641845703,
+          "std": 0.15066754817962646
+        },
+        "lambda_reg_x_l_reg": 550.1166430664063,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.00957145690918,
+        "measured_snr_db_std": 0.27543966395611735,
+        "nll": -1618.68033203125,
+        "nmse_all_db": -15.67052936553955,
+        "nmse_omitted_db": -15.670393333435058,
+        "nu_all": {
+          "mean": 2063.563720703125,
+          "std": 0.380249947309494
+        },
+        "nu_omitted": {
+          "mean": 2063.5634765625,
+          "std": 0.38024991750717163
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.1951310783624649,
+          "std": 0.09435132145881653
+        },
+        "psi_omitted": {
+          "mean": 0.19537727534770966,
+          "std": 0.09572193771600723
+        },
+        "raw_l_reg": 55011.665,
+        "reg_to_nll_ratio": 0.3398550239828251,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "2": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.14642050862312317,
+          "std": 0.025171641260385513
+        },
+        "aleatoric_omitted": {
+          "mean": 0.1456795483827591,
+          "std": 0.024798018857836723
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 2.981722354888916,
+          "std": 0.22436298429965973
+        },
+        "df_cov_omitted": {
+          "mean": 2.981722354888916,
+          "std": 0.22436298429965973
+        },
+        "epistemic_all": {
+          "mean": 0.05954848602414131,
+          "std": 0.011794308200478554
+        },
+        "epistemic_omitted": {
+          "mean": 0.05925072357058525,
+          "std": 0.011675264686346054
+        },
+        "error_aleatoric_pearson": 0.15162701904773712,
+        "error_aleatoric_spearman": 0.08785854279994965,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.14349594712257385,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.05836762860417366,
+            "error_mean": 0.000715121510438621
+          },
+          {
+            "aleatoric_mean": 0.14447003602981567,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.058765389025211334,
+            "error_mean": 0.005954461172223091
+          },
+          {
+            "aleatoric_mean": 0.14907267689704895,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.06061914563179016,
+            "error_mean": 0.034941792488098145
+          }
+        ],
+        "error_epistemic_pearson": 0.126991868019104,
+        "error_epistemic_spearman": 0.06938602775335312,
+        "kappa_all": {
+          "mean": 2.476395606994629,
+          "std": 0.17648497223854065
+        },
+        "kappa_omitted": {
+          "mean": 2.476395606994629,
+          "std": 0.17648497223854065
+        },
+        "lambda_reg_x_l_reg": 586.9022412109375,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.997757911682129,
+        "measured_snr_db_std": 0.27129987054080895,
+        "nll": -1587.6819775390625,
+        "nmse_all_db": -15.845122222900391,
+        "nmse_omitted_db": -15.86852180480957,
+        "nu_all": {
+          "mean": 2051.981689453125,
+          "std": 0.22436298429965973
+        },
+        "nu_omitted": {
+          "mean": 2051.981689453125,
+          "std": 0.22436298429965973
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.43338948488235474,
+          "std": 0.060294441878795624
+        },
+        "psi_omitted": {
+          "mean": 0.4312207102775574,
+          "std": 0.05937681719660759
+        },
+        "raw_l_reg": 58690.2253125,
+        "reg_to_nll_ratio": 0.3696598245178488,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.14615602791309357,
+          "std": 0.01987956464290619
+        },
+        "aleatoric_omitted": {
+          "mean": 0.14546479284763336,
+          "std": 0.0196374524384737
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 2.96333384513855,
+          "std": 0.06342882663011551
+        },
+        "df_cov_omitted": {
+          "mean": 2.9633336067199707,
+          "std": 0.06342882663011551
+        },
+        "epistemic_all": {
+          "mean": 0.059700850397348404,
+          "std": 0.008250209502875805
+        },
+        "epistemic_omitted": {
+          "mean": 0.05941824987530708,
+          "std": 0.008151314221322536
+        },
+        "error_aleatoric_pearson": 0.1466616839170456,
+        "error_aleatoric_spearman": 0.06759965419769287,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.14411801099777222,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.05890176072716713,
+            "error_mean": 0.0007377357687801123
+          },
+          {
+            "aleatoric_mean": 0.1446123570203781,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.05910107493400574,
+            "error_mean": 0.006044652778655291
+          },
+          {
+            "aleatoric_mean": 0.14766402542591095,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.06025191396474838,
+            "error_mean": 0.03391594812273979
+          }
+        ],
+        "error_epistemic_pearson": 0.13725993037223816,
+        "error_epistemic_spearman": 0.06023121997714043,
+        "kappa_all": {
+          "mean": 2.4505348205566406,
+          "std": 0.08897839486598969
+        },
+        "kappa_omitted": {
+          "mean": 2.4505348205566406,
+          "std": 0.08897839486598969
+        },
+        "lambda_reg_x_l_reg": 573.0915356445313,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.005968742370605,
+        "measured_snr_db_std": 0.25995335069542175,
+        "nll": -1557.23259765625,
+        "nmse_all_db": -15.722986183166505,
+        "nmse_omitted_db": -15.740286064147949,
+        "nu_all": {
+          "mean": 2051.96337890625,
+          "std": 0.0634288415312767
+        },
+        "nu_omitted": {
+          "mean": 2051.96337890625,
+          "std": 0.0634288415312767
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.43294697999954224,
+          "std": 0.058372631669044495
+        },
+        "psi_omitted": {
+          "mean": 0.43089765310287476,
+          "std": 0.0576401948928833
+        },
+        "raw_l_reg": 57309.155625,
+        "reg_to_nll_ratio": 0.36801922622439076,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.16495147347450256,
+          "std": 0.024180728942155838
+        },
+        "aleatoric_omitted": {
+          "mean": 0.16448499262332916,
+          "std": 0.024005161598324776
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 2.7349584102630615,
+          "std": 0.10350967198610306
+        },
+        "df_cov_omitted": {
+          "mean": 2.7349584102630615,
+          "std": 0.10350967198610306
+        },
+        "epistemic_all": {
+          "mean": 0.07200659066438675,
+          "std": 0.011398927308619022
+        },
+        "epistemic_omitted": {
+          "mean": 0.0718020647764206,
+          "std": 0.011319132521748543
+        },
+        "error_aleatoric_pearson": 0.06519949436187744,
+        "error_aleatoric_spearman": 0.04443209990859032,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.16354955732822418,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.07134467363357544,
+            "error_mean": 0.0468410961329937
+          },
+          {
+            "aleatoric_mean": 0.16393114626407623,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0715358555316925,
+            "error_mean": 0.3823191523551941
+          },
+          {
+            "aleatoric_mean": 0.16597424447536469,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.07252568006515503,
+            "error_mean": 1.966888427734375
+          }
+        ],
+        "error_epistemic_pearson": 0.06659384071826935,
+        "error_epistemic_spearman": 0.04568411782383919,
+        "kappa_all": {
+          "mean": 2.2967050075531006,
+          "std": 0.09678002446889877
+        },
+        "kappa_omitted": {
+          "mean": 2.2967050075531006,
+          "std": 0.09678002446889877
+        },
+        "lambda_reg_x_l_reg": 31717.610390625,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.048698883056641,
+        "measured_snr_db_std": 0.28407814713689106,
+        "nll": 2559.07505859375,
+        "nmse_all_db": 1.7656493377685547,
+        "nmse_omitted_db": 2.0142532444000243,
+        "nu_all": {
+          "mean": 2051.735107421875,
+          "std": 0.10350977629423141
+        },
+        "nu_omitted": {
+          "mean": 2051.735107421875,
+          "std": 0.10350977629423141
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.45018887519836426,
+          "std": 0.0611979104578495
+        },
+        "psi_omitted": {
+          "mean": 0.4489193558692932,
+          "std": 0.06074916198849678
+        },
+        "raw_l_reg": 3171761.13,
+        "reg_to_nll_ratio": 12.394169637185383,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.14694035053253174,
+          "std": 0.01994173228740692
+        },
+        "aleatoric_omitted": {
+          "mean": 0.1462721824645996,
+          "std": 0.019701186567544937
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 2.950620651245117,
+          "std": 0.06644389778375626
+        },
+        "df_cov_omitted": {
+          "mean": 2.950620651245117,
+          "std": 0.06644389778375626
+        },
+        "epistemic_all": {
+          "mean": 0.06029096990823746,
+          "std": 0.008374313823878765
+        },
+        "epistemic_omitted": {
+          "mean": 0.06001629680395126,
+          "std": 0.008273394778370857
+        },
+        "error_aleatoric_pearson": 0.15535874664783478,
+        "error_aleatoric_spearman": 0.05994154140353203,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.14503641426563263,
+            "bin": 0,
+            "count": 512001,
+            "epistemic_mean": 0.05950845032930374,
+            "error_mean": 0.000824855815153569
+          },
+          {
+            "aleatoric_mean": 0.1454160511493683,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.059667572379112244,
+            "error_mean": 0.006737881805747747
+          },
+          {
+            "aleatoric_mean": 0.14836415648460388,
+            "bin": 2,
+            "count": 511999,
+            "epistemic_mean": 0.060872867703437805,
+            "error_mean": 0.0376417450606823
+          }
+        ],
+        "error_epistemic_pearson": 0.15131771564483643,
+        "error_epistemic_spearman": 0.058037396520376205,
+        "kappa_all": {
+          "mean": 2.4398813247680664,
+          "std": 0.08935000002384186
+        },
+        "kappa_omitted": {
+          "mean": 2.4398815631866455,
+          "std": 0.08935000002384186
+        },
+        "lambda_reg_x_l_reg": 635.5309887695313,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.005629730224609,
+        "measured_snr_db_std": 0.24798567709593625,
+        "nll": -1437.056591796875,
+        "nmse_all_db": -15.138028564453125,
+        "nmse_omitted_db": -15.14777099609375,
+        "nu_all": {
+          "mean": 2051.95068359375,
+          "std": 0.06644392758607864
+        },
+        "nu_omitted": {
+          "mean": 2051.95068359375,
+          "std": 0.06644392758607864
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.4333614408969879,
+          "std": 0.05803000554442406
+        },
+        "psi_omitted": {
+          "mean": 0.43138983845710754,
+          "std": 0.05731317028403282
+        },
+        "raw_l_reg": 63553.0996875,
+        "reg_to_nll_ratio": 0.4422449278566337,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "3": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.06566724181175232,
+          "std": 0.015150797553360462
+        },
+        "aleatoric_omitted": {
+          "mean": 0.06560416519641876,
+          "std": 0.014971565455198288
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 5.021878719329834,
+          "std": 0.3263340890407562
+        },
+        "df_cov_omitted": {
+          "mean": 5.021878719329834,
+          "std": 0.3263340890407562
+        },
+        "epistemic_all": {
+          "mean": 0.019105462357401848,
+          "std": 0.004806130193173885
+        },
+        "epistemic_omitted": {
+          "mean": 0.019086912274360657,
+          "std": 0.004755449015647173
+        },
+        "error_aleatoric_pearson": 0.26874202489852905,
+        "error_aleatoric_spearman": 0.2050461769104004,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.06314826756715775,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.018360508605837822,
+            "error_mean": 0.0006948953378014266
+          },
+          {
+            "aleatoric_mean": 0.06421424448490143,
+            "bin": 1,
+            "count": 512001,
+            "epistemic_mean": 0.018680298700928688,
+            "error_mean": 0.005790467374026775
+          },
+          {
+            "aleatoric_mean": 0.06944996118545532,
+            "bin": 2,
+            "count": 511999,
+            "epistemic_mean": 0.02021992765367031,
+            "error_mean": 0.03333412855863571
+          }
+        ],
+        "error_epistemic_pearson": 0.2508866786956787,
+        "error_epistemic_spearman": 0.18492361903190613,
+        "kappa_all": {
+          "mean": 3.458178758621216,
+          "std": 0.199586883187294
+        },
+        "kappa_omitted": {
+          "mean": 3.458178758621216,
+          "std": 0.199586883187294
+        },
+        "lambda_reg_x_l_reg": 557.373193359375,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.011744117736816,
+        "measured_snr_db_std": 0.269451674941243,
+        "nll": -1656.7115234375,
+        "nmse_all_db": -16.017886276245118,
+        "nmse_omitted_db": -16.003070068359374,
+        "nu_all": {
+          "mean": 2054.02197265625,
+          "std": 0.3263341188430786
+        },
+        "nu_omitted": {
+          "mean": 2054.02197265625,
+          "std": 0.3263341188430786
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.3268537223339081,
+          "std": 0.0634613111615181
+        },
+        "psi_omitted": {
+          "mean": 0.3265807032585144,
+          "std": 0.062735915184021
+        },
+        "raw_l_reg": 55737.320625,
+        "reg_to_nll_ratio": 0.3364334619943493,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.06533364206552505,
+          "std": 0.013341179117560387
+        },
+        "aleatoric_omitted": {
+          "mean": 0.0652971938252449,
+          "std": 0.013195612467825413
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 5.000811576843262,
+          "std": 0.14420534670352936
+        },
+        "df_cov_omitted": {
+          "mean": 5.000811576843262,
+          "std": 0.14420534670352936
+        },
+        "epistemic_all": {
+          "mean": 0.019059456884860992,
+          "std": 0.003948030062019825
+        },
+        "epistemic_omitted": {
+          "mean": 0.01904880441725254,
+          "std": 0.0039058628026396036
+        },
+        "error_aleatoric_pearson": 0.25111666321754456,
+        "error_aleatoric_spearman": 0.17371335625648499,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.06343400478363037,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0185067281126976,
+            "error_mean": 0.0007184604764916003
+          },
+          {
+            "aleatoric_mean": 0.06419011205434799,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.018724823370575905,
+            "error_mean": 0.0058854492381215096
+          },
+          {
+            "aleatoric_mean": 0.06826745718717575,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.019914859905838966,
+            "error_mean": 0.03299383446574211
+          }
+        ],
+        "error_epistemic_pearson": 0.24849005043506622,
+        "error_epistemic_spearman": 0.17048582434654236,
+        "kappa_all": {
+          "mean": 3.430617094039917,
+          "std": 0.07316607236862183
+        },
+        "kappa_omitted": {
+          "mean": 3.430617094039917,
+          "std": 0.07316607236862183
+        },
+        "lambda_reg_x_l_reg": 554.23240234375,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.005388145446778,
+        "measured_snr_db_std": 0.2648897613642743,
+        "nll": -1614.4358642578125,
+        "nmse_all_db": -15.843554725646973,
+        "nmse_omitted_db": -15.828395690917969,
+        "nu_all": {
+          "mean": 2054.000732421875,
+          "std": 0.14420537650585175
+        },
+        "nu_omitted": {
+          "mean": 2054.000732421875,
+          "std": 0.14420537650585175
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.32587748765945435,
+          "std": 0.06261632591485977
+        },
+        "psi_omitted": {
+          "mean": 0.325713574886322,
+          "std": 0.0619637556374073
+        },
+        "raw_l_reg": 55423.24109375,
+        "reg_to_nll_ratio": 0.3432978755059486,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.08049214631319046,
+          "std": 0.019473940134048462
+        },
+        "aleatoric_omitted": {
+          "mean": 0.08072665333747864,
+          "std": 0.019404517486691475
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 4.484909534454346,
+          "std": 0.24587935209274292
+        },
+        "df_cov_omitted": {
+          "mean": 4.4849090576171875,
+          "std": 0.24587935209274292
+        },
+        "epistemic_all": {
+          "mean": 0.025637568905949593,
+          "std": 0.006770923268049955
+        },
+        "epistemic_omitted": {
+          "mean": 0.02571224421262741,
+          "std": 0.006753263063728809
+        },
+        "error_aleatoric_pearson": 0.12103481590747833,
+        "error_aleatoric_spearman": 0.09632830321788788,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.07930944114923477,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.02520826831459999,
+            "error_mean": 0.04581492766737938
+          },
+          {
+            "aleatoric_mean": 0.07990016043186188,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.025417594239115715,
+            "error_mean": 0.37353742122650146
+          },
+          {
+            "aleatoric_mean": 0.08297035843133926,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.026510871946811676,
+            "error_mean": 1.9220128059387207
+          }
+        ],
+        "error_epistemic_pearson": 0.12412786483764648,
+        "error_epistemic_spearman": 0.0987096056342125,
+        "kappa_all": {
+          "mean": 3.155363082885742,
+          "std": 0.12017644941806793
+        },
+        "kappa_omitted": {
+          "mean": 3.155362844467163,
+          "std": 0.12017644941806793
+        },
+        "lambda_reg_x_l_reg": 31106.94453125,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.014761047363281,
+        "measured_snr_db_std": 0.2539165515842246,
+        "nll": 2528.549140625,
+        "nmse_all_db": 1.675248622894287,
+        "nmse_omitted_db": 1.9133730506896973,
+        "nu_all": {
+          "mean": 2053.485107421875,
+          "std": 0.2458794265985489
+        },
+        "nu_omitted": {
+          "mean": 2053.485107421875,
+          "std": 0.2458794265985489
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.3584674000740051,
+          "std": 0.07589161396026611
+        },
+        "psi_omitted": {
+          "mean": 0.3595200181007385,
+          "std": 0.07552821189165115
+        },
+        "raw_l_reg": 3110694.54,
+        "reg_to_nll_ratio": 12.302289890809893,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.06560715287923813,
+          "std": 0.013369789347052574
+        },
+        "aleatoric_omitted": {
+          "mean": 0.06558580696582794,
+          "std": 0.0132271284237504
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 4.983465671539307,
+          "std": 0.13713374733924866
+        },
+        "df_cov_omitted": {
+          "mean": 4.983465671539307,
+          "std": 0.13713374733924866
+        },
+        "epistemic_all": {
+          "mean": 0.019218124449253082,
+          "std": 0.003993228543549776
+        },
+        "epistemic_omitted": {
+          "mean": 0.01921183057129383,
+          "std": 0.003951827995479107
+        },
+        "error_aleatoric_pearson": 0.2339356541633606,
+        "error_aleatoric_spearman": 0.13417848944664001,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.06405540555715561,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.018761588260531425,
+            "error_mean": 0.0008535904344171286
+          },
+          {
+            "aleatoric_mean": 0.06466931104660034,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.018941912800073624,
+            "error_mean": 0.006958477199077606
+          },
+          {
+            "aleatoric_mean": 0.06803271174430847,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.019931990653276443,
+            "error_mean": 0.037911754101514816
+          }
+        ],
+        "error_epistemic_pearson": 0.23061524331569672,
+        "error_epistemic_spearman": 0.13165469467639923,
+        "kappa_all": {
+          "mean": 3.4173765182495117,
+          "std": 0.07937578111886978
+        },
+        "kappa_omitted": {
+          "mean": 3.4173762798309326,
+          "std": 0.07937578111886978
+        },
+        "lambda_reg_x_l_reg": 639.7714306640624,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.99487808227539,
+        "measured_snr_db_std": 0.2931919624293263,
+        "nll": -1446.991435546875,
+        "nmse_all_db": -15.074653396606445,
+        "nmse_omitted_db": -15.058085556030273,
+        "nu_all": {
+          "mean": 2053.9833984375,
+          "std": 0.13713376224040985
+        },
+        "nu_omitted": {
+          "mean": 2053.9833984375,
+          "std": 0.13713376224040985
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.3262064456939697,
+          "std": 0.06299924105405807
+        },
+        "psi_omitted": {
+          "mean": 0.3261158764362335,
+          "std": 0.06235784292221069
+        },
+        "raw_l_reg": 63977.145,
+        "reg_to_nll_ratio": 0.44213905828533556,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "4": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.03152408450841904,
+          "std": 0.009658590890467167
+        },
+        "aleatoric_omitted": {
+          "mean": 0.03147174045443535,
+          "std": 0.009608856402337551
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 7.746254920959473,
+          "std": 0.44566184282302856
+        },
+        "df_cov_omitted": {
+          "mean": 7.7462544441223145,
+          "std": 0.44566184282302856
+        },
+        "epistemic_all": {
+          "mean": 0.006719642784446478,
+          "std": 0.002234542975202203
+        },
+        "epistemic_omitted": {
+          "mean": 0.006708276923745871,
+          "std": 0.0022230581380426884
+        },
+        "error_aleatoric_pearson": 0.2992818355560303,
+        "error_aleatoric_spearman": 0.19622869789600372,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.030009174719452858,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.006377320270985365,
+            "error_mean": 0.0005071285995654762
+          },
+          {
+            "aleatoric_mean": 0.030629608780145645,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.006517230067402124,
+            "error_mean": 0.004227473400533199
+          },
+          {
+            "aleatoric_mean": 0.033776428550481796,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.00723028089851141,
+            "error_mean": 0.025251850485801697
+          }
+        ],
+        "error_epistemic_pearson": 0.2881673574447632,
+        "error_epistemic_spearman": 0.18431337177753448,
+        "kappa_all": {
+          "mean": 4.732792377471924,
+          "std": 0.2848198711872101
+        },
+        "kappa_omitted": {
+          "mean": 4.732792377471924,
+          "std": 0.2848198711872101
+        },
+        "lambda_reg_x_l_reg": 420.78111938476565,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.988003158569336,
+        "measured_snr_db_std": 0.28178980425783273,
+        "nll": -1951.761884765625,
+        "nmse_all_db": -17.298058853149413,
+        "nmse_omitted_db": -17.2855184173584,
+        "nu_all": {
+          "mean": 2056.746337890625,
+          "std": 0.44566184282302856
+        },
+        "nu_omitted": {
+          "mean": 2056.746337890625,
+          "std": 0.44566184282302856
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.24193347990512848,
+          "std": 0.06666136533021927
+        },
+        "psi_omitted": {
+          "mean": 0.24156148731708527,
+          "std": 0.0664186179637909
+        },
+        "raw_l_reg": 42078.1128125,
+        "reg_to_nll_ratio": 0.2155903968957457,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.03135320544242859,
+          "std": 0.008830280974507332
+        },
+        "aleatoric_omitted": {
+          "mean": 0.03131809085607529,
+          "std": 0.008796414360404015
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 7.716477870941162,
+          "std": 0.25279945135116577
+        },
+        "df_cov_omitted": {
+          "mean": 7.716477870941162,
+          "std": 0.25279945135116577
+        },
+        "epistemic_all": {
+          "mean": 0.006683798972517252,
+          "std": 0.0019235064974054694
+        },
+        "epistemic_omitted": {
+          "mean": 0.006676116958260536,
+          "std": 0.0019156038761138916
+        },
+        "error_aleatoric_pearson": 0.2783673107624054,
+        "error_aleatoric_spearman": 0.1513988971710205,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.03024754300713539,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.006439135875552893,
+            "error_mean": 0.0005392507882788777
+          },
+          {
+            "aleatoric_mean": 0.030603915452957153,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.006518844980746508,
+            "error_mean": 0.004414713941514492
+          },
+          {
+            "aleatoric_mean": 0.033102814108133316,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.007070367690175772,
+            "error_mean": 0.02474573813378811
+          }
+        ],
+        "error_epistemic_pearson": 0.27950868010520935,
+        "error_epistemic_spearman": 0.15397709608078003,
+        "kappa_all": {
+          "mean": 4.6993279457092285,
+          "std": 0.10825835168361664
+        },
+        "kappa_omitted": {
+          "mean": 4.6993279457092285,
+          "std": 0.10825835168361664
+        },
+        "lambda_reg_x_l_reg": 416.9837072753906,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.048688354492187,
+        "measured_snr_db_std": 0.26884412237149935,
+        "nll": -1907.985419921875,
+        "nmse_all_db": -17.092995223999022,
+        "nmse_omitted_db": -17.082888717651368,
+        "nu_all": {
+          "mean": 2056.71630859375,
+          "std": 0.25279948115348816
+        },
+        "nu_omitted": {
+          "mean": 2056.716552734375,
+          "std": 0.25279945135116577
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.24103210866451263,
+          "std": 0.06467881053686142
+        },
+        "psi_omitted": {
+          "mean": 0.24077746272087097,
+          "std": 0.06447750329971313
+        },
+        "raw_l_reg": 41698.37171875,
+        "reg_to_nll_ratio": 0.2185465899892878,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.03930620104074478,
+          "std": 0.011950178071856499
+        },
+        "aleatoric_omitted": {
+          "mean": 0.039395712316036224,
+          "std": 0.011910036206245422
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 6.984889507293701,
+          "std": 0.35564833879470825
+        },
+        "df_cov_omitted": {
+          "mean": 6.984889984130859,
+          "std": 0.35564833879470825
+        },
+        "epistemic_all": {
+          "mean": 0.009106708690524101,
+          "std": 0.0029584961012005806
+        },
+        "epistemic_omitted": {
+          "mean": 0.009127261117100716,
+          "std": 0.0029497200157493353
+        },
+        "error_aleatoric_pearson": 0.11597508937120438,
+        "error_aleatoric_spearman": 0.09824777394533157,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.038559988141059875,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.008912740275263786,
+            "error_mean": 0.045242760330438614
+          },
+          {
+            "aleatoric_mean": 0.03890920430421829,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.009003017097711563,
+            "error_mean": 0.3696536719799042
+          },
+          {
+            "aleatoric_mean": 0.040717948228120804,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.009466025978326797,
+            "error_mean": 1.9036898612976074
+          }
+        ],
+        "error_epistemic_pearson": 0.11985653638839722,
+        "error_epistemic_spearman": 0.10070404410362244,
+        "kappa_all": {
+          "mean": 4.341466903686523,
+          "std": 0.17174667119979858
+        },
+        "kappa_omitted": {
+          "mean": 4.341466903686523,
+          "std": 0.17174667119979858
+        },
+        "lambda_reg_x_l_reg": 30888.648984375,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.967333946228027,
+        "measured_snr_db_std": 0.28516813822703374,
+        "nll": 2527.144853515625,
+        "nmse_all_db": 1.6364581203460693,
+        "nmse_omitted_db": 1.8703798866271972,
+        "nu_all": {
+          "mean": 2055.98486328125,
+          "std": 0.35564833879470825
+        },
+        "nu_omitted": {
+          "mean": 2055.98486328125,
+          "std": 0.35564833879470825
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.2725751996040344,
+          "std": 0.07589790225028992
+        },
+        "psi_omitted": {
+          "mean": 0.27320316433906555,
+          "std": 0.07560685276985168
+        },
+        "raw_l_reg": 3088864.98,
+        "reg_to_nll_ratio": 12.222745736668866,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.03144729137420654,
+          "std": 0.008922036737203598
+        },
+        "aleatoric_omitted": {
+          "mean": 0.03141536936163902,
+          "std": 0.008879137225449085
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 7.700333118438721,
+          "std": 0.24165737628936768
+        },
+        "df_cov_omitted": {
+          "mean": 7.7003326416015625,
+          "std": 0.24165737628936768
+        },
+        "epistemic_all": {
+          "mean": 0.006718354299664497,
+          "std": 0.0019497514003887773
+        },
+        "epistemic_omitted": {
+          "mean": 0.006711331661790609,
+          "std": 0.0019397907890379429
+        },
+        "error_aleatoric_pearson": 0.25042209029197693,
+        "error_aleatoric_spearman": 0.10791315883398056,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.03056841343641281,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0065237777307629585,
+            "error_mean": 0.000680849130731076
+          },
+          {
+            "aleatoric_mean": 0.030819514766335487,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.00657981401309371,
+            "error_mean": 0.005611097905784845
+          },
+          {
+            "aleatoric_mean": 0.03285818547010422,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.007030402310192585,
+            "error_mean": 0.03057095780968666
+          }
+        ],
+        "error_epistemic_pearson": 0.2494366466999054,
+        "error_epistemic_spearman": 0.11049489676952362,
+        "kappa_all": {
+          "mean": 4.689865589141846,
+          "std": 0.11595357954502106
+        },
+        "kappa_omitted": {
+          "mean": 4.689865589141846,
+          "std": 0.11595357954502106
+        },
+        "lambda_reg_x_l_reg": 517.7005554199219,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.984928665161133,
+        "measured_snr_db_std": 0.25724944836005076,
+        "nll": -1663.241044921875,
+        "nmse_all_db": -15.99458251953125,
+        "nmse_omitted_db": -15.98563205718994,
+        "nu_all": {
+          "mean": 2056.7001953125,
+          "std": 0.24165740609169006
+        },
+        "nu_omitted": {
+          "mean": 2056.700439453125,
+          "std": 0.24165739119052887
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.24133674800395966,
+          "std": 0.06557868421077728
+        },
+        "psi_omitted": {
+          "mean": 0.2411060780286789,
+          "std": 0.06531313806772232
+        },
+        "raw_l_reg": 51770.05671875,
+        "reg_to_nll_ratio": 0.3112600888472702,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "5": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.022335097193717957,
+          "std": 0.008490942418575287
+        },
+        "aleatoric_omitted": {
+          "mean": 0.022267332300543785,
+          "std": 0.008504468016326427
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 9.606766700744629,
+          "std": 0.4699920117855072
+        },
+        "df_cov_omitted": {
+          "mean": 9.606766700744629,
+          "std": 0.4699920117855072
+        },
+        "epistemic_all": {
+          "mean": 0.004136233124881983,
+          "std": 0.00164340331684798
+        },
+        "epistemic_omitted": {
+          "mean": 0.004123692400753498,
+          "std": 0.0016461058985441923
+        },
+        "error_aleatoric_pearson": 0.25260213017463684,
+        "error_aleatoric_spearman": 0.17495279014110565,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.02123442105948925,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0039237868040800095,
+            "error_mean": 0.0005564202438108623
+          },
+          {
+            "aleatoric_mean": 0.02164560556411743,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.00400528172031045,
+            "error_mean": 0.004664124455302954
+          },
+          {
+            "aleatoric_mean": 0.023921972140669823,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.004442008212208748,
+            "error_mean": 0.02729075215756893
+          }
+        ],
+        "error_epistemic_pearson": 0.24754345417022705,
+        "error_epistemic_spearman": 0.1683470755815506,
+        "kappa_all": {
+          "mean": 5.433740139007568,
+          "std": 0.2771610617637634
+        },
+        "kappa_omitted": {
+          "mean": 5.43373966217041,
+          "std": 0.2771610617637634
+        },
+        "lambda_reg_x_l_reg": 456.58642333984375,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.981553649902343,
+        "measured_snr_db_std": 0.27320792229512514,
+        "nll": -1881.5473095703126,
+        "nmse_all_db": -16.968213119506835,
+        "nmse_omitted_db": -16.95554374694824,
+        "nu_all": {
+          "mean": 2058.60693359375,
+          "std": 0.4699920415878296
+        },
+        "nu_omitted": {
+          "mean": 2058.60693359375,
+          "std": 0.4699920415878296
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.21300819516181946,
+          "std": 0.07672119140625
+        },
+        "psi_omitted": {
+          "mean": 0.212376669049263,
+          "std": 0.07692284882068634
+        },
+        "raw_l_reg": 45658.643125,
+        "reg_to_nll_ratio": 0.2426653961954788,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.02212592400610447,
+          "std": 0.00792029220610857
+        },
+        "aleatoric_omitted": {
+          "mean": 0.022068997845053673,
+          "std": 0.007944382727146149
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 9.579920768737793,
+          "std": 0.2657899260520935
+        },
+        "df_cov_omitted": {
+          "mean": 9.579920768737793,
+          "std": 0.2657899260520935
+        },
+        "epistemic_all": {
+          "mean": 0.004101105034351349,
+          "std": 0.001485334592871368
+        },
+        "epistemic_omitted": {
+          "mean": 0.004090526606887579,
+          "std": 0.001489670597948134
+        },
+        "error_aleatoric_pearson": 0.2565361261367798,
+        "error_aleatoric_spearman": 0.14153411984443665,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.021246246993541718,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.003930679988116026,
+            "error_mean": 0.0005759312771260738
+          },
+          {
+            "aleatoric_mean": 0.021548140794038773,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0039907158352434635,
+            "error_mean": 0.0047796377912163734
+          },
+          {
+            "aleatoric_mean": 0.023412605747580528,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.004350185394287109,
+            "error_mean": 0.026822460815310478
+          }
+        ],
+        "error_epistemic_pearson": 0.26021304726600647,
+        "error_epistemic_spearman": 0.14771078526973724,
+        "kappa_all": {
+          "mean": 5.403602123260498,
+          "std": 0.13265931606292725
+        },
+        "kappa_omitted": {
+          "mean": 5.403602123260498,
+          "std": 0.13265931606292725
+        },
+        "lambda_reg_x_l_reg": 452.30339477539064,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.011650924682618,
+        "measured_snr_db_std": 0.28641070862418894,
+        "nll": -1829.4622509765625,
+        "nmse_all_db": -16.76043113708496,
+        "nmse_omitted_db": -16.750834350585937,
+        "nu_all": {
+          "mean": 2058.580078125,
+          "std": 0.2657899856567383
+        },
+        "nu_omitted": {
+          "mean": 2058.580078125,
+          "std": 0.2657899856567383
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.21134133636951447,
+          "std": 0.07388612627983093
+        },
+        "psi_omitted": {
+          "mean": 0.21080440282821655,
+          "std": 0.07414592057466507
+        },
+        "raw_l_reg": 45230.34015625,
+        "reg_to_nll_ratio": 0.2472329748982139,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.02915794774889946,
+          "std": 0.010660949163138866
+        },
+        "aleatoric_omitted": {
+          "mean": 0.029134495183825493,
+          "std": 0.010643362998962402
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 8.515360832214355,
+          "std": 0.44636115431785583
+        },
+        "df_cov_omitted": {
+          "mean": 8.515361785888672,
+          "std": 0.44636115431785583
+        },
+        "epistemic_all": {
+          "mean": 0.005994502920657396,
+          "std": 0.0023150183260440826
+        },
+        "epistemic_omitted": {
+          "mean": 0.005989681929349899,
+          "std": 0.002311520744115114
+        },
+        "error_aleatoric_pearson": 0.09082808345556259,
+        "error_aleatoric_spearman": 0.08552566170692444,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.028592636808753014,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.00586342066526413,
+            "error_mean": 0.04323003441095352
+          },
+          {
+            "aleatoric_mean": 0.028779948130249977,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.005908482242375612,
+            "error_mean": 0.3526715636253357
+          },
+          {
+            "aleatoric_mean": 0.030030904337763786,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.006197143811732531,
+            "error_mean": 1.8121577501296997
+          }
+        ],
+        "error_epistemic_pearson": 0.09631722420454025,
+        "error_epistemic_spearman": 0.0884605273604393,
+        "kappa_all": {
+          "mean": 4.897799491882324,
+          "std": 0.20841531455516815
+        },
+        "kappa_omitted": {
+          "mean": 4.897799491882324,
+          "std": 0.20841531455516815
+        },
+        "lambda_reg_x_l_reg": 29522.353515625,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.06881622314453,
+        "measured_snr_db_std": 0.26436358033515284,
+        "nll": 2493.6763671875,
+        "nmse_all_db": 1.4369147396087647,
+        "nmse_omitted_db": 1.6595143795013427,
+        "nu_all": {
+          "mean": 2057.515380859375,
+          "std": 0.44636115431785583
+        },
+        "nu_omitted": {
+          "mean": 2057.515380859375,
+          "std": 0.44636115431785583
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.24635715782642365,
+          "std": 0.08451005816459656
+        },
+        "psi_omitted": {
+          "mean": 0.24616163969039917,
+          "std": 0.08437259495258331
+        },
+        "raw_l_reg": 2952235.41,
+        "reg_to_nll_ratio": 11.83888731672245,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.022279703989624977,
+          "std": 0.007987222634255886
+        },
+        "aleatoric_omitted": {
+          "mean": 0.022222742438316345,
+          "std": 0.008004912175238132
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 9.541708946228027,
+          "std": 0.26161232590675354
+        },
+        "df_cov_omitted": {
+          "mean": 9.541707992553711,
+          "std": 0.26161232590675354
+        },
+        "epistemic_all": {
+          "mean": 0.004147006664425135,
+          "std": 0.0015085870400071144
+        },
+        "epistemic_omitted": {
+          "mean": 0.004136379342526197,
+          "std": 0.0015117943985387683
+        },
+        "error_aleatoric_pearson": 0.25568580627441406,
+        "error_aleatoric_spearman": 0.09418194741010666,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.021538561210036278,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.004003351088613272,
+            "error_mean": 0.0007782122702337801
+          },
+          {
+            "aleatoric_mean": 0.021719900891184807,
+            "bin": 1,
+            "count": 512001,
+            "epistemic_mean": 0.004039751831442118,
+            "error_mean": 0.006400986574590206
+          },
+          {
+            "aleatoric_mean": 0.023409772664308548,
+            "bin": 2,
+            "count": 511999,
+            "epistemic_mean": 0.00436603557318449,
+            "error_mean": 0.034528523683547974
+          }
+        ],
+        "error_epistemic_pearson": 0.25715070962905884,
+        "error_epistemic_spearman": 0.09963887929916382,
+        "kappa_all": {
+          "mean": 5.382468223571777,
+          "std": 0.14018021523952484
+        },
+        "kappa_omitted": {
+          "mean": 5.382468223571777,
+          "std": 0.14018021523952484
+        },
+        "lambda_reg_x_l_reg": 586.2266577148438,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.990868263244629,
+        "measured_snr_db_std": 0.2660972716736428,
+        "nll": -1537.1664697265626,
+        "nmse_all_db": -15.424121322631835,
+        "nmse_omitted_db": -15.413901329040527,
+        "nu_all": {
+          "mean": 2058.541748046875,
+          "std": 0.26161232590675354
+        },
+        "nu_omitted": {
+          "mean": 2058.541748046875,
+          "std": 0.26161232590675354
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.2119969129562378,
+          "std": 0.07430867850780487
+        },
+        "psi_omitted": {
+          "mean": 0.21146135032176971,
+          "std": 0.07450726628303528
+        },
+        "raw_l_reg": 58622.6671875,
+        "reg_to_nll_ratio": 0.3813683613690263,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "6": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.022257130593061447,
+          "std": 0.010013330727815628
+        },
+        "aleatoric_omitted": {
+          "mean": 0.022242330014705658,
+          "std": 0.010082786902785301
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 10.083205223083496,
+          "std": 0.593747615814209
+        },
+        "df_cov_omitted": {
+          "mean": 10.083206176757812,
+          "std": 0.593747615814209
+        },
+        "epistemic_all": {
+          "mean": 0.004235907923430204,
+          "std": 0.002039562910795212
+        },
+        "epistemic_omitted": {
+          "mean": 0.004233313724398613,
+          "std": 0.0020537744276225567
+        },
+        "error_aleatoric_pearson": 0.26381218433380127,
+        "error_aleatoric_spearman": 0.18429183959960938,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.021047983318567276,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.003992682788521051,
+            "error_mean": 0.00045900282566435635
+          },
+          {
+            "aleatoric_mean": 0.021491393446922302,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.004079430364072323,
+            "error_mean": 0.003841743106022477
+          },
+          {
+            "aleatoric_mean": 0.024187613278627396,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.004627828486263752,
+            "error_mean": 0.022132327780127525
+          }
+        ],
+        "error_epistemic_pearson": 0.25710275769233704,
+        "error_epistemic_spearman": 0.16919578611850739,
+        "kappa_all": {
+          "mean": 5.31672477722168,
+          "std": 0.36136066913604736
+        },
+        "kappa_omitted": {
+          "mean": 5.316725254058838,
+          "std": 0.36136066913604736
+        },
+        "lambda_reg_x_l_reg": 371.9685424804687,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.993588333129884,
+        "measured_snr_db_std": 0.25956149410460005,
+        "nll": -2074.53734375,
+        "nmse_all_db": -17.713868942260742,
+        "nmse_omitted_db": -17.70625518798828,
+        "nu_all": {
+          "mean": 2059.0830078125,
+          "std": 0.593747615814209
+        },
+        "nu_omitted": {
+          "mean": 2059.083251953125,
+          "std": 0.593747615814209
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.22235748171806335,
+          "std": 0.09484189003705978
+        },
+        "psi_omitted": {
+          "mean": 0.22220996022224426,
+          "std": 0.09553607553243637
+        },
+        "raw_l_reg": 37196.855,
+        "reg_to_nll_ratio": 0.17930192657139324,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.022183189168572426,
+          "std": 0.009248912334442139
+        },
+        "aleatoric_omitted": {
+          "mean": 0.022175533697009087,
+          "std": 0.009320326149463654
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 10.025138854980469,
+          "std": 0.2857562303543091
+        },
+        "df_cov_omitted": {
+          "mean": 10.025138854980469,
+          "std": 0.2857562303543091
+        },
+        "epistemic_all": {
+          "mean": 0.004212539177387953,
+          "std": 0.0017740805633366108
+        },
+        "epistemic_omitted": {
+          "mean": 0.004211062099784613,
+          "std": 0.0017875621560961008
+        },
+        "error_aleatoric_pearson": 0.27809008955955505,
+        "error_aleatoric_spearman": 0.16006441414356232,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.021170498803257942,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.004014944192022085,
+            "error_mean": 0.0005312715657055378
+          },
+          {
+            "aleatoric_mean": 0.021519793197512627,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.004082726780325174,
+            "error_mean": 0.004370519425719976
+          },
+          {
+            "aleatoric_mean": 0.02383631467819214,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.004535514395684004,
+            "error_mean": 0.024274451658129692
+          }
+        ],
+        "error_epistemic_pearson": 0.28031495213508606,
+        "error_epistemic_spearman": 0.16168631613254547,
+        "kappa_all": {
+          "mean": 5.27482795715332,
+          "std": 0.13793474435806274
+        },
+        "kappa_omitted": {
+          "mean": 5.2748284339904785,
+          "std": 0.13793474435806274
+        },
+        "lambda_reg_x_l_reg": 410.386298828125,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.983608932495118,
+        "measured_snr_db_std": 0.2525386812490027,
+        "nll": -1933.3520556640624,
+        "nmse_all_db": -17.110158920288086,
+        "nmse_omitted_db": -17.101161193847656,
+        "nu_all": {
+          "mean": 2059.025146484375,
+          "std": 0.2857562303543091
+        },
+        "nu_omitted": {
+          "mean": 2059.025146484375,
+          "std": 0.2857562303543091
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.22179462015628815,
+          "std": 0.09102872759103775
+        },
+        "psi_omitted": {
+          "mean": 0.22172121703624725,
+          "std": 0.09175051003694534
+        },
+        "raw_l_reg": 41038.630625,
+        "reg_to_nll_ratio": 0.21226671967152097,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.032232414931058884,
+          "std": 0.013709863647818565
+        },
+        "aleatoric_omitted": {
+          "mean": 0.03222724050283432,
+          "std": 0.013732274062931538
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 8.497376441955566,
+          "std": 0.5930384993553162
+        },
+        "df_cov_omitted": {
+          "mean": 8.497376441955566,
+          "std": 0.5930384993553162
+        },
+        "epistemic_all": {
+          "mean": 0.007120722439140081,
+          "std": 0.003301945747807622
+        },
+        "epistemic_omitted": {
+          "mean": 0.007119580637663603,
+          "std": 0.0033067704644054174
+        },
+        "error_aleatoric_pearson": 0.0793001651763916,
+        "error_aleatoric_spearman": 0.07884234935045242,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.03159363567829132,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.006952045019716024,
+            "error_mean": 0.04266223683953285
+          },
+          {
+            "aleatoric_mean": 0.03187114745378494,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.007026284001767635,
+            "error_mean": 0.3485984206199646
+          },
+          {
+            "aleatoric_mean": 0.033216942101716995,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.007380412891507149,
+            "error_mean": 1.7879338264465332
+          }
+        ],
+        "error_epistemic_pearson": 0.08636963367462158,
+        "error_epistemic_spearman": 0.08200349658727646,
+        "kappa_all": {
+          "mean": 4.5859270095825195,
+          "std": 0.2665834426879883
+        },
+        "kappa_omitted": {
+          "mean": 4.5859270095825195,
+          "std": 0.2665834426879883
+        },
+        "lambda_reg_x_l_reg": 29203.18390625,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.034753112792968,
+        "measured_snr_db_std": 0.2793002559332075,
+        "nll": 2488.487236328125,
+        "nmse_all_db": 1.3917742776870727,
+        "nmse_omitted_db": 1.6036862421035767,
+        "nu_all": {
+          "mean": 2057.497314453125,
+          "std": 0.5930384993553162
+        },
+        "nu_omitted": {
+          "mean": 2057.497314453125,
+          "std": 0.5930384993553162
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.2704152762889862,
+          "std": 0.10565941780805588
+        },
+        "psi_omitted": {
+          "mean": 0.2703735828399658,
+          "std": 0.10586558282375336
+        },
+        "raw_l_reg": 2920318.46,
+        "reg_to_nll_ratio": 11.735315930019903,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.02250809036195278,
+          "std": 0.009535323828458786
+        },
+        "aleatoric_omitted": {
+          "mean": 0.022499730810523033,
+          "std": 0.009595748968422413
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 9.959896087646484,
+          "std": 0.2819843590259552
+        },
+        "df_cov_omitted": {
+          "mean": 9.959896087646484,
+          "std": 0.2819843590259552
+        },
+        "epistemic_all": {
+          "mean": 0.004301243461668491,
+          "std": 0.0018439417472109199
+        },
+        "epistemic_omitted": {
+          "mean": 0.00429962994530797,
+          "std": 0.0018553922418504953
+        },
+        "error_aleatoric_pearson": 0.26589643955230713,
+        "error_aleatoric_spearman": 0.10347476601600647,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.02170686610043049,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.004143064841628075,
+            "error_mean": 0.0007957943016663194
+          },
+          {
+            "aleatoric_mean": 0.021907325834035873,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.004183514509350061,
+            "error_mean": 0.006520176772028208
+          },
+          {
+            "aleatoric_mean": 0.023884998634457588,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0045723095536231995,
+            "error_mean": 0.034974005073308945
+          }
+        ],
+        "error_epistemic_pearson": 0.26760679483413696,
+        "error_epistemic_spearman": 0.10504496842622757,
+        "kappa_all": {
+          "mean": 5.243229389190674,
+          "std": 0.14505839347839355
+        },
+        "kappa_omitted": {
+          "mean": 5.243229389190674,
+          "std": 0.14505839347839355
+        },
+        "lambda_reg_x_l_reg": 594.4451196289062,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.997339401245117,
+        "measured_snr_db_std": 0.2628705735904983,
+        "nll": -1529.5581103515624,
+        "nmse_all_db": -15.325002975463867,
+        "nmse_omitted_db": -15.313651885986328,
+        "nu_all": {
+          "mean": 2058.9599609375,
+          "std": 0.2819843590259552
+        },
+        "nu_omitted": {
+          "mean": 2058.9599609375,
+          "std": 0.2819843590259552
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.2235986888408661,
+          "std": 0.0932622179389
+        },
+        "psi_omitted": {
+          "mean": 0.22351816296577454,
+          "std": 0.09387324005365372
+        },
+        "raw_l_reg": 59444.51328125,
+        "reg_to_nll_ratio": 0.3886384672815008,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "7": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.01714775152504444,
+          "std": 0.00858717318624258
+        },
+        "aleatoric_omitted": {
+          "mean": 0.01715092919766903,
+          "std": 0.00868209172040224
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 11.907573699951172,
+          "std": 0.6409127116203308
+        },
+        "df_cov_omitted": {
+          "mean": 11.907572746276855,
+          "std": 0.6409127116203308
+        },
+        "epistemic_all": {
+          "mean": 0.002918393351137638,
+          "std": 0.001521474914625287
+        },
+        "epistemic_omitted": {
+          "mean": 0.0029190494678914547,
+          "std": 0.0015378063544631004
+        },
+        "error_aleatoric_pearson": 0.23930756747722626,
+        "error_aleatoric_spearman": 0.1652693748474121,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.01628008671104908,
+            "bin": 0,
+            "count": 512001,
+            "epistemic_mean": 0.0027624242939054966,
+            "error_mean": 0.00044842620263807476
+          },
+          {
+            "aleatoric_mean": 0.016601847484707832,
+            "bin": 1,
+            "count": 511999,
+            "epistemic_mean": 0.002819558372721076,
+            "error_mean": 0.0037174446042627096
+          },
+          {
+            "aleatoric_mean": 0.018570857122540474,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0031751675996929407,
+            "error_mean": 0.02104354277253151
+          }
+        ],
+        "error_epistemic_pearson": 0.2400364875793457,
+        "error_epistemic_spearman": 0.15375016629695892,
+        "kappa_all": {
+          "mean": 5.93109130859375,
+          "std": 0.34143126010894775
+        },
+        "kappa_omitted": {
+          "mean": 5.93109130859375,
+          "std": 0.34143126010894775
+        },
+        "lambda_reg_x_l_reg": 355.2533862304688,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.019112167358399,
+        "measured_snr_db_std": 0.28740077784995105,
+        "nll": -2108.221142578125,
+        "nmse_all_db": -17.974103927612305,
+        "nmse_omitted_db": -17.968948669433594,
+        "nu_all": {
+          "mean": 2060.907470703125,
+          "std": 0.6409127116203308
+        },
+        "nu_omitted": {
+          "mean": 2060.90771484375,
+          "std": 0.6409127116203308
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.20258788764476776,
+          "std": 0.09811239689588547
+        },
+        "psi_omitted": {
+          "mean": 0.20262013375759125,
+          "std": 0.09921535849571228
+        },
+        "raw_l_reg": 35525.3396875,
+        "reg_to_nll_ratio": 0.16850859668087165,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.017097609117627144,
+          "std": 0.008011014200747013
+        },
+        "aleatoric_omitted": {
+          "mean": 0.01710457354784012,
+          "std": 0.008093878626823425
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 11.848549842834473,
+          "std": 0.3166900873184204
+        },
+        "df_cov_omitted": {
+          "mean": 11.848549842834473,
+          "std": 0.3166900873184204
+        },
+        "epistemic_all": {
+          "mean": 0.0029038586653769016,
+          "std": 0.0013702302239835262
+        },
+        "epistemic_omitted": {
+          "mean": 0.00290504889562726,
+          "std": 0.0013843781780451536
+        },
+        "error_aleatoric_pearson": 0.2802671492099762,
+        "error_aleatoric_spearman": 0.12699952721595764,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.016353163868188858,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.002774842781946063,
+            "error_mean": 0.0005122969159856439
+          },
+          {
+            "aleatoric_mean": 0.016557777300477028,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.002810373669490218,
+            "error_mean": 0.004155430477112532
+          },
+          {
+            "aleatoric_mean": 0.018402783200144768,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0031299300026148558,
+            "error_mean": 0.02284969761967659
+          }
+        ],
+        "error_epistemic_pearson": 0.281961590051651,
+        "error_epistemic_spearman": 0.12866145372390747,
+        "kappa_all": {
+          "mean": 5.896116733551025,
+          "std": 0.12699633836746216
+        },
+        "kappa_omitted": {
+          "mean": 5.896115779876709,
+          "std": 0.12699633836746216
+        },
+        "lambda_reg_x_l_reg": 387.73993408203125,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.031959838867188,
+        "measured_snr_db_std": 0.27510810047697104,
+        "nll": -1979.5714501953125,
+        "nmse_all_db": -17.351653594970703,
+        "nmse_omitted_db": -17.346108169555663,
+        "nu_all": {
+          "mean": 2060.848388671875,
+          "std": 0.3166901171207428
+        },
+        "nu_omitted": {
+          "mean": 2060.848388671875,
+          "std": 0.3166901171207428
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.20209674537181854,
+          "std": 0.09360091388225555
+        },
+        "psi_omitted": {
+          "mean": 0.20217855274677277,
+          "std": 0.09457074850797653
+        },
+        "raw_l_reg": 38773.994375,
+        "reg_to_nll_ratio": 0.19587064363946882,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.025179006159305573,
+          "std": 0.01175413653254509
+        },
+        "aleatoric_omitted": {
+          "mean": 0.02519284002482891,
+          "std": 0.01181388646364212
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 10.089820861816406,
+          "std": 0.6721071004867554
+        },
+        "df_cov_omitted": {
+          "mean": 10.08981990814209,
+          "std": 0.6721071004867554
+        },
+        "epistemic_all": {
+          "mean": 0.0049376171082258224,
+          "std": 0.0024653319269418716
+        },
+        "epistemic_omitted": {
+          "mean": 0.004940476734191179,
+          "std": 0.002477334113791585
+        },
+        "error_aleatoric_pearson": 0.07302501797676086,
+        "error_aleatoric_spearman": 0.07690277695655823,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.024693123996257782,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.004824403673410416,
+            "error_mean": 0.0423278845846653
+          },
+          {
+            "aleatoric_mean": 0.02491353265941143,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.004876330494880676,
+            "error_mean": 0.3447017967700958
+          },
+          {
+            "aleatoric_mean": 0.02597185969352722,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.005120695102959871,
+            "error_mean": 1.7703722715377808
+          }
+        ],
+        "error_epistemic_pearson": 0.07991653680801392,
+        "error_epistemic_spearman": 0.08053008466959,
+        "kappa_all": {
+          "mean": 5.160279750823975,
+          "std": 0.2728385627269745
+        },
+        "kappa_omitted": {
+          "mean": 5.160279750823975,
+          "std": 0.2728385627269745
+        },
+        "lambda_reg_x_l_reg": 28968.5815625,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.011092948913575,
+        "measured_snr_db_std": 0.26923302606568883,
+        "nll": 2484.006748046875,
+        "nmse_all_db": 1.3523746395111085,
+        "nmse_omitted_db": 1.5602052640914916,
+        "nu_all": {
+          "mean": 2059.08984375,
+          "std": 0.6721071004867554
+        },
+        "nu_omitted": {
+          "mean": 2059.08984375,
+          "std": 0.6721071004867554
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.25099483132362366,
+          "std": 0.10964680463075638
+        },
+        "psi_omitted": {
+          "mean": 0.2511254847049713,
+          "std": 0.11023182421922684
+        },
+        "raw_l_reg": 2896858.22,
+        "reg_to_nll_ratio": 11.662038190983498,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.01736646145582199,
+          "std": 0.008233074098825455
+        },
+        "aleatoric_omitted": {
+          "mean": 0.01737312227487564,
+          "std": 0.008307257667183876
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 11.771881103515625,
+          "std": 0.30651265382766724
+        },
+        "df_cov_omitted": {
+          "mean": 11.771881103515625,
+          "std": 0.30651265382766724
+        },
+        "epistemic_all": {
+          "mean": 0.002966504078358412,
+          "std": 0.0014147070469334722
+        },
+        "epistemic_omitted": {
+          "mean": 0.0029676444828510284,
+          "std": 0.0014273204142227769
+        },
+        "error_aleatoric_pearson": 0.24981515109539032,
+        "error_aleatoric_spearman": 0.08211139589548111,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.016736064106225967,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0028569032438099384,
+            "error_mean": 0.0007907673134468496
+          },
+          {
+            "aleatoric_mean": 0.016913387924432755,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0028883391059935093,
+            "error_mean": 0.006453794427216053
+          },
+          {
+            "aleatoric_mean": 0.01846992038190365,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.003157691564410925,
+            "error_mean": 0.0341174490749836
+          }
+        ],
+        "error_epistemic_pearson": 0.2505035996437073,
+        "error_epistemic_spearman": 0.08315986394882202,
+        "kappa_all": {
+          "mean": 5.86265754699707,
+          "std": 0.1318517029285431
+        },
+        "kappa_omitted": {
+          "mean": 5.86265754699707,
+          "std": 0.1318517029285431
+        },
+        "lambda_reg_x_l_reg": 582.9275512695312,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.021226959228516,
+        "measured_snr_db_std": 0.28229101951244223,
+        "nll": -1539.1175048828125,
+        "nmse_all_db": -15.41338607788086,
+        "nmse_omitted_db": -15.408940048217774,
+        "nu_all": {
+          "mean": 2060.77197265625,
+          "std": 0.3065126836299896
+        },
+        "nu_omitted": {
+          "mean": 2060.77197265625,
+          "std": 0.3065126836299896
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.2039889097213745,
+          "std": 0.09580816328525543
+        },
+        "psi_omitted": {
+          "mean": 0.2040674239397049,
+          "std": 0.09668394923210144
+        },
+        "raw_l_reg": 58292.7559375,
+        "reg_to_nll_ratio": 0.37874142124718907,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "8": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.015485775656998158,
+          "std": 0.00769300339743495
+        },
+        "aleatoric_omitted": {
+          "mean": 0.015465890057384968,
+          "std": 0.007763162720948458
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 12.912306785583496,
+          "std": 0.5327410101890564
+        },
+        "df_cov_omitted": {
+          "mean": 12.91230583190918,
+          "std": 0.5327410101890564
+        },
+        "epistemic_all": {
+          "mean": 0.0025936425663530827,
+          "std": 0.0013141757808625698
+        },
+        "epistemic_omitted": {
+          "mean": 0.002590370597317815,
+          "std": 0.0013260081177577376
+        },
+        "error_aleatoric_pearson": 0.23798254132270813,
+        "error_aleatoric_spearman": 0.15398874878883362,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.014731211587786674,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0024628276005387306,
+            "error_mean": 0.00048128084745258093
+          },
+          {
+            "aleatoric_mean": 0.014975826255977154,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0025059659965336323,
+            "error_mean": 0.003971544094383717
+          },
+          {
+            "aleatoric_mean": 0.016690632328391075,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0028023177292197943,
+            "error_mean": 0.02267557568848133
+          }
+        ],
+        "error_epistemic_pearson": 0.23711638152599335,
+        "error_epistemic_spearman": 0.15067602694034576,
+        "kappa_all": {
+          "mean": 5.998286724090576,
+          "std": 0.2609340250492096
+        },
+        "kappa_omitted": {
+          "mean": 5.998286247253418,
+          "std": 0.2609340250492096
+        },
+        "lambda_reg_x_l_reg": 382.24292846679685,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.01248764038086,
+        "measured_snr_db_std": 0.27702960484951866,
+        "nll": -2045.0635009765624,
+        "nmse_all_db": -17.669254302978516,
+        "nmse_omitted_db": -17.660537719726562,
+        "nu_all": {
+          "mean": 2061.912109375,
+          "std": 0.5327410101890564
+        },
+        "nu_omitted": {
+          "mean": 2061.912353515625,
+          "std": 0.5327410101890564
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.19890820980072021,
+          "std": 0.0964759811758995
+        },
+        "psi_omitted": {
+          "mean": 0.1986459493637085,
+          "std": 0.09734862297773361
+        },
+        "raw_l_reg": 38224.29375,
+        "reg_to_nll_ratio": 0.18691005354229756,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.01529229898005724,
+          "std": 0.007198000326752663
+        },
+        "aleatoric_omitted": {
+          "mean": 0.015273728407919407,
+          "std": 0.007259734906256199
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 12.919389724731445,
+          "std": 0.3004717528820038
+        },
+        "df_cov_omitted": {
+          "mean": 12.919387817382812,
+          "std": 0.3004717528820038
+        },
+        "epistemic_all": {
+          "mean": 0.0025517174508422613,
+          "std": 0.0012064606416970491
+        },
+        "epistemic_omitted": {
+          "mean": 0.002548624761402607,
+          "std": 0.001216829870827496
+        },
+        "error_aleatoric_pearson": 0.28038856387138367,
+        "error_aleatoric_spearman": 0.12344710528850555,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.014643789269030094,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.00244192429818213,
+            "error_mean": 0.0005271147238090634
+          },
+          {
+            "aleatoric_mean": 0.014789106324315071,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0024669424165040255,
+            "error_mean": 0.004280525725334883
+          },
+          {
+            "aleatoric_mean": 0.016388289630413055,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0027370075695216656,
+            "error_mean": 0.023734603077173233
+          }
+        ],
+        "error_epistemic_pearson": 0.2811206579208374,
+        "error_epistemic_spearman": 0.1254587173461914,
+        "kappa_all": {
+          "mean": 5.997659683227539,
+          "std": 0.08617343008518219
+        },
+        "kappa_omitted": {
+          "mean": 5.997660160064697,
+          "std": 0.08617343008518219
+        },
+        "lambda_reg_x_l_reg": 402.2801318359375,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.011845321655274,
+        "measured_snr_db_std": 0.24635474278640737,
+        "nll": -1948.2133544921876,
+        "nmse_all_db": -17.20683837890625,
+        "nmse_omitted_db": -17.19918197631836,
+        "nu_all": {
+          "mean": 2061.91943359375,
+          "std": 0.30047178268432617
+        },
+        "nu_omitted": {
+          "mean": 2061.91943359375,
+          "std": 0.30047178268432617
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.19715964794158936,
+          "std": 0.09178928285837173
+        },
+        "psi_omitted": {
+          "mean": 0.19691723585128784,
+          "std": 0.09256802499294281
+        },
+        "raw_l_reg": 40228.014375,
+        "reg_to_nll_ratio": 0.20648669248996557,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.022350776940584183,
+          "std": 0.010487929917871952
+        },
+        "aleatoric_omitted": {
+          "mean": 0.02233254164457321,
+          "std": 0.010526474565267563
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 11.070762634277344,
+          "std": 0.6950950026512146
+        },
+        "df_cov_omitted": {
+          "mean": 11.070762634277344,
+          "std": 0.6950950026512146
+        },
+        "epistemic_all": {
+          "mean": 0.004277671221643686,
+          "std": 0.002133772475644946
+        },
+        "epistemic_omitted": {
+          "mean": 0.004274315666407347,
+          "std": 0.0021412353962659836
+        },
+        "error_aleatoric_pearson": 0.07162941992282867,
+        "error_aleatoric_spearman": 0.0769500732421875,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.021923955529928207,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0041817412711679935,
+            "error_mean": 0.042303554713726044
+          },
+          {
+            "aleatoric_mean": 0.022071216255426407,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.004215865861624479,
+            "error_mean": 0.3455231785774231
+          },
+          {
+            "aleatoric_mean": 0.02300245314836502,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.004425339866429567,
+            "error_mean": 1.773820161819458
+          }
+        ],
+        "error_epistemic_pearson": 0.07885684072971344,
+        "error_epistemic_spearman": 0.08097770065069199,
+        "kappa_all": {
+          "mean": 5.280057907104492,
+          "std": 0.24768224358558655
+        },
+        "kappa_omitted": {
+          "mean": 5.280057430267334,
+          "std": 0.24768224358558655
+        },
+        "lambda_reg_x_l_reg": 29052.18875,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.009871139526368,
+        "measured_snr_db_std": 0.2609778542993299,
+        "nll": 2488.389580078125,
+        "nmse_all_db": 1.3620877742767334,
+        "nmse_omitted_db": 1.568206672668457,
+        "nu_all": {
+          "mean": 2060.070556640625,
+          "std": 0.6950950622558594
+        },
+        "nu_omitted": {
+          "mean": 2060.07080078125,
+          "std": 0.6950950026512146
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.24463024735450745,
+          "std": 0.10797999054193497
+        },
+        "psi_omitted": {
+          "mean": 0.2444193959236145,
+          "std": 0.10839228332042694
+        },
+        "raw_l_reg": 2905218.93,
+        "reg_to_nll_ratio": 11.675096609659944,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.015533980913460255,
+          "std": 0.0076069398783147335
+        },
+        "aleatoric_omitted": {
+          "mean": 0.015516632236540318,
+          "std": 0.007681161165237427
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 12.843893051147461,
+          "std": 0.2986754775047302
+        },
+        "df_cov_omitted": {
+          "mean": 12.843893051147461,
+          "std": 0.2986754775047302
+        },
+        "epistemic_all": {
+          "mean": 0.0026060002855956554,
+          "std": 0.0012818992836400867
+        },
+        "epistemic_omitted": {
+          "mean": 0.002603094791993499,
+          "std": 0.0012943664332851768
+        },
+        "error_aleatoric_pearson": 0.2625986635684967,
+        "error_aleatoric_spearman": 0.08375150710344315,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.014935512095689774,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0025043729692697525,
+            "error_mean": 0.0007986270356923342
+          },
+          {
+            "aleatoric_mean": 0.015075531788170338,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0025284932926297188,
+            "error_mean": 0.006476055830717087
+          },
+          {
+            "aleatoric_mean": 0.01653885282576084,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.002776417648419738,
+            "error_mean": 0.034756094217300415
+          }
+        ],
+        "error_epistemic_pearson": 0.26296284794807434,
+        "error_epistemic_spearman": 0.08468753844499588,
+        "kappa_all": {
+          "mean": 5.9666428565979,
+          "std": 0.0973430648446083
+        },
+        "kappa_omitted": {
+          "mean": 5.966643333435059,
+          "std": 0.0973430648446083
+        },
+        "lambda_reg_x_l_reg": 592.7073974609375,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.995318336486816,
+        "measured_snr_db_std": 0.2815318432243144,
+        "nll": -1528.77185546875,
+        "nmse_all_db": -15.335495147705078,
+        "nmse_omitted_db": -15.330931625366212,
+        "nu_all": {
+          "mean": 2061.84375,
+          "std": 0.2986755073070526
+        },
+        "nu_omitted": {
+          "mean": 2061.84375,
+          "std": 0.2986755073070526
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.19912032783031464,
+          "std": 0.09657759219408035
+        },
+        "psi_omitted": {
+          "mean": 0.19889530539512634,
+          "std": 0.09751719236373901
+        },
+        "raw_l_reg": 59270.7409375,
+        "reg_to_nll_ratio": 0.387701667411535,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    },
+    "9": {
+      "ID-Easy 20 ns": {
+        "aleatoric_all": {
+          "mean": 0.013079178519546986,
+          "std": 0.006955933291465044
+        },
+        "aleatoric_omitted": {
+          "mean": 0.013083569705486298,
+          "std": 0.007059646304696798
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 14.426870346069336,
+          "std": 0.5925599336624146
+        },
+        "df_cov_omitted": {
+          "mean": 14.42686939239502,
+          "std": 0.5925599336624146
+        },
+        "epistemic_all": {
+          "mean": 0.002095285337418318,
+          "std": 0.0011444598203524947
+        },
+        "epistemic_omitted": {
+          "mean": 0.0020961237605661154,
+          "std": 0.0011614281684160233
+        },
+        "error_aleatoric_pearson": 0.25490936636924744,
+        "error_aleatoric_spearman": 0.18364235758781433,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.012390841729938984,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0019808372016996145,
+            "error_mean": 0.00039095841930247843
+          },
+          {
+            "aleatoric_mean": 0.012601759284734726,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.002016216516494751,
+            "error_mean": 0.0032565135043114424
+          },
+          {
+            "aleatoric_mean": 0.014258108101785183,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0022913175635039806,
+            "error_mean": 0.01897405833005905
+          }
+        ],
+        "error_epistemic_pearson": 0.25347864627838135,
+        "error_epistemic_spearman": 0.1739197075366974,
+        "kappa_all": {
+          "mean": 6.275481700897217,
+          "std": 0.28235915303230286
+        },
+        "kappa_omitted": {
+          "mean": 6.275481224060059,
+          "std": 0.28235915303230286
+        },
+        "lambda_reg_x_l_reg": 319.23099731445313,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.993715057373047,
+        "measured_snr_db_std": 0.2612481776007515,
+        "nll": -2230.4933203125,
+        "nmse_all_db": -18.457633438110353,
+        "nmse_omitted_db": -18.45326972961426,
+        "nu_all": {
+          "mean": 2063.4267578125,
+          "std": 0.5925599336624146
+        },
+        "nu_omitted": {
+          "mean": 2063.427001953125,
+          "std": 0.5925599336624146
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.18765559792518616,
+          "std": 0.09664984047412872
+        },
+        "psi_omitted": {
+          "mean": 0.18770873546600342,
+          "std": 0.09808740019798279
+        },
+        "raw_l_reg": 31923.10078125,
+        "reg_to_nll_ratio": 0.14312125232829503,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "ID-Hard 80 ns": {
+        "aleatoric_all": {
+          "mean": 0.012962439097464085,
+          "std": 0.0064500500448048115
+        },
+        "aleatoric_omitted": {
+          "mean": 0.01296413317322731,
+          "std": 0.006547984201461077
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 14.409226417541504,
+          "std": 0.30784767866134644
+        },
+        "df_cov_omitted": {
+          "mean": 14.409226417541504,
+          "std": 0.30784767866134644
+        },
+        "epistemic_all": {
+          "mean": 0.0020699233282357454,
+          "std": 0.0010341533925384283
+        },
+        "epistemic_omitted": {
+          "mean": 0.002070208778604865,
+          "std": 0.0010498552583158016
+        },
+        "error_aleatoric_pearson": 0.31001314520835876,
+        "error_aleatoric_spearman": 0.14423047006130219,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.012361488305032253,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.001972536789253354,
+            "error_mean": 0.00045269669499248266
+          },
+          {
+            "aleatoric_mean": 0.012518031522631645,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.0019982471130788326,
+            "error_mean": 0.00370490038767457
+          },
+          {
+            "aleatoric_mean": 0.014012878760695457,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.002239842200651765,
+            "error_mean": 0.021122606471180916
+          }
+        ],
+        "error_epistemic_pearson": 0.3108634948730469,
+        "error_epistemic_spearman": 0.14570175111293793,
+        "kappa_all": {
+          "mean": 6.26701545715332,
+          "std": 0.10719000548124313
+        },
+        "kappa_omitted": {
+          "mean": 6.267014980316162,
+          "std": 0.10719000548124313
+        },
+        "lambda_reg_x_l_reg": 356.63633911132814,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 15.045122489929199,
+        "measured_snr_db_std": 0.28850961282046567,
+        "nll": -2088.3529638671876,
+        "nmse_all_db": -17.757291793823242,
+        "nmse_omitted_db": -17.751038131713866,
+        "nu_all": {
+          "mean": 2063.4091796875,
+          "std": 0.30784767866134644
+        },
+        "nu_omitted": {
+          "mean": 2063.4091796875,
+          "std": 0.30784767866134644
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.18647873401641846,
+          "std": 0.0920480489730835
+        },
+        "psi_omitted": {
+          "mean": 0.1864999234676361,
+          "std": 0.09344559162855148
+        },
+        "raw_l_reg": 35663.6346875,
+        "reg_to_nll_ratio": 0.1707739760855394,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Far 1 ms": {
+        "aleatoric_all": {
+          "mean": 0.01884082518517971,
+          "std": 0.008657228201627731
+        },
+        "aleatoric_omitted": {
+          "mean": 0.018857300281524658,
+          "std": 0.008733749389648438
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 12.430327415466309,
+          "std": 0.692208468914032
+        },
+        "df_cov_omitted": {
+          "mean": 12.430326461791992,
+          "std": 0.692208468914032
+        },
+        "epistemic_all": {
+          "mean": 0.0034152863081544638,
+          "std": 0.0016430175164714456
+        },
+        "epistemic_omitted": {
+          "mean": 0.0034184292890131474,
+          "std": 0.001657107612118125
+        },
+        "error_aleatoric_pearson": 0.07073484361171722,
+        "error_aleatoric_spearman": 0.0791454017162323,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.01850176975131035,
+            "bin": 0,
+            "count": 512001,
+            "epistemic_mean": 0.003344462253153324,
+            "error_mean": 0.041999127715826035
+          },
+          {
+            "aleatoric_mean": 0.018655996769666672,
+            "bin": 1,
+            "count": 511999,
+            "epistemic_mean": 0.0033766794949769974,
+            "error_mean": 0.3427460193634033
+          },
+          {
+            "aleatoric_mean": 0.019414134323596954,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.0035341461189091206,
+            "error_mean": 1.7600165605545044
+          }
+        ],
+        "error_epistemic_pearson": 0.07699695974588394,
+        "error_epistemic_spearman": 0.082228884100914,
+        "kappa_all": {
+          "mean": 5.561466217041016,
+          "std": 0.23537035286426544
+        },
+        "kappa_omitted": {
+          "mean": 5.561466693878174,
+          "std": 0.23537035286426544
+        },
+        "lambda_reg_x_l_reg": 28863.3690625,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.999110946655273,
+        "measured_snr_db_std": 0.28538938270280256,
+        "nll": 2480.43423828125,
+        "nmse_all_db": 1.329974193572998,
+        "nmse_omitted_db": 1.533832883834839,
+        "nu_all": {
+          "mean": 2061.430419921875,
+          "std": 0.692208468914032
+        },
+        "nu_omitted": {
+          "mean": 2061.430419921875,
+          "std": 0.692208468914032
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.23210854828357697,
+          "std": 0.10172336548566818
+        },
+        "psi_omitted": {
+          "mean": 0.23229919373989105,
+          "std": 0.10265613347291946
+        },
+        "raw_l_reg": 2886336.96,
+        "reg_to_nll_ratio": 11.636417775938995,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      },
+      "OOD-Near 120 ns": {
+        "aleatoric_all": {
+          "mean": 0.01313849352300167,
+          "std": 0.006397486664354801
+        },
+        "aleatoric_omitted": {
+          "mean": 0.013137663714587688,
+          "std": 0.006483136676251888
+        },
+        "covariance_diag_omitted": null,
+        "df_cov_all": {
+          "mean": 14.326681137084961,
+          "std": 0.2876415550708771
+        },
+        "df_cov_omitted": {
+          "mean": 14.326681137084961,
+          "std": 0.2876415550708771
+        },
+        "epistemic_all": {
+          "mean": 0.0021084346808493137,
+          "std": 0.0010292998049408197
+        },
+        "epistemic_omitted": {
+          "mean": 0.002108314773067832,
+          "std": 0.0010430067777633667
+        },
+        "error_aleatoric_pearson": 0.2915249466896057,
+        "error_aleatoric_spearman": 0.09333135187625885,
+        "error_bin_calibration": [
+          {
+            "aleatoric_mean": 0.012634162791073322,
+            "bin": 0,
+            "count": 512000,
+            "epistemic_mean": 0.0020263814367353916,
+            "error_mean": 0.0007398927700705826
+          },
+          {
+            "aleatoric_mean": 0.012722697108983994,
+            "bin": 1,
+            "count": 512000,
+            "epistemic_mean": 0.002041101921349764,
+            "error_mean": 0.006038865074515343
+          },
+          {
+            "aleatoric_mean": 0.014056128449738026,
+            "bin": 2,
+            "count": 512000,
+            "epistemic_mean": 0.002257460495457053,
+            "error_mean": 0.03256119415163994
+          }
+        ],
+        "error_epistemic_pearson": 0.292471319437027,
+        "error_epistemic_spearman": 0.09540675580501556,
+        "kappa_all": {
+          "mean": 6.236253261566162,
+          "std": 0.11260026693344116
+        },
+        "kappa_omitted": {
+          "mean": 6.236252784729004,
+          "std": 0.11260026693344116
+        },
+        "lambda_reg_x_l_reg": 555.3979699707031,
+        "lowrank_diag_contribution_omitted": null,
+        "measured_snr_db_mean": 14.998775291442872,
+        "measured_snr_db_std": 0.270128174465721,
+        "nll": -1609.6172998046875,
+        "nmse_all_db": -15.634172172546387,
+        "nmse_omitted_db": -15.631560440063476,
+        "nu_all": {
+          "mean": 2063.32666015625,
+          "std": 0.2876415550708771
+        },
+        "nu_omitted": {
+          "mean": 2063.32666015625,
+          "std": 0.2876415550708771
+        },
+        "off_diagonal_energy_ratio_mean": null,
+        "off_diagonal_energy_ratio_std": null,
+        "psi_all": {
+          "mean": 0.18797732889652252,
+          "std": 0.09103108197450638
+        },
+        "psi_omitted": {
+          "mean": 0.1879631131887436,
+          "std": 0.09225484728813171
+        },
+        "raw_l_reg": 55539.7984375,
+        "reg_to_nll_ratio": 0.3450497022084971,
+        "requested_snr_db": 15.0,
+        "samples": 200
+      }
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train": {
+        "lambda_reg_x_reg": 3901.127963671875,
+        "measured_snr_db_mean": 15.008128532409668,
+        "nll": -260.52428468017575,
+        "nmse_all_db": -8.829307818508148,
+        "nmse_omitted_db": -8.801639546585083,
+        "reg": 390112.80505625,
+        "reg_to_nll_ratio": 14.974143267723496,
+        "total": 3640.603673144531
+      },
+      "validation": {
+        "aleatoric": 0.5099181842803955,
+        "aleatoric_all": 0.5154591703414917,
+        "epistemic": 0.4128877532482147,
+        "epistemic_all": 0.4173946523666382,
+        "lambda_reg_x_reg": 1143.304384765625,
+        "measured_snr_db_mean": 14.992932510375976,
+        "nll": -865.87109375,
+        "nmse_all_db": -12.404208526611328,
+        "nmse_omitted_db": -12.440376319885253,
+        "reg": 114330.440625,
+        "reg_to_nll_ratio": 1.3204094616450186,
+        "total": 277.433291015625
+      }
+    },
+    {
+      "epoch": 2,
+      "train": {
+        "lambda_reg_x_reg": 828.6165349609375,
+        "measured_snr_db_mean": 15.012035800170898,
+        "nll": -1339.3837518554687,
+        "nmse_all_db": -14.04050064086914,
+        "nmse_omitted_db": -14.039277545166016,
+        "reg": 82861.6553,
+        "reg_to_nll_ratio": 0.618655059692083,
+        "total": -510.76721669921875
+      },
+      "validation": {
+        "aleatoric": 0.14492762565612793,
+        "aleatoric_all": 0.1455829232931137,
+        "epistemic": 0.05940579071640968,
+        "epistemic_all": 0.05967298865318298,
+        "lambda_reg_x_reg": 539.2896801757812,
+        "measured_snr_db_mean": 15.028152885437011,
+        "nll": -1645.60103515625,
+        "nmse_all_db": -15.845520248413086,
+        "nmse_omitted_db": -15.8644877243042,
+        "reg": 53928.96875,
+        "reg_to_nll_ratio": 0.32771593396652093,
+        "total": -1106.3113452148436
+      }
+    },
+    {
+      "epoch": 3,
+      "train": {
+        "lambda_reg_x_reg": 600.5794108154297,
+        "measured_snr_db_mean": 15.00655069732666,
+        "nll": -1681.7503348632813,
+        "nmse_all_db": -15.44447583618164,
+        "nmse_omitted_db": -15.439512934875488,
+        "reg": 60057.942371875,
+        "reg_to_nll_ratio": 0.35711567785160153,
+        "total": -1081.1709233398437
+      },
+      "validation": {
+        "aleatoric": 0.06435929238796234,
+        "aleatoric_all": 0.06438886791467667,
+        "epistemic": 0.018770772591233255,
+        "epistemic_all": 0.01877949930727482,
+        "lambda_reg_x_reg": 504.6147021484375,
+        "measured_snr_db_mean": 15.031261482238769,
+        "nll": -1725.537255859375,
+        "nmse_all_db": -16.077179260253907,
+        "nmse_omitted_db": -16.061446075439452,
+        "reg": 50461.4715625,
+        "reg_to_nll_ratio": 0.29243918114894496,
+        "total": -1220.9225463867188
+      }
+    },
+    {
+      "epoch": 4,
+      "train": {
+        "lambda_reg_x_reg": 519.6302980712891,
+        "measured_snr_db_mean": 15.008176182556152,
+        "nll": -1846.747168359375,
+        "nmse_all_db": -16.079649490356445,
+        "nmse_omitted_db": -16.07655033721924,
+        "reg": 51963.03101875,
+        "reg_to_nll_ratio": 0.28137598203554187,
+        "total": -1327.116869921875
+      },
+      "validation": {
+        "aleatoric": 0.030810006260871887,
+        "aleatoric_all": 0.030843216627836227,
+        "epistemic": 0.006571939215064049,
+        "epistemic_all": 0.006579227186739445,
+        "lambda_reg_x_reg": 396.3830822753906,
+        "measured_snr_db_mean": 15.000806884765625,
+        "nll": -1988.7078515625,
+        "nmse_all_db": -17.206887969970705,
+        "nmse_omitted_db": -17.195148468017578,
+        "reg": 39638.3090625,
+        "reg_to_nll_ratio": 0.1993168991423073,
+        "total": -1592.324755859375
+      }
+    },
+    {
+      "epoch": 5,
+      "train": {
+        "lambda_reg_x_reg": 441.316330859375,
+        "measured_snr_db_mean": 15.00739418182373,
+        "nll": -2013.2146798828126,
+        "nmse_all_db": -16.800564138793945,
+        "nmse_omitted_db": -16.8025152053833,
+        "reg": 44131.634015625,
+        "reg_to_nll_ratio": 0.21920977194686042,
+        "total": -1571.898348046875
+      },
+      "validation": {
+        "aleatoric": 0.02190812014043331,
+        "aleatoric_all": 0.021963740438222884,
+        "epistemic": 0.004067587964236737,
+        "epistemic_all": 0.004077920056879521,
+        "lambda_reg_x_reg": 418.6883251953125,
+        "measured_snr_db_mean": 15.00766815185547,
+        "nll": -1938.628916015625,
+        "nmse_all_db": -16.965079193115233,
+        "nmse_omitted_db": -16.954170989990235,
+        "reg": 41868.83328125,
+        "reg_to_nll_ratio": 0.2159713608593354,
+        "total": -1519.94060546875
+      }
+    },
+    {
+      "epoch": 6,
+      "train": {
+        "lambda_reg_x_reg": 407.34958203125,
+        "measured_snr_db_mean": 15.01289666595459,
+        "nll": -2085.138176953125,
+        "nmse_all_db": -17.133388050842285,
+        "nmse_omitted_db": -17.137502200317382,
+        "reg": 40734.95910625,
+        "reg_to_nll_ratio": 0.19535855538577762,
+        "total": -1677.7885924804687
+      },
+      "validation": {
+        "aleatoric": 0.022045069858431816,
+        "aleatoric_all": 0.022054933905601502,
+        "epistemic": 0.004204290974885225,
+        "epistemic_all": 0.004206106048077345,
+        "lambda_reg_x_reg": 377.50708984375,
+        "measured_snr_db_mean": 14.988492164611817,
+        "nll": -2047.59921875,
+        "nmse_all_db": -17.3241828918457,
+        "nmse_omitted_db": -17.314949493408204,
+        "reg": 37750.70984375,
+        "reg_to_nll_ratio": 0.18436571297012092,
+        "total": -1670.09212890625
+      }
+    },
+    {
+      "epoch": 7,
+      "train": {
+        "lambda_reg_x_reg": 373.153206640625,
+        "measured_snr_db_mean": 15.007150608825684,
+        "nll": -2175.09256171875,
+        "nmse_all_db": -17.52666316986084,
+        "nmse_omitted_db": -17.530048216247557,
+        "reg": 37315.321434375,
+        "reg_to_nll_ratio": 0.17155739172039888,
+        "total": -1801.939356640625
+      },
+      "validation": {
+        "aleatoric": 0.016921663954854012,
+        "aleatoric_all": 0.01691652961075306,
+        "epistemic": 0.00287586004473269,
+        "epistemic_all": 0.002874941863119602,
+        "lambda_reg_x_reg": 347.39095092773437,
+        "measured_snr_db_mean": 15.03970832824707,
+        "nll": -2118.543505859375,
+        "nmse_all_db": -17.706679153442384,
+        "nmse_omitted_db": -17.702311401367187,
+        "reg": 34739.095625,
+        "reg_to_nll_ratio": 0.16397631201119822,
+        "total": -1771.1525439453126
+      }
+    },
+    {
+      "epoch": 8,
+      "train": {
+        "lambda_reg_x_reg": 369.8750926269531,
+        "measured_snr_db_mean": 15.0107236038208,
+        "nll": -2189.9360357421874,
+        "nmse_all_db": -17.567376612854005,
+        "nmse_omitted_db": -17.569545069885255,
+        "reg": 36987.51003125,
+        "reg_to_nll_ratio": 0.16889766942435397,
+        "total": -1820.0609401367187
+      },
+      "validation": {
+        "aleatoric": 0.015120904222130775,
+        "aleatoric_all": 0.01513887569308281,
+        "epistemic": 0.002524495627731085,
+        "epistemic_all": 0.002527466807514429,
+        "lambda_reg_x_reg": 366.2003540039062,
+        "measured_snr_db_mean": 15.032392692565917,
+        "nll": -2062.858212890625,
+        "nmse_all_db": -17.462773971557617,
+        "nmse_omitted_db": -17.454196395874025,
+        "reg": 36620.0353125,
+        "reg_to_nll_ratio": 0.17752085514834526,
+        "total": -1696.657841796875
+      }
+    },
+    {
+      "epoch": 9,
+      "train": {
+        "lambda_reg_x_reg": 347.6606642089844,
+        "measured_snr_db_mean": 15.010874555969238,
+        "nll": -2255.7548703125,
+        "nmse_all_db": -17.838853048706056,
+        "nmse_omitted_db": -17.8397728225708,
+        "reg": 34766.0672421875,
+        "reg_to_nll_ratio": 0.1541216507090064,
+        "total": -1908.0942048828124
+      },
+      "validation": {
+        "aleatoric": 0.012792404070496559,
+        "aleatoric_all": 0.012792563177645206,
+        "epistemic": 0.002043114947155118,
+        "epistemic_all": 0.0020430833380669353,
+        "lambda_reg_x_reg": 316.87939086914065,
+        "measured_snr_db_mean": 15.045856742858886,
+        "nll": -2230.576025390625,
+        "nmse_all_db": -18.13806655883789,
+        "nmse_omitted_db": -18.133632278442384,
+        "reg": 31687.93953125,
+        "reg_to_nll_ratio": 0.14206168597738209,
+        "total": -1913.696630859375
+      }
+    },
+    {
+      "epoch": 10,
+      "train": {
+        "lambda_reg_x_reg": 338.5154628173828,
+        "measured_snr_db_mean": 15.005531604003906,
+        "nll": -2278.07725625,
+        "nmse_all_db": -17.947231968688964,
+        "nmse_omitted_db": -17.947613105773925,
+        "reg": 33851.5469875,
+        "reg_to_nll_ratio": 0.14859700736099513,
+        "total": -1939.5617922851563
+      },
+      "validation": {
+        "aleatoric": 0.013040824718773365,
+        "aleatoric_all": 0.013026233315467834,
+        "epistemic": 0.002205945188179612,
+        "epistemic_all": 0.0022034183889627456,
+        "lambda_reg_x_reg": 308.670322265625,
+        "measured_snr_db_mean": 15.033672370910644,
+        "nll": -2266.72234375,
+        "nmse_all_db": -18.264362030029297,
+        "nmse_omitted_db": -18.26299880981445,
+        "reg": 30867.03265625,
+        "reg_to_nll_ratio": 0.13617473843470743,
+        "total": -1958.0520263671874
+      }
+    }
+  ],
+  "interpretation": {
+    "Aleatoric(80) > Aleatoric(20)": false,
+    "Early epoch OOD-Far epistemic > ID": true,
+    "Epistemic(1 ms) > Epistemic(ID)": true,
+    "Epistemic(120) > Epistemic(ID)": true,
+    "Final error-uncertainty Pearson correlations positive": true,
+    "OOD-Far NMSE worse than ID-Easy": true,
+    "case": "Case A",
+    "latest_epoch": 10,
+    "proceed_to_step4b": true
+  },
+  "model_config": "configs/train_formulation_d_pair_reg.json",
+  "runtime": {
+    "dataset_generation_seconds": 18.477971645072103,
+    "estimated_training_seconds": 1330.0,
+    "training_probe_seconds": 1257.5378507319838
+  },
+  "step": "STEP 8A Corrected Lambda 1e-2",
+  "total_parameters": 11815320,
+  "train_path": "runs/baseline_reproduction/step8_corrected_revalidation/lambda_1e-2/generated_data/train_5k_pilot.npz",
+  "trainable_parameters": 11815320,
+  "validation_path": "data/prototype/validation.npz"
+}
