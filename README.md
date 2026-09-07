@@ -1,4 +1,3 @@
-# 현재 상태 / 먼저 볼 문서
 
 - 현재 Valid Baseline: `runs/current_valid_baseline/condition_c_5k_10ep_lambda1e3_corrected/`
 - 현재 연구 흐름: `docs/CURRENT_RESEARCH_STORY.md`
