@@ -1,0 +1,13 @@
+Verification date: 2026-09-18
+
+- `python report/build_report.py`: exit 0; report figures and source tables regenerated from existing artifacts.
+- `pandoc report/UACP_reproduction_report.md -o report/UACP_reproduction_report.docx --from=gfm --resource-path=report`: exit 0.
+- DOCX ZIP integrity: `unzip -t report/UACP_reproduction_report.docx`: no errors.
+- Markdown top-level sections: `1. 연구 목적 및 재현 목표`, `2. 논문 기준 및 현재 재현 환경`, `3. Baseline 학습 설정 비교 및 최종 선정`.
+- Figures: 7 PNG files, all opened successfully with PIL.
+- Existing checkpoint/result files were not used as output targets. Current anchor hashes:
+  - `runs/current_valid_baseline/paper_sample_alignment_100k_1ep_fig8_20260915/uacp_predictor_step4a.pt`: `0e5b0472fd559d4e08f7e6200c512c10dfc208f7a4d507bf613dbd69958b6382`
+  - `runs/current_valid_baseline/paper_sample_alignment_100k_1ep_fig8_20260915/evaluation_table.csv`: `bde6231f63befad73f4d803c21c836c35114f183f4f16335cfcc4f34dac50581`
+  - `runs/current_valid_baseline/batch400_100k5ep_20260918_bf16_final/uacp_predictor_100k_5ep_batch400_bf16.pt`: `0955ebc72709a09c3c6f4e979c36a46bcb4caeacc70a1ebf81f2aeca6d7c12a0`
+- Fig.8/9 invalid states are represented as `N/A (ν/inf)`; OOM/failed benchmark states are represented as text, not zero.
+- No training, evaluator rerun, hyperparameter sweep, checkpoint rewrite, or existing-result overwrite was performed by the report build.

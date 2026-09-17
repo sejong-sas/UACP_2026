@@ -1,0 +1,8 @@
+setting,batch,precision,status,source,sec,samples_sec,mem_gib,util
+batch400 FP32,400,FP32,success,/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/batch400_bottleneck_benchmark_20260918_utilfix/A_fp32_current/result.json,13.733624773369613,29.125595507431214,31.613762378692627,94.25679228746714
+batch400 BF16,400,BF16,success,/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/batch400_bottleneck_benchmark_20260918_utilfix/C_bf16_amp/result.json,2.9872040452610236,133.90447854895288,17.226781368255615,92.80952380952381
+batch2048 BF16,2048,BF16,success,/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/batch4096_benchmark_20260918/bf16_b2048_20steps/result.json,21.71827662965079,94.29845815684915,89.65,92.3328431372549
+batch2432 BF16,2432,BF16,success,/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/batch4096_benchmark_20260918/bf16_b2432/result.json,25.546308139018947,95.19966590731791,103.93844652175903,83.56666666666666
+batch2496 BF16,2496,BF16,failed,/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/batch4096_benchmark_20260918/bf16_b2496/preflight.json,,,,
+batch4096 FP32,4096,FP32,OOM,/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/batch4096_benchmark_20260918/fp32/result.json,,,,
+batch4096 BF16,4096,BF16,failed,/home/saslab01/Desktop/UACP_2026/runs/current_valid_baseline/batch4096_benchmark_20260918/bf16/preflight.json,,,,

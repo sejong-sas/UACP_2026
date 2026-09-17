@@ -1,0 +1,11 @@
+{
+  "paper_pdf_repo": "mobihoc26-paper289.pdf",
+  "experiment_pdf_repo": "UACP실험_250914.pdf",
+  "baseline_100k1_eval": "runs/current_valid_baseline/paper_sample_alignment_100k_1ep_fig8_20260915/evaluation_table.csv",
+  "baseline_100k1_fig8": "runs/current_valid_baseline/paper_sample_alignment_100k_1ep_fig8_20260915/fig8_eval_retry/results.json",
+  "baseline_100k5_fig8_fig9": "runs/current_valid_baseline/training_convergence_100k_5ep_20260916_final_controlled/matched_fig8_fig9_comparison_10k_v3/",
+  "baseline_100k5_batch400_fig8_fig9": "runs/current_valid_baseline/batch400_100k5ep_20260918_bf16_final/evaluation_streaming_v5/",
+  "benchmark_4096": "runs/current_valid_baseline/batch4096_benchmark_20260918/",
+  "benchmark_400": "runs/current_valid_baseline/batch400_bottleneck_benchmark_20260918_utilfix/",
+  "pipeline_code": "src/training/data.py, src/models/uacp_predictor.py, src/models/evidential.py, src/training/uncertainty.py"
+}
