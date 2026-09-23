@@ -1,0 +1,48 @@
+{
+  "paper_specified": {
+    "num_rx_ant": 2,
+    "num_tx_ant": 2,
+    "fft_size": 1024,
+    "carrier_frequency_hz": 3500000000.0,
+    "subcarrier_spacing_hz": 30000.0,
+    "snr_db": 15.0
+  },
+  "implementation_assumption": {
+    "sionna_package": "sionna-no-rt",
+    "sionna_version": "2.0.1",
+    "channel_family": "3GPP TR 38.901 TDL",
+    "tdl_model": "A",
+    "num_ofdm_symbols": 1,
+    "cyclic_prefix_length": 0,
+    "num_tx": 1,
+    "num_streams_per_tx": 1,
+    "min_speed_mps": 0.0,
+    "max_speed_mps": 0.0,
+    "normalize_channel": false,
+    "normalize_channel_label": "IMPLEMENTATION-ASSUMPTION: paper does not confirm this setting",
+    "precision": "single",
+    "device": "cuda:0",
+    "seed": 20260921,
+    "store_device": "cpu",
+    "store_dtype": "complex64",
+    "adaptation_protocol": "RESEARCH-EXTENSION: new 120 ns full-feedback adaptation split; no existing evaluation archive reused",
+    "adaptation_sample_counts": "IMPLEMENTATION-ASSUMPTION: 1000 train, 200 validation, 1000 per untouched test regime",
+    "training_delay_spread_ns": [120.0, 120.0],
+    "test_regimes": {"ID-Easy": 20.0, "ID-Hard": 80.0, "OOD-Near": 120.0},
+    "dataset_role": "RESEARCH-EXTENSION / IMPLEMENTATION-ASSUMPTION, not paper baseline training"
+  },
+  "dataset": {
+    "output_dir": "runs/current_valid_baseline/overnight_20260920_adaptation_data",
+    "train_samples": 1000,
+    "validation_samples": 200,
+    "test_samples_per_regime": 1000,
+    "include_ood_far": true,
+    "ood_far_delay_spread_ns": 1000000.0
+  },
+  "unknown": {
+    "paper_adaptation_sample_count": "UNKNOWN",
+    "paper_adaptation_epochs": "UNKNOWN",
+    "paper_adaptation_learning_rate": "UNKNOWN",
+    "paper_partial_layer_policy": "UNKNOWN"
+  }
+}
