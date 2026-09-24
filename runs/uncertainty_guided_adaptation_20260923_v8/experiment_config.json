@@ -1,0 +1,44 @@
+{
+  "experiment": "uncertainty-guided minimum adaptation scope Experiment A",
+  "checkpoint_sha256": "d3c864788ee7e0e58bbe9f683aa47615039a470258ff054ec2828179b1f23986",
+  "checkpoint": "runs/current_valid_baseline/training_convergence_100k_5ep_20260916_final_controlled/uacp_predictor_100k_5ep_epoch_3.pt",
+  "device": "cuda:0",
+  "gpu": "NVIDIA GB10",
+  "delays_ns": [
+    110,
+    120,
+    140,
+    160,
+    200,
+    250
+  ],
+  "scopes": [
+    "partial_small",
+    "partial_medium",
+    "partial_large",
+    "full"
+  ],
+  "seed": 20260921,
+  "epochs": 3,
+  "batch_size": 8,
+  "lr": 0.0001,
+  "ngs": [
+    4,
+    8,
+    16,
+    32
+  ],
+  "primary_ngs": [
+    16,
+    32
+  ],
+  "research_extension": true,
+  "implementation_assumptions": [
+    "delay-specific 1000/200/1000 data counts",
+    "TDL-A current repository channel generator",
+    "15 dB complex AWGN on reported sparse CFR",
+    "clean full-CFR target",
+    "diagonal Psi and current UACP loss",
+    "Ng-conditioned ID-only q99 thresholds reused without recalibration"
+  ]
+}

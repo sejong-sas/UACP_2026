@@ -1,0 +1,5 @@
+{
+  "policy": "z < t -> partial_small; z >= t -> partial_medium",
+  "t": 0.6549994334350574,
+  "calibration_only": true
+}

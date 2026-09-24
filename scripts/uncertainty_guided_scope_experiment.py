@@ -12,6 +12,7 @@ import csv
 import hashlib
 import json
 import math
+import os
 import sys
 import time
 from pathlib import Path
@@ -157,22 +158,35 @@ def evaluate_model(model, path: Path, cfg: dict, device, seed: int, include_samp
     from src.training.data import CFRNPZDataset
     ds = CFRNPZDataset(path)
     rows = []
-    loader = DataLoader(ds, batch_size=16, shuffle=False, num_workers=0)
+    # Held-out validation can use a larger batch without changing the
+    # observation schedule or metric definition.
+    eval_batch_size = int(os.environ.get("UACP_EVAL_BATCH_SIZE", "32"))
+    loader = DataLoader(ds, batch_size=eval_batch_size, shuffle=False, num_workers=0)
     for bi, batch in enumerate(loader):
         cfr = batch["cfr"].to(device)
-        batch_rows = []
+        xs, targets, masks = [], [], []
         for ng in NGS:
             (x, target, _), mask = mask_and_observe(cfr, ng, seed, bi, device)
-            out = model(x)
+            xs.append(x); targets.append(target); masks.append(mask)
+        out = model(torch.cat(xs, dim=0))
+        for ng_index, ng in enumerate(NGS):
+            start = ng_index * cfr.shape[0]
+            stop = start + cfr.shape[0]
+            target = targets[ng_index]
+            mask = masks[ng_index]
+            gamma = out.gamma[start:stop]
+            epistemic = out.epistemic[start:stop]
+            aleatoric_tensor = out.aleatoric[start:stop]
             omitted = (1.0 - mask)[:, None, :]
-            err = (out.predicted - target).square()
+            err = (gamma - target).square()
             nmse = 10 * torch.log10((err.mul(omitted).sum((1,2)) / (target.square().mul(omitted).sum((1,2)).clamp_min(1e-12))).clamp_min(1e-12))
-            epi = (out.epistemic * omitted).sum((1,2)) / omitted.sum((1,2)).clamp_min(1.0)
-            ale = (out.aleatoric * omitted).sum((1,2)) / omitted.sum((1,2)).clamp_min(1.0)
-            for i in range(cfr.shape[0]):
-                row = {"sample": int(bi * 16 + i), "ng": ng, "nmse_omitted_db": float(nmse[i].cpu()),
-                       "epistemic": float(epi[i].cpu()), "aleatoric": float(ale[i].cpu()),
-                       "finite": bool(torch.isfinite(nmse[i]) and torch.isfinite(epi[i]) and torch.isfinite(ale[i]))}
+            epi = (epistemic * omitted).sum((1,2)) / omitted.sum((1,2)).clamp_min(1.0)
+            ale = (aleatoric_tensor * omitted).sum((1,2)) / omitted.sum((1,2)).clamp_min(1.0)
+            nmse_np = nmse.detach().cpu().numpy(); epi_np = epi.detach().cpu().numpy(); ale_np = ale.detach().cpu().numpy()
+            finite_np = np.isfinite(nmse_np) & np.isfinite(epi_np) & np.isfinite(ale_np)
+            for i, (nmse_value, epi_value, ale_value) in enumerate(zip(nmse_np, epi_np, ale_np)):
+                row = {"sample": int(bi * eval_batch_size + i), "ng": ng, "nmse_omitted_db": float(nmse_value),
+                       "epistemic": float(epi_value), "aleatoric": float(ale_value), "finite": bool(finite_np[i])}
                 rows.append(row)
     summary = []
     for ng in NGS:
@@ -185,7 +199,7 @@ def evaluate_model(model, path: Path, cfg: dict, device, seed: int, include_samp
     return (rows if include_samples else []), {f"{r['ng']}_{r['metric']}": r for r in summary}
 
 
-def train_one(scope_name: str, scope: str, delay: int, paths: dict, out: Path, device, cfg: dict) -> dict:
+def train_one(scope_name: str, scope: str, delay: int, paths: dict, out: Path, device, cfg: dict, seed: int = SEED) -> dict:
     from scripts.train_predictor import set_seeds
     from scripts.partial_ft_adapt import make_adaptation_observation, scheduled_mask, optimizer_for_trainable
     from src.models.evidential import evidential_loss
@@ -199,9 +213,9 @@ def train_one(scope_name: str, scope: str, delay: int, paths: dict, out: Path, d
     trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
     names = [n for n,p in model.named_parameters() if p.requires_grad]
     frozen_before = {n: p.detach().clone() for n,p in model.named_parameters() if not p.requires_grad}
-    set_seeds(SEED)
+    set_seeds(seed)
     train_loader = DataLoader(CFRNPZDataset(paths[f"{delay}ns_adapt_train"]), batch_size=BATCH, shuffle=True,
-                              generator=torch.Generator().manual_seed(SEED), num_workers=0)
+                              generator=torch.Generator().manual_seed(seed), num_workers=0)
     val_loader = DataLoader(CFRNPZDataset(paths[f"{delay}ns_adapt_val"]), batch_size=BATCH, shuffle=False, num_workers=0)
     opt = optimizer_for_trainable(model, LR)
     history=[]; steps=0; step_times=[]
@@ -211,8 +225,8 @@ def train_one(scope_name: str, scope: str, delay: int, paths: dict, out: Path, d
         model.train(); losses=[]
         for bi,batch in enumerate(train_loader):
             t=time.perf_counter(); cfr=batch["cfr"].to(device)
-            mask=scheduled_mask(cfr.shape[0],1024,epoch,bi,SEED,device)
-            x,target,_=make_adaptation_observation(cfr,mask,SEED,device,epoch,bi)
+            mask=scheduled_mask(cfr.shape[0],1024,epoch,bi,seed,device)
+            x,target,_=make_adaptation_observation(cfr,mask,seed,device,epoch,bi)
             opt.zero_grad(set_to_none=True); result=model(x)
             ls=evidential_loss(result,target,float(cfg["paper_specified"]["lambda_reg"]),nll_mode=cfg["implementation_assumption"].get("nll_mode","elementwise"),reg_mode=cfg["implementation_assumption"].get("reg_mode","elementwise"))
             if not torch.isfinite(ls["total"]): raise FloatingPointError(f"nonfinite loss delay={delay} scope={scope_name} epoch={epoch}")
@@ -221,14 +235,14 @@ def train_one(scope_name: str, scope: str, delay: int, paths: dict, out: Path, d
         model.eval(); v=[]
         with torch.inference_mode():
             for bi,batch in enumerate(val_loader):
-                cfr=batch["cfr"].to(device); mask=scheduled_mask(cfr.shape[0],1024,epoch,bi,SEED+700000,device)
-                x,target,_=make_adaptation_observation(cfr,mask,SEED+700000,device,epoch,bi)
+                cfr=batch["cfr"].to(device); mask=scheduled_mask(cfr.shape[0],1024,epoch,bi,seed+700000,device)
+                x,target,_=make_adaptation_observation(cfr,mask,seed+700000,device,epoch,bi)
                 ls=evidential_loss(model(x),target,float(cfg["paper_specified"]["lambda_reg"]),nll_mode=cfg["implementation_assumption"].get("nll_mode","elementwise"),reg_mode=cfg["implementation_assumption"].get("reg_mode","elementwise")); v.append(float(ls["total"].cpu()))
         ck=run/f"adapted_epoch_{epoch}.pt"; torch.save(model.state_dict(),ck)
         history.append({"epoch":epoch,"train_loss":float(np.mean(losses)),"val_loss":float(np.mean(v)),"optimizer_steps":steps,"checkpoint":str(ck.relative_to(ROOT))})
     elapsed=time.perf_counter()-started
-    frozen_diff=max(float((p.detach()-frozen_before[n]).abs().max().cpu()) for n,p in model.named_parameters() if n in frozen_before)
-    manifest={"delay_ns":delay,"scope_name":scope_name,"scope":scope,"seed":SEED,"checkpoint":str(CHECKPOINT.relative_to(ROOT)),"checkpoint_sha256":sha256_file(CHECKPOINT),"total_params":total,"trainable_params":trainable,"trainable_percent":100*trainable/total,"trainable_names":names,"epochs":EPOCHS,"batch_size":BATCH,"lr":LR,"lambda_reg":float(cfg["paper_specified"]["lambda_reg"]),"device":"cuda:0","gpu":torch.cuda.get_device_name(0),"elapsed_seconds":elapsed,"sec_per_step_mean":float(np.mean(step_times)),"sec_per_step_total":float(np.sum(step_times)),"peak_allocated_vram_mib":float(torch.cuda.max_memory_allocated(device)/2**20),"frozen_parameter_max_diff":frozen_diff,"history":history,"implementation_assumption":True}
+    frozen_diff=max((float((p.detach()-frozen_before[n]).abs().max().cpu()) for n,p in model.named_parameters() if n in frozen_before), default=0.0)
+    manifest={"delay_ns":delay,"scope_name":scope_name,"scope":scope,"seed":seed,"checkpoint":str(CHECKPOINT.relative_to(ROOT)),"checkpoint_sha256":sha256_file(CHECKPOINT),"total_params":total,"trainable_params":trainable,"trainable_percent":100*trainable/total,"trainable_names":names,"epochs":EPOCHS,"batch_size":BATCH,"lr":LR,"lambda_reg":float(cfg["paper_specified"]["lambda_reg"]),"device":"cuda:0","gpu":torch.cuda.get_device_name(0),"elapsed_seconds":elapsed,"sec_per_step_mean":float(np.mean(step_times)),"sec_per_step_total":float(np.sum(step_times)),"peak_allocated_vram_mib":float(torch.cuda.max_memory_allocated(device)/2**20),"frozen_parameter_max_diff":frozen_diff,"history":history,"implementation_assumption":True}
     (run/"training_manifest.json").write_text(json.dumps(manifest,indent=2),encoding="utf-8")
     del model; torch.cuda.empty_cache()
     return manifest

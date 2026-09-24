@@ -1,0 +1,8 @@
+{
+  "pre_checkpoint_sha256": "d3c864788ee7e0e58bbe9f683aa47615039a470258ff054ec2828179b1f23986",
+  "expected_pre_checkpoint_sha256": "d3c864788ee7e0e58bbe9f683aa47615039a470258ff054ec2828179b1f23986",
+  "checkpoint_unchanged": true,
+  "leakage_summary": "leakage_summary.json",
+  "all_evaluation_finite": true,
+  "gpu": "NVIDIA GB10"
+}

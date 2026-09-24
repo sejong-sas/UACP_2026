@@ -1,0 +1,18 @@
+{
+  "rho": 0.8280786712108252,
+  "conditions_with_scope": 6,
+  "scope_ordinals": [
+    1,
+    1,
+    1,
+    1,
+    2,
+    2
+  ],
+  "non_decreasing_by_delay": true,
+  "passes_rho": true,
+  "passes_condition_count": true,
+  "nontrivial_scope_variation": true,
+  "h1_supported": true,
+  "severity_source": "pre_evaluation_samples.csv; corrected delay-wise aggregation"
+}

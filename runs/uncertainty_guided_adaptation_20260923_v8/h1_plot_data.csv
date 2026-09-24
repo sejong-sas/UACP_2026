@@ -1,0 +1,7 @@
+delay_ns,severity_median_z_primary,minimum_scope,scope_ordinal,criterion_db
+110,0.2812673912093123,partial_small,1,0.5
+120,0.32682623423299517,partial_small,1,0.5
+140,0.4429791774718438,partial_small,1,0.5
+160,0.5600360193923094,partial_small,1,0.5
+200,0.7499628474778054,partial_medium,2,0.5
+250,1.0245495519680876,partial_medium,2,0.5

@@ -1,0 +1,4 @@
+delay_ns,severity_median_z_primary,selected_scope,policy_threshold
+130,0.4285141424704745,partial_small,0.6549994334350574
+180,0.6536255080573432,partial_small,0.6549994334350574
+220,0.8388888053635,partial_medium,0.6549994334350574

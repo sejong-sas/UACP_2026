@@ -1,0 +1,6 @@
+{
+  "checkpoint_sha256": "d3c864788ee7e0e58bbe9f683aa47615039a470258ff054ec2828179b1f23986",
+  "expected_sha256": "d3c864788ee7e0e58bbe9f683aa47615039a470258ff054ec2828179b1f23986",
+  "cuda": "NVIDIA GB10",
+  "one_ms_training_used": false
+}
