@@ -5513,3 +5513,60 @@ The direct mechanism was not κ inflation; the one-sided penalty drove κ too lo
 - Results/checkpoints: `runs/current_valid_baseline/partial_ft_uncertainty_boundary_distillation_20260922/`
 - Proxy manifest: `runs/current_valid_baseline/partial_ft_uncertainty_boundary_distillation_20260922/proxy_ood/manifest.json`
 - Scripts: `scripts/prepare_proxy_ood_boundary_data.py`, `scripts/partial_ft_boundary_distill.py`, `scripts/evaluate_boundary_distillation.py`, `scripts/evaluate_boundary_curve.py`, `scripts/summarize_boundary_distillation.py`
+
+## 2026-09-26 Safe Uncertainty-Guided Adaptation final-run audit
+
+The output `runs/safe_uncertainty_guided_adaptation_20260925_v5` contains all planned 91 training/evaluation cases and finite results, but its stored integrity audit reports nonzero CFR hash overlap. Direct checking reproduces substantial train/validation/test and cross-seed duplication; therefore this run is **not paper-ready** and its policy result cannot support an unseen-OOD generalization claim. No training was rerun. Audit-only Tables 1–5 and PNG/PDF figures were generated under `runs/safe_uncertainty_guided_adaptation_20260925_v5_audit_20260926/`. The full finding is documented in `docs/SAFE_UNCERTAINTY_GUIDED_ADAPTATION_FINAL_20260925.md`. EVM/BER, fixed-threshold FPR/TPR, AUROC, and final ID-forgetting were not available in the raw artifacts and were not inferred.
+
+## 2026-09-26 Clean Fast Scope-Selection Gate
+
+The clean v6-fast experiment corrected the v5 CFR leakage by deriving a unique deterministic generator seed from `(delay, experiment_seed, split, sample_index)` and hashing canonical clean complex64 CFR bytes. The previous v5 outputs remain preserved as **INVALID due to CFR leakage** and were not reused for performance values. The smoke audit passed with zero split/cross-seed duplicates and identical same-seed datasets across scopes.
+
+Stage A used anchor delays `160/180/200 ns`, clean seeds `20260926/27/28`, and Small `3.1625%`, Medium `12.5323%`, and Full `100%`. All `27/27` runs completed on NVIDIA GB10 / `cuda:0`; losses were finite and frozen-parameter max difference was `0.0`.
+
+The locked primary criterion was the **1-SE model-selection heuristic**, not an equivalence proof. It selected Full at all three anchor delays (`160: Full`, `180: Full`, `200: Full`). Under the pre-registered gate, boundary refinement and final held-out training were not executed; no severity-to-scope policy or paper-ready claim was created. Spearman severity/scope correlation is undefined because the required-scope label is constant. Secondary `Full+0.25 dB`/`Full+0.5 dB` sensitivity was reported only as analysis.
+
+- Clean gate report: `runs/safe_uncertainty_guided_adaptation_20260926_v6_clean_fast_retry_20260926/CLEAN_FAST_GATE_REPORT.md`
+- Clean tables/figures: `runs/safe_uncertainty_guided_adaptation_20260926_v6_clean_fast_retry_20260926/tables/`, `runs/safe_uncertainty_guided_adaptation_20260926_v6_clean_fast_retry_20260926/figures/`
+- Clean generator/root-cause: `scripts/run_safe_uncertainty_guided_adaptation_20260926_clean.py`, `scripts/run_safe_uncertainty_guided_adaptation_20260926_clean_fast.py`, `docs/DATA_LEAKAGE_ROOT_CAUSE_20260926.md`
+- Final document: `docs/SAFE_UNCERTAINTY_GUIDED_ADAPTATION_CLEAN_FAST_FINAL_20260926.md`
+
+## 2026-09-26 System QoS-Guided Scope Gate
+
+The clean 27-checkpoint Small/Medium/Full result was audited for an additional system-level evaluation. The repository provides Sionna CFR generation, sparse observation, UACP reconstruction, and uncertainty metrics, but no validated checkpoint-compatible precoding, modulation, coding/decoder, BER/BLER, EVM, or throughput pipeline. The reference paper reports such PHY results, but its reported values are not normative QoS thresholds for this Partial Fine-Tuning question.
+
+Therefore Gate A failed. No arbitrary BER/EVM threshold was introduced, no new training was run, and no communication-QoS-required scope label or scope-selection policy was created. The contaminated v5 results were not reused. The clean checkpoints remain read-only.
+
+- QoS criterion audit: `docs/SYSTEM_QOS_CRITERION_20260926.md`
+- Gate report: `runs/system_qos_guided_scope_20260926_v1/SYSTEM_QOS_GATE_REPORT.md`
+- Audit summary: `runs/system_qos_guided_scope_20260926_v1/audit_summary.json`
+
+## 2026-09-26 Communication-Aware Surrogate Scope Evaluation
+
+Clean 27개 checkpoint(160/180/200 ns × 3 seeds × Small/Medium/Full)를 재학습 없이 평가했다. 2×2 predicted CSI의 principal beamformer를 clean channel에 적용한 normalized beamforming gain과 기존 ID-only q99 Epistemic threshold를 동시에 사용해 sufficient scope를 정의했다. BF sanity는 통과했지만 9개 delay/seed 중 8개가 `NONE`, 1개만 `Full`이었고, EPI exceedance가 주된 병목이었다. 따라서 severity 기반 ordered scope policy와 final unseen training은 사전 Gate에 따라 실행하지 않았으며, 현재 가설은 지지되지 않는다. 이 평가는 BER/BLER 또는 system QoS 보장이 아닌 communication-aware surrogate 결과다. 상세 문서는 [COMMUNICATION_SURROGATE_SCOPE_FINAL_20260926.md](docs/COMMUNICATION_SURROGATE_SCOPE_FINAL_20260926.md), 결과는 `runs/communication_surrogate_scope_20260926_v1_retry/`에 있다. 기존 checkpoint/result는 수정하지 않았다.
+
+## 2026-09-26 Performance Recovery vs Epistemic Role Analysis
+
+기존 clean 27개 checkpoint를 재학습 없이 BF-only 기준으로 재분석했다. 160/180/200 ns의 BF-only minimum scope는 모두 Medium이었고, pre-Epistemic severity 증가에 따른 scope transition은 관찰되지 않았다. Post-Epistemic은 sample-level BF failure를 예측하지 못했으며(original Ng16/32 AUROC 0.442/0.442, independent CFR 0.443/0.443), BF-pass checkpoint 내부에서도 Epi-high failure율이 Epi-low보다 낮았다. 따라서 현재 evidence에서는 post-Epistemic recovery를 hard gate나 safety monitor로 사용할 근거가 부족하고 supplementary diagnostic으로 기록한다. 상세 문서는 [EPISTEMIC_ROLE_AFTER_ADAPTATION_20260926.md](docs/EPISTEMIC_ROLE_AFTER_ADAPTATION_20260926.md), 결과는 `runs/bf_sufficient_epi_role_analysis_20260926_v1_retry5/`에 있다. 새 training은 0회다.
+## 2026-09-26 KIPS Partial Fine-Tuning paper draft V2
+
+V1 논문의 3.1–3.4가 결과 수치를 압축적으로 나열하던 문제를 보완하여, 연구 질문 → 비교 방법 → surrogate 판정 기준 → raw 결과 → 해석의 순서로 설명을 확장했다. 3.1은 `table1_bf_only_required_scope.csv`와 ID-Hard reference를 사용해 Small/Medium/Full의 Ng16·Ng32 gain과 seed variation을 표시하고, 3.2는 `table6_efficiency.csv`의 절대 비용과 Full 대비 감소율을 연결한다. 3.3은 `table2_pre_ei_severity_vs_bf_scope.csv`에서 severity 증가와 Medium 고정 scope를 함께 보여준다. 3.4는 `table3_post_epi_bf_risk.csv`, `table5_epi_low_high_performance.csv`, `table6_incremental_risk_prediction.csv`, `table7_independent_replication.csv`를 사용해 Original/Independent CFR의 post-Epistemic risk 결과를 설명한다.
+
+이번 수정은 새 training/evaluation을 실행하지 않았으며, 기존 V1과 clean checkpoint/result/raw artifact를 수정하거나 덮어쓰지 않았다. V2에서는 normalized beamforming gain을 BER/BLER이나 실제 QoS 보장으로 표현하지 않았고, 기존 implementation assumption을 그대로 표시했다.
+
+- V2 Markdown: `docs/KIPS_UACP_PARTIAL_FINETUNING_PAPER_DRAFT_V2.md`
+- V2 validation guide: `docs/KIPS_UACP_PARTIAL_FINETUNING_V2_VALIDATION_NOTE.md`
+- V2 DOCX/PDF: `output/KIPS_UACP_PARTIAL_FINETUNING_PAPER_DRAFT_V2.docx`, `output/KIPS_UACP_PARTIAL_FINETUNING_PAPER_DRAFT_V2.pdf`
+- V2 figures: `output/KIPS_UACP_PARTIAL_FINETUNING_PAPER_DRAFT_V2_figures/`
+- Builder: `scripts/build_kips_uacp_paper_v2.py`
+
+## 2026-09-26 KIPS Partial Fine-Tuning paper draft V3
+
+V3는 논문 본문을 2–3페이지 분량으로 압축하고 연구 범위를 3.3까지로 제한했다. 기존 V2의 post-adaptation Epistemic/BF-risk/AUROC/Epi-low/Epi-high 분석은 본문에서 제외했으며, 해당 raw artifact와 문서는 후속 연구 자료로 보존했다. V3는 새 training/evaluation 없이 clean BF-only scope, efficiency, pre-adaptation severity 결과만 재사용했다.
+
+- V3 Markdown: `docs/KIPS_UACP_PARTIAL_FINETUNING_PAPER_DRAFT_V3.md`
+- V3 DOCX/PDF: `output/KIPS_UACP_PARTIAL_FINETUNING_PAPER_DRAFT_V3.docx`, `output/KIPS_UACP_PARTIAL_FINETUNING_PAPER_DRAFT_V3.pdf`
+- V3 figures: `output/KIPS_UACP_PARTIAL_FINETUNING_PAPER_DRAFT_V3_figures/`
+- Builder: `scripts/build_kips_uacp_paper_v3.py`
+
+V3의 핵심 결과는 160/180/200 ns × 3 seeds에서 Medium 12.5323%가 9/9 조건의 minimum evaluated performance-sufficient scope였다는 점이다. Medium은 Full 대비 parameter 87.47%, measured training time 45.92%, peak VRAM 72.57%를 줄였다. Pre-adaptation Epistemic severity는 delay 증가와 함께 높아졌지만 required scope는 모두 Medium으로 유지되었다.
